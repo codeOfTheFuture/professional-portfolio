@@ -1,16 +1,18 @@
 import React from "react";
+import InfoWrapper from "../infoWrapper/InfoWrapper";
 import styles from "./SectionMain.module.scss";
 
-const SectionOne = () => {
+const SectionMain = () => {
   return (
     <section className={styles.s1}>
       <div className='main-container'>
-        <h1>Hi, I'm Jeffrey Oliver</h1>
-        <p>This is a sentence</p>
-        <a href='#'>Link</a>
+        <div className={styles.greetingWrapper}>
+          <h1>Hi, I'm Jeffrey Oliver</h1>
+        </div>
+        <InfoWrapper />
       </div>
     </section>
   );
 };
 
-export default SectionOne;
+export default SectionMain;

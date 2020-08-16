@@ -1,6 +1,13 @@
 @import "../../styles/variables.scss";
 
-section.s1 {
+.s1 {
   background-color: $mainColor;
   border-bottom: 1px solid $borderColor;
+
+  .greetingWrapper {
+    display: grid;
+    text-align: center;
+    align-content: center;
+    min-height: 10em;
+  }
 }
