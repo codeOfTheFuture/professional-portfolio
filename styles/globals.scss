@@ -129,14 +129,29 @@ table {
 }
 
 // Global Styles
-$mainColor: #eaeaea;
-$secondaryColor: #fff;
+@import "variables";
 
-$borderColor: #c1c1c1;
+// Global heading font-sizes
+h1 {
+  font-size: 56px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+}
 
-$mainText: black;
-$secondaryText: #4b5156;
-
+// Main text color for headings
 h1,
 h2,
 h3,
@@ -144,14 +159,49 @@ h4,
 h5,
 h6,
 strong {
-  color: $secondaryText;
+  color: $mainText;
+  padding: 0.7em 0;
+  font-family: "Russo One", sans-serif;
 }
 
+// Secondary text color
 p,
 li,
 span,
 label,
 input,
 textarea {
-  color: $mainText;
+  color: $secondaryText;
+  font-size: 1.5em;
+  font-family: "Roboto Mono", monospace;
+}
+
+// Global section styles
+.s1,
+.s2,
+.s3,
+.s4 {
+  overflow: auto;
+}
+
+// Global container styles
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $mobileView) {
+    width: 95%;
+  }
+}
+
+// Global link styles
+a {
+  text-decoration: none;
+  color: #17a2b8;
+  font-size: 1.5em;
+}
+
+// Global unordered list styles
+ul {
+  list-style: none;
 }
