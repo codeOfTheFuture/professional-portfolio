@@ -1,0 +1,62 @@
+@import "../../styles/variables.scss";
+
+.rightColumn {
+  grid-area: rightColumn;
+  display: grid;
+  align-content: center;
+  padding: 50px 0;
+
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+  }
+
+  #previewShadow {
+    background-color: $previewShadow;
+    width: 300px;
+    height: 180px;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+
+  #preview {
+    width: 300px;
+    border: 1.5px solid #17a2b8;
+    background-color: $previewBg;
+    padding: 15px;
+    position: relative;
+
+    .corner {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 1.5px solid #17a2b8;
+      background-color: $secondaryColor;
+      position: absolute;
+    }
+
+    #cornerTl {
+      top: -5px;
+      left: -5px;
+    }
+    #cornerTr {
+      top: -5px;
+      right: -5px;
+    }
+    #cornerBr {
+      bottom: -5px;
+      right: -5px;
+    }
+    #cornerBl {
+      bottom: -5px;
+      left: -5px;
+    }
+
+    h3 {
+      padding: 0.7em 0;
+    }
+
+    p {
+      padding: 1em 0;
+    }
+  }
+}

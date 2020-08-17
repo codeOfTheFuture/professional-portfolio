@@ -131,6 +131,11 @@ table {
 // Global Styles
 @import "variables";
 
+// Global box-sizing
+:root {
+  box-sizing: border-box;
+}
+
 // Global heading font-sizes
 h1 {
   font-size: 56px;

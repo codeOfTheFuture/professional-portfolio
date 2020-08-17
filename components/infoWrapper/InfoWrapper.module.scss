@@ -10,10 +10,17 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 3em 30em;
   grid-template-areas:
     "navWrapper navWrapper"
     "leftColumn rightColumn";
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navWrapper"
+      "leftColumn"
+      "rightColumn";
+  }
 
   .navWrapper {
     border-radius: 5px 5px 0 0;
@@ -23,11 +30,5 @@
     justify-content: space-between;
     align-items: center;
     background-color: $mainColor;
-  }
-  .leftColumn {
-    grid-area: leftColumn;
-  }
-  .rightColumn {
-    grid-area: rightColumn;
   }
 }
