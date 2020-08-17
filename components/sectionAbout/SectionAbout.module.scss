@@ -3,4 +3,10 @@
 section.s2 {
   background-color: $secondaryColor;
   border-bottom: 1px solid $borderColor;
+
+  .aboutWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 50px 0;
+  }
 }

@@ -1,0 +1,7 @@
+@import "../../styles/variables.scss";
+
+#skills {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $previewShadow;
+}

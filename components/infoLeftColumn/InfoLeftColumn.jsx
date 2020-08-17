@@ -3,7 +3,7 @@ import styles from "./InfoLeftColumn.module.scss";
 
 const InfoLeftColumn = () => {
   return (
-    <div className={styles.InfoLeftColumn}>
+    <div className={styles.infoLeftColumn}>
       <img
         id={styles.profilePic}
         src='assets/mainImg.jpg'

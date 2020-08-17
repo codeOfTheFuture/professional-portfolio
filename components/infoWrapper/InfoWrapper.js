@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./InfoWrapper.module.scss";
 import DotsWrapper from "../dotsWrapper/dotWrapper";
 import Navigation from "../navigation/Navigation";
+import InfoLeftColumn from "../infoLeftColumn/InfoLeftColumn";
 import InfoRightColumn from "../infoRightColumn/InfoRightColumn";
 
 const InfoWrapper = () => {
@@ -11,7 +12,7 @@ const InfoWrapper = () => {
         <DotsWrapper />
         <Navigation />
       </div>
-      <div className={styles.leftColumn}></div>
+      <InfoLeftColumn />
       <InfoRightColumn />
     </div>
   );
