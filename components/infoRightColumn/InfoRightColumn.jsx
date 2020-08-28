@@ -10,8 +10,9 @@ const InfoRightColumn = () => {
           <div id={styles.cornerTr} className={styles.corner}></div>
           <h3>What I Do</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            saepe accusamus mollitia.
+            I develop web applications with modern JavaScript frameworks.
+            Experienced in object-oriented, functional, and
+            reactive-programming.
           </p>
           <div id={styles.cornerBr} className={styles.corner}></div>
           <div id={styles.cornerBl} className={styles.corner}></div>

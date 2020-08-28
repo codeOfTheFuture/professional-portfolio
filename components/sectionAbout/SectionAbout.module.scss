@@ -8,5 +8,6 @@ section.s2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     padding: 50px 0;
+    gap: 100px;
   }
 }

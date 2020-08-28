@@ -1,0 +1,39 @@
+@import "../../styles/variables.scss";
+
+#contactForm {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid $borderColor;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: $mainColor;
+  margin-bottom: 50px;
+
+  label {
+    line-height: 2.7em;
+  }
+
+  .inputField {
+    width: 100%;
+    padding: 10px 0;
+    background-color: $secondaryColor;
+    border-radius: 5px;
+    border: 1px solid $borderColor;
+    font-size: 14px;
+  }
+
+  textarea {
+    min-height: 100px;
+    font-size: 14px;
+  }
+
+  #submitBtn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    background-color: $buttonColor;
+    border: none;
+  }
+}

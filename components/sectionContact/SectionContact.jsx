@@ -1,11 +1,13 @@
 import React from "react";
+import ContactForm from "../contactForm/ContactForm";
 import styles from "./SectionContact.module.scss";
 
 const SectionContact = () => {
   return (
     <section className={styles.s4}>
       <div className='main-container'>
-        <h1>Contact</h1>
+        <h3>Get In Touch</h3>
+        <ContactForm />
       </div>
     </section>
   );

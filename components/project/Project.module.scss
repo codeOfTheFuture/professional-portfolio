@@ -1,0 +1,33 @@
+@import "../../styles//variables.scss";
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  .projectMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h4 {
+      text-decoration: underline;
+    }
+
+    img {
+      width: 450px;
+    }
+  }
+
+  .projectAbout {
+    width: 25vw;
+    height: 450px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: $mainColor;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.carouselWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+
+  .chevronLeft,
+  .chevronRight {
+    width: 250px;
+    // height: 50px;
+    background-color: black;
+    color: $secondaryColor;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 2em;
+  }
+
+  .projectWrapper {
+    display: flex;
+    padding: 2em;
+    background-color: $secondaryColor;
+    border: 1px solid $borderColor;
+    border-radius: 5px;
+  }
+}
