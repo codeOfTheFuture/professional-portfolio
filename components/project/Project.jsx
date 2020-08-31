@@ -15,13 +15,17 @@ const Project = ({ project }) => {
       </div>
 
       <div className={styles.projectAbout}>
-        <h5>{project.about.projectDesc}</h5>
-        <p>{project.about.projectDescText}</p>
-        <h5>{project.about.techStack}</h5>
-        <p>{project.about.techStackList}</p>
-        <ul>
+        <h5 className={styles.projectDesc}> {project.about.projectDesc}</h5>
+        <p className={styles.projectDescText}>
+          {project.about.projectDescText}
+        </p>
+        <h5 className={styles.techStack}>{project.about.techStack}</h5>
+        <p className={styles.techStackList}>{project.about.techStackList}</p>
+        <ul className={styles.bulletPoints}>
           {project.about.bulletPoints.map((bPoint, index) => (
-            <li key={index}>{bPoint}</li>
+            <li className={styles.bPoint} key={index}>
+              {bPoint}
+            </li>
           ))}
         </ul>
       </div>

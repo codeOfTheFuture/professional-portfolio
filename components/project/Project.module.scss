@@ -21,13 +21,32 @@
   }
 
   .projectAbout {
-    width: 25vw;
+    width: 20vw;
     height: 450px;
     overflow-y: scroll;
+    padding: 1.3em;
 
     &::-webkit-scrollbar {
       width: 8px;
       background-color: $mainColor;
+    }
+
+    .projectDesc,
+    .techStack {
+      padding-top: 1em;
+    }
+
+    .projectDescText,
+    .techStackList {
+      padding: 1em 0;
+      line-height: 1.7em;
+    }
+
+    .bPoint {
+      list-style: disc;
+      padding: 0 1em;
+      margin-left: 1em;
+      margin-bottom: 1em;
     }
   }
 }

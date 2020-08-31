@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles//mixins.scss";
 
 .carouselWrapper {
   display: flex;
@@ -8,13 +9,16 @@
 
   .chevronLeft,
   .chevronRight {
-    width: 250px;
-    // height: 50px;
+    width: 300px;
     background-color: black;
     color: $secondaryColor;
     cursor: pointer;
     border-radius: 50%;
-    margin: 0 2em;
+    margin: 1em;
+
+    &:hover {
+      @include boxShadow;
+    }
   }
 
   .projectWrapper {
