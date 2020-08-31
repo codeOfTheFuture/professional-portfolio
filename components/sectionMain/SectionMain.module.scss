@@ -1,7 +1,9 @@
+@use 'sass:map';
 @import "../../styles/variables.scss";
 
+
 .s1 {
-  background-color: $mainColor;
+  // background-color: map.get($testColor, "blueMode");
   border-bottom: 1px solid $borderColor;
 
   .greetingWrapper {
@@ -10,4 +12,12 @@
     align-content: center;
     min-height: 10em;
   }
+}
+
+.lightMode {
+  background-color: map.get($testColor, "lightMode");
+}
+
+.blueMode {
+  background-color: map.get($testColor, "blueMode");
 }

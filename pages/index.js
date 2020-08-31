@@ -1,11 +1,22 @@
+import React, { useState } from 'react';
+
 import Head from "next/head";
 import SectionMain from "../components/sectionMain/SectionMain";
 import SectionAbout from "../components/sectionAbout/SectionAbout";
 import SectionPortfolio from "../components/sectionPortfolio/SectionPortfolio";
 import SectionContact from "../components/sectionContact/SectionContact";
 
-const Home = () => (
-  <div>
+const Home = () => {
+  const [colorModeOptions] = useState([
+    "lightMode",
+    "blueMode",
+    "greenMode",
+    "purpleMode"
+  ]);
+
+  const [colorMode, setColorMode] = useState("");
+
+  return (<div>
     <Head>
       <title>Jeff Oliver | Professional Portfolio</title>
       <link rel='icon' href='/favicon.ico' />
@@ -24,11 +35,11 @@ const Home = () => (
         rel='stylesheet'
       ></link>
     </Head>
-    <SectionMain />
-    <SectionAbout />
-    <SectionPortfolio />
-    <SectionContact />
-  </div>
-);
+    <SectionMain setColorMode={setColorMode} colorModeOptions={colorModeOptions} colorMode={colorMode} />
+    <SectionAbout colorMode={colorMode} />
+    <SectionPortfolio colorMode={colorMode} />
+    <SectionContact colorMode={colorMode} />
+  </div>)
+};
 
 export default Home;

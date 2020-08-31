@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./InfoLeftColumn.module.scss";
 
-const InfoLeftColumn = () => {
+const InfoLeftColumn = ({ setColorMode, colorModeOptions, colorMode }) => {
   return (
     <div className={styles.infoLeftColumn}>
       <img
@@ -12,10 +12,17 @@ const InfoLeftColumn = () => {
       <h5>Personalize Theme</h5>
 
       <div id={styles.themeOptionsWrapper}>
-        <div id={styles.lightMode} className={styles.themeDot}></div>
-        <div id={styles.blueMode} className={styles.themeDot}></div>
-        <div id={styles.greenMode} className={styles.themeDot}></div>
-        <div id={styles.purpleMode} className={styles.themeDot}></div>
+        {/* {
+          colorModeOptions.map((colorOption, index) => {
+            const mode = `styles.${colorOption}`;
+
+            return <div id={mode} className={styles.themeDot} key={index}></div>
+          })
+        } */}
+        <div id={styles.lightMode} className={styles.themeDot} onClick={() => setColorMode("lightMode")}></div>
+        <div id={styles.blueMode} className={styles.themeDot} onClick={() => setColorMode("blueMode")}></div>
+        <div id={styles.greenMode} className={styles.themeDot} onClick={() => setColorMode("greenMode")}></div>
+        <div id={styles.purpleMode} className={styles.themeDot} onClick={() => setColorMode("purpleMode")}></div>
       </div>
 
       <p id={styles.settingsNote}>

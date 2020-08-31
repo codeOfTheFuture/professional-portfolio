@@ -5,14 +5,14 @@ import Navigation from "../navigation/Navigation";
 import InfoLeftColumn from "../infoLeftColumn/InfoLeftColumn";
 import InfoRightColumn from "../infoRightColumn/InfoRightColumn";
 
-const InfoWrapper = () => {
+const InfoWrapper = ({ setColorMode, colorModeOptions, colorMode }) => {
   return (
     <div className={styles.infoWrapper}>
       <div className={styles.navWrapper}>
         <DotsWrapper />
         <Navigation />
       </div>
-      <InfoLeftColumn />
+      <InfoLeftColumn setColorMode={setColorMode} colorModeOptions={colorModeOptions} colorMode={colorMode} />
       <InfoRightColumn />
     </div>
   );
