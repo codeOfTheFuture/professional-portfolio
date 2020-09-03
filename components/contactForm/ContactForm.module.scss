@@ -4,10 +4,10 @@
   display: block;
   max-width: 600px;
   margin: 0 auto;
-  border: 1px solid $borderColor;
+  // border: 1px solid $borderColor;
   padding: 15px;
   border-radius: 5px;
-  background-color: $mainColor;
+  // background-color: $mainColor;
   margin-bottom: 50px;
 
   label {
@@ -17,9 +17,9 @@
   .inputField {
     width: 100%;
     padding: 10px 0;
-    background-color: $secondaryColor;
+    // background-color: $secondaryColor;
     border-radius: 5px;
-    border: 1px solid $borderColor;
+    // border: 1px solid $borderColor;
     font-size: 14px;
   }
 

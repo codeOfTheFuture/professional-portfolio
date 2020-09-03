@@ -1,23 +1,26 @@
 @use 'sass:map';
 @import "../../styles/variables.scss";
-
-
-.s1 {
-  // background-color: map.get($testColor, "blueMode");
-  border-bottom: 1px solid $borderColor;
-
-  .greetingWrapper {
-    display: grid;
-    text-align: center;
-    align-content: center;
-    min-height: 10em;
-  }
-}
+@import "../../styles/mixins.scss";
 
 .lightMode {
-  background-color: map.get($testColor, "lightMode");
+  @include s1("lightMode");
 }
 
 .blueMode {
-  background-color: map.get($testColor, "blueMode");
+  @include s1("blueMode");
+}
+
+.greenMode {
+  @include s1("greenMode");
+}
+
+.purpleMode {
+  @include s1("purpleMode");
+}
+
+.greetingWrapper {
+  display: grid;
+  text-align: center;
+  align-content: center;
+  min-height: 10em;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Skills from "../skills/Skills";
 import styles from "./AboutMe.module.scss";
 
-const AboutMe = () => {
+const AboutMe = ({ colorMode }) => {
   return (
     <div className={styles.aboutMe}>
       <h4>More about me</h4>
@@ -31,7 +31,7 @@ const AboutMe = () => {
         </a>
       </p>
 
-      <Skills />
+      <Skills colorMode={colorMode} />
     </div>
   );
 };

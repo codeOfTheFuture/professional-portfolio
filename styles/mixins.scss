@@ -1,5 +1,117 @@
+@use 'sass:map';
 @mixin boxShadow {
   -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+}
+
+@mixin s1($themeName) {
+  background-color: map.get($mainColorTest, $themeName);
+  border-bottom: 1px solid map.get($borderColorTest, $themeName);
+  color: map.get($mainTextTest, $themeName);
+  p {
+    color: map.get($secondaryTextTest, $themeName);
+  }
+}
+
+@mixin infoWrapper($themeName) {
+  background-color: map.get($secondaryColorTest, $themeName);
+  border: 1px solid map.get($borderColorTest, $themeName);
+}
+
+@mixin navWrapper($themeName) {
+  background-color: map.get($mainColorTest, $themeName);
+  border-bottom: 1px solid map.get($borderColorTest, $themeName);
+}
+
+@mixin themeDot($themeName) {
+  border: 2px solid map.get($themeDotBorderTest, $themeName);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+
+  cursor: pointer;
+
+  &:hover {
+    border-width: 5px;
+  }
+}
+
+@mixin previewShadow($themeName) {
+  background-color: map.get($previewShadowTest, $themeName);
+  width: 300px;
+  height: 180px;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+@mixin preview($themeName) {
+  width: 300px;
+  border: 1.5px solid #17a2b8;
+  background-color: map.get($previewBgTest, $themeName);
+  padding: 15px;
+  position: relative;
+
+  .corner {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid #17a2b8;
+    background-color: map.get($secondaryColorTest, $themeName);
+    position: absolute;
+  }
+
+  #cornerTl {
+    top: -5px;
+    left: -5px;
+  }
+  #cornerTr {
+    top: -5px;
+    right: -5px;
+  }
+  #cornerBr {
+    bottom: -5px;
+    right: -5px;
+  }
+  #cornerBl {
+    bottom: -5px;
+    left: -5px;
+  }
+
+  h3 {
+    padding: 0.7em 0;
+    color: map.get($mainTextTest, $themeName);
+  }
+
+  p {
+    padding: 1em 0;
+    color: map.get($secondaryTextTest, $themeName);
+  }
+}
+
+@mixin s2($themeName) {
+  background-color: map.get($secondaryColorTest, $themeName);
+  border-bottom: 1px solid map.get($borderColorTest, $themeName);
+
+  img {
+    border: 1px solid map.get($borderColorTest, $themeName);
+  }
+
+  h3,
+  h4 {
+    color: map.get($mainTextTest, $themeName);
+  }
+
+  p {
+    color: map.get($secondaryTextTest, $themeName);
+  }
+}
+
+@mixin skills($themeName) {
+  background-color: map.get($previewShadowTest, $themeName);
+
+  li {
+    color: map.get($secondaryTextTest, $themeName);
+  }
 }

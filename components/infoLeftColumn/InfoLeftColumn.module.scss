@@ -1,3 +1,4 @@
+@use 'sass:map';
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
@@ -12,7 +13,7 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border: 2px solid $borderColor;
+    // border: 2px solid $borderColor;
   }
 
   h5 {
@@ -21,52 +22,51 @@
     padding-top: 1.5em;
   }
 
-  #themeOptionsWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6em;
-    box-sizing: border-box;
-
-    .themeDot {
-      height: 30px;
-      width: 30px;
-      background-color: black;
-      border-radius: 50%;
-
-      margin: 5px;
-      border: 2px solid $themeDotBorder;
-
-      @include boxShadow;
-
-      cursor: pointer;
-
-      &:hover {
-        border-width: 5px;
-      }
-    }
-
-    #lightMode {
-      background-color: $secondaryColor;
-    }
-
-    #blueMode {
-      background-color: #192734;
-    }
-
-    #greenMode {
-      background-color: #78866b;
-    }
-
-    #purpleMode {
-      background-color: #7e4c74;
-    }
-  }
-
   #settingsNote {
     font-size: 12px;
     font-style: italic;
     text-align: center;
     margin: 1em 0;
+  }
+}
+
+#themeOptionsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6em;
+  box-sizing: border-box;
+
+  .themeDotLt {
+    @include themeDot("lightMode");
+    @include boxShadow;
+  }
+  .themeDotBl {
+    @include themeDot("blueMode");
+    @include boxShadow;
+  }
+  .themeDotGn {
+    @include themeDot("greenMode");
+    @include boxShadow;
+  }
+  .themeDotPl {
+    @include themeDot("purpleMode");
+    @include boxShadow;
+  }
+
+  #lightMode {
+    background-color: #fff;
+  }
+
+  #blueMode {
+    background-color: #192734;
+  }
+
+  #greenMode {
+    background-color: #78866b;
+  }
+
+  #purpleMode {
+    background-color: #7e4c74;
   }
 }

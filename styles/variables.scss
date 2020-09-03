@@ -1,21 +1,72 @@
 // Background Colors
-$mainColor: #eaeaea;
-$testColor: (
+$mainColorTest: (
   "lightMode": #eaeaea,
-  "blueMode": blue
+  "blueMode": #15202b,
+  "greenMode": #606b56,
+  "purpleMode": #46344e,
 );
-$secondaryColor: #fff;
+// $mainColor: #eaeaea;
+
+$secondaryColorTest: (
+  "lightMode": white,
+  "blueMode": #192734,
+  "greenMode": #515a48,
+  "purpleMode": #382a3f,
+);
+// $secondaryColor: #fff;
+
 // Border Colors
-$borderColor: #c1c1c1;
+$borderColorTest: (
+  "lightMode": #c1c1c1,
+  "blueMode": #164d56,
+  "greenMode": #161914,
+  "purpleMode": #1d1520,
+);
+// $borderColor: #c1c1c1;
+
+$themeDotBorderTest: (
+  "lightMode": #24292e,
+  "blueMode": #fff,
+  "greenMode": #fff,
+  "purpleMode": #fff,
+);
+
 $themeDotBorder: #24292e;
 // Text Colors
+$mainTextTest: (
+  "lightMode": #000,
+  "blueMode": #fff,
+  "greenMode": #fff,
+  "purpleMode": #fff,
+);
 $mainText: black;
+
+$secondaryTextTest: (
+  "lightMode": #4b5156,
+  "blueMode": #eee,
+  "greenMode": #eee,
+  "purpleMode": #eee,
+);
+
 $secondaryText: #4b5156;
 
 // preview background color
+$previewBgTest: (
+  "lightMode": rgba(251, 249, 243, 0.8),
+  "blueMode": rgba(25, 39, 52, 0.8),
+  "greenMode": rgba(81, 90, 72, 0.8),
+  "purpleMode": rgba(29, 21, 32, 0.8),
+);
 $previewBg: rgba(251, 249, 243, 0.8);
 
 // preview shadow
+$previewShadowTest: (
+  "lightMode": #f0ead6,
+  "blueMode": #111921,
+  "greenMode": #2a2f25,
+  "purpleMode": #2b202f,
+);
+
 $previewShadow: #f0ead6;
 
 //Button Color

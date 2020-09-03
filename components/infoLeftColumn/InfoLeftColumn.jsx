@@ -1,7 +1,18 @@
 import React, { useState } from "react";
-import styles from "./InfoLeftColumn.module.scss";
+import styles, {
+  themeDotLt,
+  themeDotBl,
+  themeDotGn,
+  themeDotPl,
+} from "./InfoLeftColumn.module.scss";
 
 const InfoLeftColumn = ({ setColorMode, colorModeOptions, colorMode }) => {
+  let mode;
+  if (colorMode === "lightMode") mode = themeDotLt;
+  else if (colorMode === "blueMode") mode = themeDotBl;
+  else if (colorMode === "greenMode") mode = themeDotGn;
+  else mode = themeDotPl;
+
   return (
     <div className={styles.infoLeftColumn}>
       <img
@@ -12,17 +23,27 @@ const InfoLeftColumn = ({ setColorMode, colorModeOptions, colorMode }) => {
       <h5>Personalize Theme</h5>
 
       <div id={styles.themeOptionsWrapper}>
-        {/* {
-          colorModeOptions.map((colorOption, index) => {
-            const mode = `styles.${colorOption}`;
+        <div
+          id={styles.lightMode}
+          className={mode}
+          onClick={() => setColorMode("lightMode")}
+        ></div>
 
-            return <div id={mode} className={styles.themeDot} key={index}></div>
-          })
-        } */}
-        <div id={styles.lightMode} className={styles.themeDot} onClick={() => setColorMode("lightMode")}></div>
-        <div id={styles.blueMode} className={styles.themeDot} onClick={() => setColorMode("blueMode")}></div>
-        <div id={styles.greenMode} className={styles.themeDot} onClick={() => setColorMode("greenMode")}></div>
-        <div id={styles.purpleMode} className={styles.themeDot} onClick={() => setColorMode("purpleMode")}></div>
+        <div
+          id={styles.blueMode}
+          className={mode}
+          onClick={() => setColorMode("blueMode")}
+        ></div>
+        <div
+          id={styles.greenMode}
+          className={mode}
+          onClick={() => setColorMode("greenMode")}
+        ></div>
+        <div
+          id={styles.purpleMode}
+          className={mode}
+          onClick={() => setColorMode("purpleMode")}
+        ></div>
       </div>
 
       <p id={styles.settingsNote}>

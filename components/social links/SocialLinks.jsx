@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./SocialLinks.module.scss";
+import { socialLinks, socialImg } from "./SocialLinks.module.scss";
 
-const SocialLinks = () => {
+const SocialLinks = ({ colorMode }) => {
   return (
-    <div className={styles.socialLinks}>
+    <div className={socialLinks}>
       <img
-        id={styles.socialImg}
+        id={socialImg}
         src='assets/programming.jpg'
         alt='Programming on a computer with multiple screens'
       />

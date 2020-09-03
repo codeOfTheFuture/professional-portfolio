@@ -1,9 +1,26 @@
 import React from "react";
-import styles from "./Skills.module.scss";
+import {
+  skills,
+  skillsLt,
+  skillsBl,
+  skillsGn,
+  skillsPl,
+} from "./Skills.module.scss";
 
-const Skills = () => {
+const Skills = ({ colorMode }) => {
+  let skillsMode;
+  if (colorMode === "lightMode") {
+    skillsMode = skillsLt;
+  } else if (colorMode === "blueMode") {
+    skillsMode = skillsBl;
+  } else if (colorMode === "greenMode") {
+    skillsMode = skillsGn;
+  } else {
+    skillsMode = skillsPl;
+  }
+
   return (
-    <div id={styles.skills}>
+    <div id={skills} className={skillsMode}>
       <ul>
         <li>React</li>
         <li>Redux</li>
