@@ -1,11 +1,15 @@
 @import "../../styles/variables.scss";
+@import "../../styles//mixins.scss";
 
-section.s3 {
-  // background-color: $mainColor;
-  // border-bottom: 1px solid $borderColor;
-
-  h3 {
-    padding-top: 2em;
-    text-align: center;
-  }
+.s3Lt {
+  @include s3("lightMode");
+}
+.s3Bl {
+  @include s3("blueMode");
+}
+.s3Gn {
+  @include s3("greenMode");
+}
+.s3Pl {
+  @include s3("purpleMode");
 }

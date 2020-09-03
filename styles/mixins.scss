@@ -115,3 +115,21 @@
     color: map.get($secondaryTextTest, $themeName);
   }
 }
+
+@mixin s3($themeName) {
+  background-color: map.get($mainColorTest, $themeName);
+  border-bottom: 1px solid map.get($borderColorTest, $themeName);
+
+  h3,
+  h4,
+  h5 {
+    color: map.get($mainTextTest, $themeName);
+    padding-top: 2em;
+    text-align: center;
+  }
+
+  p,
+  li {
+    color: map.get($secondaryTextTest, $themeName);
+  }
+}
