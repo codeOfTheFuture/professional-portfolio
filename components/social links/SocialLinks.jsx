@@ -10,13 +10,18 @@ const SocialLinks = ({ colorMode }) => {
         alt='Programming on a computer with multiple screens'
       />
       <h3>Find me on Github & Linkedin</h3>
-      <a target='_blank' href='#'>
-        Github: codeOfTheFuture
-      </a>
-      <br />
-      <a target='_blank' href='#'>
-        Linkedin: Jeffrey Oliver
-      </a>
+      <div>
+        <a target='_blank' href='https://github.com/codeOfTheFuture'>
+          Github: codeOfTheFuture
+        </a>
+        <br />
+        <a
+          target='_blank'
+          href='https://www.linkedin.com/in/jeffrey-oliver-353260160/'
+        >
+          Linkedin: Jeffrey Oliver
+        </a>
+      </div>
     </div>
   );
 };

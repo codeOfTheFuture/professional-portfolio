@@ -1,8 +1,9 @@
 @import "../../styles/variables.scss";
 
 .socialLinks {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   padding-bottom: 4em;
 
@@ -10,10 +11,16 @@
     display: block;
     width: 100%;
     object-fit: cover;
-    // border: 1px solid $borderColor;
   }
 
   h3 {
     padding-top: 2em;
+  }
+
+  a {
+    letter-spacing: 2px;
+    line-height: 2em;
+    font-weight: bold;
+    margin: 2em 0;
   }
 }

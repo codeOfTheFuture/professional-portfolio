@@ -9,6 +9,18 @@
   background-color: map.get($mainColorTest, $themeName);
   border-bottom: 1px solid map.get($borderColorTest, $themeName);
   color: map.get($mainTextTest, $themeName);
+
+  h1 {
+    // -webkit-text-stroke: 2px black;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    // -webkit-text-stroke: 1px black;
+  }
+
   p {
     color: map.get($secondaryTextTest, $themeName);
   }
@@ -131,5 +143,70 @@
   p,
   li {
     color: map.get($secondaryTextTest, $themeName);
+  }
+}
+
+@mixin projectWrapper($themeName) {
+  background-color: map.get($secondaryColorTest, $themeName);
+  border: 1px solid map.get($borderColorTest, $themeName);
+}
+
+@mixin chevron($themeName) {
+  color: map.get($secondaryColorTest, $themeName);
+  background-color: map.get($mainTextTest, $themeName);
+  border: 2px solid map.get($borderColorTest, $themeName);
+
+  &:hover {
+    color: map.get($mainColorTest, $themeName);
+  }
+}
+
+@mixin scrollbar($themeName) {
+  &::-webkit-scrollbar {
+    background-color: map.get($mainColorTest, $themeName);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($themeDotBorderTest, $themeName);
+    border-radius: 5px;
+  }
+}
+
+// Section Four
+@mixin s4($themeName) {
+  background-color: map.get($secondaryColorTest, $themeName);
+  border-bottom: 1px solid map.get($borderColorTest, $themeName);
+
+  h3 {
+    color: map.get($mainTextTest, $themeName);
+  }
+}
+
+@mixin contact($themeName) {
+  background-color: map.get($secondaryColorTest, $themeName);
+  // border: 1px solid map.get($borderColorTest, $themeName);
+
+  input,
+  textarea {
+    background-color: map.get($secondaryColorTest, $themeName);
+    border: 1px solid map.get($borderColorTest, $themeName);
+  }
+}
+
+@mixin label($themeName) {
+  color: map.get($secondaryTextTest, $themeName);
+}
+
+@mixin formBtn($themeName) {
+  background-color: map.get($buttonColor, $themeName);
+  &:hover {
+    background-color: map.get($themeDotBorderTest, $themeName);
+
+    @if $themeName == "lightMode" {
+      color: white !important;
+    } @else {
+      color: black !important;
+    }
   }
 }

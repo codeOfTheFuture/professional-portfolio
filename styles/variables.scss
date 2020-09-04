@@ -70,7 +70,12 @@ $previewShadowTest: (
 $previewShadow: #f0ead6;
 
 //Button Color
-$buttonColor: black;
+$buttonColor: (
+  "lightMode": #000,
+  "blueMode": #17a2b8,
+  "greenMode": #669966,
+  "purpleMode": #8534a3,
+);
 
 // Mobile view
 $mobileView: 1200px;

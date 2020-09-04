@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles//mixins.scss";
 
 #contactForm {
   display: block;
@@ -8,37 +9,85 @@
   padding: 15px;
   border-radius: 5px;
   // background-color: $mainColor;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 
   label {
     line-height: 2.7em;
+    padding: 1.5em 0;
+  }
+
+  .labelLt {
+    @include label("lightMode");
+  }
+
+  .labelBl {
+    @include label("blueMode");
+  }
+
+  .labelGn {
+    @include label("greenMode");
+  }
+
+  .labelPl {
+    @include label("purpleMode");
   }
 
   .inputField {
     width: 100%;
-    padding: 10px 0;
+    box-sizing: border-box;
+    padding: 15px 5px;
     // background-color: $secondaryColor;
     border-radius: 5px;
     // border: 1px solid $borderColor;
     font-size: 14px;
+    margin: 0.5em 0;
   }
 
   textarea {
-    min-height: 100px;
+    min-height: 150px;
     font-size: 14px;
   }
 
   #submitBtn {
-    margin-top: 10px;
+    margin: 2em 0;
     width: 100%;
     padding: 10px 0;
     color: #fff;
-    background-color: $buttonColor;
-    border: none;
+    // background-color: $buttonColor;
+    // border: none;
     border-radius: 5px;
 
-    &:hover {
-      background-color: $themeDotBorder;
-    }
+    // &:hover {
+    //   background-color: $themeDotBorder;
+    // }
   }
+
+  .btnLt {
+    @include formBtn("lightMode");
+  }
+  .btnBl {
+    @include formBtn("blueMode");
+  }
+  .btnGn {
+    @include formBtn("greenMode");
+  }
+  .btnPl {
+    @include formBtn("purpleMode");
+  }
+}
+
+.contactLt {
+  @include s4("lightMode");
+}
+
+.contactBl {
+  @include s4("blueMode");
+}
+
+.contactGn {
+  @include s4("greenMode");
+}
+
+.contactPl {
+  @include s4("purpleMode");
 }

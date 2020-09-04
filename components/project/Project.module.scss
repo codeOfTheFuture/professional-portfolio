@@ -1,4 +1,5 @@
 @import "../../styles//variables.scss";
+@import "../../styles/mixins.scss";
 
 .project {
   display: grid;
@@ -48,5 +49,21 @@
       margin-left: 1em;
       margin-bottom: 1em;
     }
+  }
+
+  .projectLt {
+    @include scrollbar("lightMode");
+  }
+
+  .projectBl {
+    @include scrollbar("blueMode");
+  }
+
+  .projectGn {
+    @include scrollbar("greenMode");
+  }
+
+  .projectPl {
+    @include scrollbar("purpleMode");
   }
 }

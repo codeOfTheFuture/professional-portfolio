@@ -1,7 +1,23 @@
 import React from "react";
-import styles from "./Project.module.scss";
+import styles, {
+  projectLt,
+  projectBl,
+  projectGn,
+  projectPl,
+} from "./Project.module.scss";
 
-const Project = ({ project }) => {
+const Project = ({ project, colorMode }) => {
+  let mode;
+  if (colorMode === "lightMode") {
+    mode = projectLt;
+  } else if (colorMode === "blueMode") {
+    mode = projectBl;
+  } else if (colorMode === "greenMode") {
+    mode = projectGn;
+  } else {
+    mode = projectPl;
+  }
+
   return (
     <div className={styles.project}>
       <div className={styles.projectMain}>
@@ -14,7 +30,7 @@ const Project = ({ project }) => {
         </a>
       </div>
 
-      <div className={styles.projectAbout}>
+      <div className={`${styles.projectAbout} ${mode}`}>
         <h5 className={styles.projectDesc}> {project.about.projectDesc}</h5>
         <p className={styles.projectDescText}>
           {project.about.projectDescText}

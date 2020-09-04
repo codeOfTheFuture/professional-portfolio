@@ -1,10 +1,38 @@
 import React, { useState } from "react";
 import Project from "../project/Project";
-import styles from "./Carousel.module.scss";
+import {
+  carouselWrapper,
+  chevronLeft,
+  chevronRight,
+  chevronLt,
+  chevronBl,
+  chevronGn,
+  chevronPl,
+  projectWrapper,
+  projectWrapperLt,
+  projectWrapperBl,
+  projectWrapperGn,
+  projectWrapperPl,
+} from "./Carousel.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/fontAwesome";
 
-const Carousel = () => {
+const Carousel = ({ colorMode }) => {
+  let mode = {};
+  if (colorMode === "lightMode") {
+    mode.projectWrapper = projectWrapperLt;
+    mode.chevron = chevronLt;
+  } else if (colorMode === "blueMode") {
+    mode.projectWrapper = projectWrapperBl;
+    mode.chevron = chevronBl;
+  } else if (colorMode === "greenMode") {
+    mode.projectWrapper = projectWrapperGn;
+    mode.chevron = chevronGn;
+  } else {
+    mode.projectWrapper = projectWrapperPl;
+    mode.chevron = chevronPl;
+  }
+
   const [projects] = useState([
     {
       title: "Cryptolitic",
@@ -115,22 +143,22 @@ const Carousel = () => {
   };
 
   return (
-    <div className={styles.carouselWrapper}>
+    <div className={carouselWrapper}>
       <FontAwesomeIcon
-        className={styles.chevronLeft}
+        className={`${chevronLeft} ${mode.chevron}`}
         icon={["fas", "chevron-circle-left"]}
         onClick={() => getProject("left")}
       />
-      <div className={styles.projectWrapper}>
+      <div className={`${projectWrapper} ${mode.projectWrapper}`}>
         {projects.map(
           (project, index) =>
             index === currentProject && (
-              <Project key={index} project={project} />
+              <Project key={index} project={project} colorMode={colorMode} />
             )
         )}
       </div>
       <FontAwesomeIcon
-        className={styles.chevronRight}
+        className={`${chevronRight} ${mode.chevron}`}
         icon={["fas", "chevron-circle-right"]}
         onClick={() => getProject("right")}
       />

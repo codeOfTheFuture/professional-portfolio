@@ -5,13 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 4em;
 
   .chevronLeft,
   .chevronRight {
-    width: 300px;
-    background-color: black;
-    // color: $secondaryColor;
+    width: 5em;
     cursor: pointer;
     border-radius: 50%;
     margin: 1em;
@@ -21,11 +20,38 @@
     }
   }
 
+  .chevronLt {
+    @include chevron("lightMode");
+  }
+
+  .chevronBl {
+    @include chevron("blueMode");
+  }
+
+  .chevronGn {
+    @include chevron("greenMode");
+  }
+
+  .chevronPl {
+    @include chevron("purpleMode");
+  }
+
   .projectWrapper {
     display: flex;
     padding: 2em;
-    // background-color: $secondaryColor;
-    // border: 1px solid $borderColor;
     border-radius: 5px;
+  }
+
+  .projectWrapperLt {
+    @include projectWrapper("lightMode");
+  }
+  .projectWrapperBl {
+    @include projectWrapper("blueMode");
+  }
+  .projectWrapperGn {
+    @include projectWrapper("greenMode");
+  }
+  .projectWrapperPl {
+    @include projectWrapper("purpleMode");
   }
 }
