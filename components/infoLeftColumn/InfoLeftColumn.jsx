@@ -6,7 +6,7 @@ import styles, {
   themeDotPl,
 } from "./InfoLeftColumn.module.scss";
 
-const InfoLeftColumn = ({ setColorMode, colorModeOptions, colorMode }) => {
+const InfoLeftColumn = ({ chooseColorMode, colorMode }) => {
   let mode;
   if (colorMode === "lightMode") mode = themeDotLt;
   else if (colorMode === "blueMode") mode = themeDotBl;
@@ -26,23 +26,23 @@ const InfoLeftColumn = ({ setColorMode, colorModeOptions, colorMode }) => {
         <div
           id={styles.lightMode}
           className={mode}
-          onClick={() => setColorMode("lightMode")}
+          onClick={() => chooseColorMode("lightMode")}
         ></div>
 
         <div
           id={styles.blueMode}
           className={mode}
-          onClick={() => setColorMode("blueMode")}
+          onClick={() => chooseColorMode("blueMode")}
         ></div>
         <div
           id={styles.greenMode}
           className={mode}
-          onClick={() => setColorMode("greenMode")}
+          onClick={() => chooseColorMode("greenMode")}
         ></div>
         <div
           id={styles.purpleMode}
           className={mode}
-          onClick={() => setColorMode("purpleMode")}
+          onClick={() => chooseColorMode("purpleMode")}
         ></div>
       </div>
 

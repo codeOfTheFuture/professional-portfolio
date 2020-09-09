@@ -131,15 +131,17 @@ const Carousel = ({ colorMode }) => {
   const [currentProject, setCurrentProject] = useState(0);
 
   const getProject = (direction) => {
-    let nextProject = currentProject;
-    if (direction === "left" && currentProject !== 0) {
-      nextProject--;
-      setCurrentProject(nextProject);
-    }
-    if (direction === "right" && currentProject !== projects.length - 1) {
-      nextProject++;
-      setCurrentProject(nextProject);
-    }
+    setTimeout(() => {
+      let nextProject = currentProject;
+      if (direction === "left" && currentProject !== 0) {
+        nextProject--;
+        setCurrentProject(nextProject);
+      }
+      if (direction === "right" && currentProject !== projects.length - 1) {
+        nextProject++;
+        setCurrentProject(nextProject);
+      }
+    }, 500);
   };
 
   return (

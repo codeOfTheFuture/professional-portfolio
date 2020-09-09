@@ -16,7 +16,7 @@ import Navigation from "../navigation/Navigation";
 import InfoLeftColumn from "../infoLeftColumn/InfoLeftColumn";
 import InfoRightColumn from "../infoRightColumn/InfoRightColumn";
 
-const InfoWrapper = ({ setColorMode, colorModeOptions, colorMode }) => {
+const InfoWrapper = ({ chooseColorMode, colorMode }) => {
   let mode = {};
   if (colorMode === "lightMode") {
     mode.infoWrapper = infoWrapperLt;
@@ -38,11 +38,7 @@ const InfoWrapper = ({ setColorMode, colorModeOptions, colorMode }) => {
         <DotsWrapper />
         <Navigation />
       </div>
-      <InfoLeftColumn
-        setColorMode={setColorMode}
-        colorModeOptions={colorModeOptions}
-        colorMode={colorMode}
-      />
+      <InfoLeftColumn chooseColorMode={chooseColorMode} colorMode={colorMode} />
       <InfoRightColumn colorMode={colorMode} />
     </div>
   );

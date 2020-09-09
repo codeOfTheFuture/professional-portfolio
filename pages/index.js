@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Head from "next/head";
 import SectionMain from "../components/sectionMain/SectionMain";
@@ -7,14 +7,23 @@ import SectionPortfolio from "../components/sectionPortfolio/SectionPortfolio";
 import SectionContact from "../components/sectionContact/SectionContact";
 
 const Home = () => {
-  const [colorModeOptions] = useState([
-    "lightMode",
-    "blueMode",
-    "greenMode",
-    "purpleMode",
-  ]);
-
   const [colorMode, setColorMode] = useState("lightMode");
+
+  useEffect(() => {
+    if (localStorage.getItem("mode"))
+      setColorMode(localStorage.getItem("mode"));
+  }, []);
+
+  const chooseColorMode = (mode) => {
+    if (localStorage.getItem(mode)) {
+      let currentMode = localStorage.getItem("mode");
+      currentMode = mode;
+      localStorage.setItem("mode", currentMode);
+    } else {
+      localStorage.setItem("mode", mode);
+    }
+    setColorMode(mode);
+  };
 
   return (
     <div>
@@ -36,11 +45,7 @@ const Home = () => {
           rel='stylesheet'
         ></link>
       </Head>
-      <SectionMain
-        setColorMode={setColorMode}
-        colorModeOptions={colorModeOptions}
-        colorMode={colorMode}
-      />
+      <SectionMain chooseColorMode={chooseColorMode} colorMode={colorMode} />
       <SectionAbout colorMode={colorMode} />
       <SectionPortfolio colorMode={colorMode} />
       <SectionContact colorMode={colorMode} />

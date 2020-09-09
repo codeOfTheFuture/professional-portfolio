@@ -7,7 +7,7 @@ import styles, {
   purpleMode,
 } from "./SectionMain.module.scss";
 
-const SectionMain = ({ setColorMode, colorModeOptions, colorMode }) => {
+const SectionMain = ({ chooseColorMode, colorMode }) => {
   let mode;
   if (colorMode === "lightMode") mode = lightMode;
   else if (colorMode === "blueMode") mode = blueMode;
@@ -20,11 +20,7 @@ const SectionMain = ({ setColorMode, colorModeOptions, colorMode }) => {
         <div className={styles.greetingWrapper}>
           <h1>Hi, I'm Jeffrey Oliver</h1>
         </div>
-        <InfoWrapper
-          setColorMode={setColorMode}
-          colorModeOptions={colorModeOptions}
-          colorMode={colorMode}
-        />
+        <InfoWrapper chooseColorMode={chooseColorMode} colorMode={colorMode} />
       </div>
     </section>
   );

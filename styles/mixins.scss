@@ -176,7 +176,6 @@
 // Section Four
 @mixin s4($themeName) {
   background-color: map.get($secondaryColorTest, $themeName);
-  border-bottom: 1px solid map.get($borderColorTest, $themeName);
 
   h3 {
     color: map.get($mainTextTest, $themeName);
@@ -185,7 +184,6 @@
 
 @mixin contact($themeName) {
   background-color: map.get($secondaryColorTest, $themeName);
-  // border: 1px solid map.get($borderColorTest, $themeName);
 
   input,
   textarea {

@@ -15,7 +15,7 @@ const SectionContact = ({ colorMode }) => {
   }
 
   return (
-    <section className={`${s4} ${mode}`}>
+    <section className={`${s4} ${mode}`} id='contact'>
       <div className='main-container'>
         <h3>Get In Touch</h3>
         <ContactForm colorMode={colorMode} />
