@@ -35,8 +35,7 @@ const InfoRightColumn = ({ colorMode }) => {
           <h3>What I Do</h3>
           <p>
             I develop web applications with modern JavaScript frameworks.
-            Experienced in object-oriented, functional, and
-            reactive-programming.
+            Experienced in object-oriented and functional programming.
           </p>
           <div id={styles.cornerBr} className={styles.corner}></div>
           <div id={styles.cornerBl} className={styles.corner}></div>
