@@ -56,6 +56,14 @@
   height: 180px;
   padding-left: 30px;
   padding-top: 30px;
+
+  @media screen and (max-width: $mobileView) {
+    height: 240px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+  }
 }
 
 @mixin preview($themeName) {
@@ -64,6 +72,11 @@
   background-color: map.get($previewBgTest, $themeName);
   padding: 15px;
   position: relative;
+
+  @media screen and (max-width: $mobileView) {
+    width: 285px;
+    margin-bottom: 50px;
+  }
 
   .corner {
     width: 7px;
