@@ -8,6 +8,10 @@
   margin-top: 2em;
   margin-bottom: 4em;
 
+  @media screen and (max-width: $mobileView) {
+    flex-direction: column;
+  }
+
   .chevronLeft,
   .chevronRight {
     width: 5em;
