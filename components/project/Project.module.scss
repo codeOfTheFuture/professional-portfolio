@@ -16,10 +16,6 @@
     justify-content: space-around;
     align-items: center;
 
-    @media screen and (max-width: $mobileView) {
-      // height: 350px;
-    }
-
     h4 {
       text-decoration: underline;
     }
