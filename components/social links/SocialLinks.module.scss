@@ -7,10 +7,18 @@
   text-align: center;
   padding-bottom: 4em;
 
+  @media screen and (min-width: 1800px) {
+    align-items: center;
+  }
+
   #socialImg {
     display: block;
     width: 100%;
     object-fit: cover;
+
+    @media screen and (min-width: 1800px) {
+      width: 600px;
+    }
   }
 
   h3 {

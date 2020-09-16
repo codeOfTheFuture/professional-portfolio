@@ -164,7 +164,6 @@ h4,
 h5,
 h6,
 strong {
-  // color: $mainText;
   padding: 0.5em 0;
   font-family: "Russo One", sans-serif;
   font-weight: 500;
@@ -177,7 +176,6 @@ span,
 label,
 input,
 textarea {
-  // color: $secondaryText;
   font-size: 1em;
   font-family: "Roboto Mono", monospace;
   line-height: 1.5em;
@@ -198,6 +196,10 @@ textarea {
 
   @media screen and (max-width: $mobileView) {
     width: 95%;
+  }
+
+  @media screen and (min-width: 1800px) {
+    width: 70%;
   }
 }
 

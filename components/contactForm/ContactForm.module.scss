@@ -8,6 +8,10 @@
   padding: 15px;
   margin-bottom: 100px;
 
+  @media screen and (min-width: 1800px) {
+    max-width: 1200px;
+  }
+
   label {
     line-height: 2.7em;
     padding: 1.5em 0;
@@ -48,6 +52,7 @@
     width: 100%;
     padding: 10px 0;
     color: #fff;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
   }
