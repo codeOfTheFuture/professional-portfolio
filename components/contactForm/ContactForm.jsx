@@ -20,6 +20,21 @@ import {
 const ContactForm = ({ colorMode }) => {
   let mode = {};
 
+  const formSubmit = (event) => {
+    const form = event.target,
+      data = new FormData(form),
+      requestOptions = {
+        method: form.method,
+        headers: { Accept: "application/json" },
+        body: JSON.stringify(data),
+      };
+
+    fetch(form.action, requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
   if (colorMode === "lightMode") {
     mode.contact = contactLt;
     mode.label = labelLt;
@@ -39,7 +54,14 @@ const ContactForm = ({ colorMode }) => {
   }
 
   return (
-    <form id={contactForm} className={mode.contact}>
+    <form
+      id={contactForm}
+      className={mode.contact}
+      method='POST'
+      action='https://formspree.io/xyynyqzr'
+      target='_blank'
+      onSubmit={formSubmit}
+    >
       <label htmlFor='name' className={mode.label}>
         Name
       </label>
