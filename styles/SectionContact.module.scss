@@ -1,0 +1,26 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.s4 {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    text-align: center;
+    padding: 2em;
+  }
+}
+
+.s4Lt {
+  @include s4("lightMode");
+}
+.s4Bl {
+  @include s4("blueMode");
+}
+.s4Gn {
+  @include s4("greenMode");
+}
+.s4Pl {
+  @include s4("purpleMode");
+}

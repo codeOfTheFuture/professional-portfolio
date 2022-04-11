@@ -1,0 +1,26 @@
+@use "sass:map";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.lightMode {
+  @include s1("lightMode");
+}
+
+.blueMode {
+  @include s1("blueMode");
+}
+
+.greenMode {
+  @include s1("greenMode");
+}
+
+.purpleMode {
+  @include s1("purpleMode");
+}
+
+.greetingWrapper {
+  display: grid;
+  text-align: center;
+  align-content: center;
+  min-height: 10em;
+}

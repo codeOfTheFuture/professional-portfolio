@@ -1,0 +1,24 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.s3Lt {
+  @include s3("lightMode");
+}
+.s3Bl {
+  @include s3("blueMode");
+}
+.s3Gn {
+  @include s3("greenMode");
+}
+.s3Pl {
+  @include s3("purpleMode");
+}

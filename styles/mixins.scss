@@ -1,4 +1,4 @@
-@use 'sass:map';
+@use "sass:map";
 @mixin boxShadow {
   -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
@@ -149,6 +149,11 @@
 }
 
 @mixin projectWrapper($themeName) {
+  background-color: map.get($mainColorTest, $themeName);
+  // border: 1px solid map.get($borderColorTest, $themeName);
+}
+
+@mixin project($themeName) {
   background-color: map.get($secondaryColorTest, $themeName);
   border: 1px solid map.get($borderColorTest, $themeName);
 }

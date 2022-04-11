@@ -1,0 +1,67 @@
+@use "sass:map";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.infoWrapper {
+  // background-color: $secondaryColor;
+  // border: 1px solid $borderColor;
+  border-radius: 5px 5px 0 0;
+
+  @include boxShadow;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "navWrapper navWrapper"
+    "leftColumn rightColumn";
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navWrapper"
+      "leftColumn"
+      "rightColumn";
+  }
+
+  .navWrapper {
+    border-radius: 5px 5px 0 0;
+    grid-area: navWrapper;
+    // border-bottom: 1px solid $borderColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: $mainColor;
+  }
+
+  .navWrapperLt {
+    @include navWrapper("lightMode");
+  }
+
+  .navWrapperBl {
+    @include navWrapper("blueMode");
+  }
+
+  .navWrapperGn {
+    @include navWrapper("greenMode");
+  }
+
+  .navWrapperPl {
+    @include navWrapper("purpleMode");
+  }
+}
+
+.infoWrapperLt {
+  @include infoWrapper("lightMode");
+}
+
+.infoWrapperBl {
+  @include infoWrapper("blueMode");
+}
+
+.infoWrapperGn {
+  @include infoWrapper("greenMode");
+}
+
+.infoWrapperPl {
+  @include infoWrapper("purpleMode");
+}

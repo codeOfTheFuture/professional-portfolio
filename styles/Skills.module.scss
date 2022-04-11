@@ -1,0 +1,25 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+#skills {
+  display: flex;
+  justify-content: space-evenly;
+  // background-color: $previewShadow;
+  padding: 2em 0;
+}
+
+.skillsLt {
+  @include skills("lightMode");
+}
+
+.skillsBl {
+  @include skills("blueMode");
+}
+
+.skillsGn {
+  @include skills("greenMode");
+}
+
+.skillsPl {
+  @include skills("purpleMode");
+}

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import Head from "next/head";
-import SectionMain from "../components/sectionMain/SectionMain";
-import SectionAbout from "../components/sectionAbout/SectionAbout";
-import SectionPortfolio from "../components/sectionPortfolio/SectionPortfolio";
-import SectionContact from "../components/sectionContact/SectionContact";
+import SectionMain from "../components/SectionMain";
+import SectionAbout from "../components/SectionAbout";
+import SectionPortfolio from "../components/SectionPortfolio";
+import SectionContact from "../components/SectionContact";
 
 const Home = () => {
   const [colorMode, setColorMode] = useState("lightMode");
