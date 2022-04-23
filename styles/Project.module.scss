@@ -2,16 +2,12 @@
 @import "./mixins.scss";
 
 .project {
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  border-radius: 10px;
 
   @media screen and (max-width: $mobileView) {
-    grid-template-columns: 1fr;
-    gap: 0;
+    flex-direction: column;
   }
   .projectMain {
     display: flex;
@@ -20,8 +16,14 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    padding: 2em;
     h4 {
       text-decoration: underline;
+
+      @media screen and (max-width: $mobileView) {
+        margin: 0.5em 0;
+        padding: 0;
+      }
     }
 
     img {
@@ -30,34 +32,35 @@
 
       @media screen and (max-width: $mobileView) {
         width: 100%;
+        margin: 0.5em 0;
       }
+    }
+
+    @media screen and (max-width: $mobileView) {
+      margin-bottom: 1em;
     }
   }
 
   .projectAbout {
-    height: 500px;
-    overflow-y: scroll;
     padding: 2em;
-
-    @media screen and (max-width: $mobileView) {
-      width: 100%;
-      height: 100%;
-    }
-
-    &::-webkit-scrollbar {
-      width: 8px;
-      // background-color: $mainColor;
-    }
 
     .projectDesc,
     .techStack {
       padding-top: 1em;
+
+      @media screen and (max-width: $mobileView) {
+        padding: 0.5em 0;
+      }
     }
 
     .projectDescText,
     .techStackList {
       padding: 1em 0;
       line-height: 1.7em;
+
+      @media screen and (max-width: $mobileView) {
+        padding: 0;
+      }
     }
 
     .bPoint {
