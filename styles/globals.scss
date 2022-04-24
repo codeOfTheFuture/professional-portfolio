@@ -196,7 +196,8 @@ textarea {
   margin: 0 auto;
   @media screen and (max-width: $mobileView) {
     width: 95%;
-    height: auto;
+    height: 100%;
+    overflow-x: hidden;
   }
 
   @media screen and (min-width: 1800px) {

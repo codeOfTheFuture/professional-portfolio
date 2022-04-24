@@ -37,7 +37,7 @@
     }
 
     @media screen and (max-width: $mobileView) {
-      margin-bottom: 1em;
+      padding: 0.5em;
     }
   }
 
@@ -60,6 +60,7 @@
 
       @media screen and (max-width: $mobileView) {
         padding: 0;
+        margin: 1em 0;
       }
     }
 
@@ -68,6 +69,11 @@
       padding: 0 1em;
       margin-left: 1em;
       margin-bottom: 1em;
+    }
+
+    @media screen and (max-width: $mobileView) {
+      margin: 1em 0;
+      padding: 0 2.5em;
     }
   }
 
