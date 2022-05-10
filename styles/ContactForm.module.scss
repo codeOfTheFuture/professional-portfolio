@@ -72,17 +72,17 @@
 }
 
 .contactLt {
-  @include s4("lightMode");
+  @include sectionContact("lightMode");
 }
 
 .contactBl {
-  @include s4("blueMode");
+  @include sectionContact("blueMode");
 }
 
 .contactGn {
-  @include s4("greenMode");
+  @include sectionContact("greenMode");
 }
 
 .contactPl {
-  @include s4("purpleMode");
+  @include sectionContact("purpleMode");
 }

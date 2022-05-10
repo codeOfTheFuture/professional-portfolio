@@ -1,22 +1,23 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-.projectWrapper {
+.carouselWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
+  margin-bottom: 2em;
 }
 
-.projectWrapperLt {
+.lightMode {
   @include projectWrapper("lightMode");
 }
-.projectWrapperBl {
+.blueMode {
   @include projectWrapper("blueMode");
 }
-.projectWrapperGn {
+.greenMode {
   @include projectWrapper("greenMode");
 }
-.projectWrapperPl {
+.purpleMode {
   @include projectWrapper("purpleMode");
 }

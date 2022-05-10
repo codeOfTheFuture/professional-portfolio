@@ -39,19 +39,19 @@
   align-items: center;
   height: 6em;
 
-  .themeDotLt {
+  .themeDotLightMode {
     @include themeDot("lightMode");
     @include boxShadow;
   }
-  .themeDotBl {
+  .themeDotBlueMode {
     @include themeDot("blueMode");
     @include boxShadow;
   }
-  .themeDotGn {
+  .themeDotGreenMode {
     @include themeDot("greenMode");
     @include boxShadow;
   }
-  .themeDotPl {
+  .themeDotPurpleMode {
     @include themeDot("purpleMode");
     @include boxShadow;
   }

@@ -14,15 +14,30 @@
   }
 }
 
-.s3Lt {
-  @include s3("lightMode");
+.lightMode {
+  @include sectionPortfolio("lightMode");
 }
-.s3Bl {
-  @include s3("blueMode");
+.blueMode {
+  @include sectionPortfolio("blueMode");
 }
-.s3Gn {
-  @include s3("greenMode");
+.greenMode {
+  @include sectionPortfolio("greenMode");
 }
-.s3Pl {
-  @include s3("purpleMode");
+.purpleMode {
+  @include sectionPortfolio("purpleMode");
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  @media screen and (max-width: $mobileView) {
+    width: 95%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  @media screen and (min-width: 1800px) {
+    width: 70%;
+  }
 }

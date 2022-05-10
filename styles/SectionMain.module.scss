@@ -3,19 +3,34 @@
 @import "./mixins.scss";
 
 .lightMode {
-  @include s1("lightMode");
+  @include sectionMain("lightMode");
 }
 
 .blueMode {
-  @include s1("blueMode");
+  @include sectionMain("blueMode");
 }
 
 .greenMode {
-  @include s1("greenMode");
+  @include sectionMain("greenMode");
 }
 
 .purpleMode {
-  @include s1("purpleMode");
+  @include sectionMain("purpleMode");
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  @media screen and (max-width: $mobileView) {
+    width: 95%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  @media screen and (min-width: 1800px) {
+    width: 70%;
+  }
 }
 
 .greetingWrapper {

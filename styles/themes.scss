@@ -1,4 +1,4 @@
-@use 'sass:map';
+@use "sass:map";
 
 @mixin colorMode(
   $themeName,
@@ -13,7 +13,7 @@
   $buttonColor
 ) {
   .#{$themeName} {
-    .s1 {
+    .sectionMain {
       background-color: map.get($mainColor, $themeName);
       border-bottom: 1px solid map.get($borderColor, $themeName);
     }
@@ -45,25 +45,7 @@
       background-color: map.get($secondaryColor, $themeName);
     }
 
-    // h1,
-    // h2,
-    // h3,
-    // h4,
-    // h5,
-    // h6,
-    // strong {
-    //   color: $mainText;
-    // }
-
-    // p,
-    // li,
-    // span,
-    // label,
-    // input,
-    // textarea {
-    //   color: $secondaryText;
-    // }
-    .s2 {
+    .sectionAbout {
       background-color: map.get($secondaryColor, $themeName);
       border-bottom: 1px solid map.get($borderColor, $themeName);
     }

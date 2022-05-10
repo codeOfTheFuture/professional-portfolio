@@ -5,7 +5,7 @@
   box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
 }
 
-@mixin s1($themeName) {
+@mixin sectionMain($themeName) {
   background-color: map.get($mainColorTest, $themeName);
   border-bottom: 1px solid map.get($borderColorTest, $themeName);
   color: map.get($mainTextTest, $themeName);
@@ -104,7 +104,7 @@
   }
 }
 
-@mixin s2($themeName) {
+@mixin sectionAbout($themeName) {
   background-color: map.get($secondaryColorTest, $themeName);
   border-bottom: 1px solid map.get($borderColorTest, $themeName);
 
@@ -130,7 +130,7 @@
   }
 }
 
-@mixin s3($themeName) {
+@mixin sectionPortfolio($themeName) {
   background-color: map.get($mainColorTest, $themeName);
   border-bottom: 1px solid map.get($borderColorTest, $themeName);
 
@@ -168,20 +168,8 @@
   }
 }
 
-@mixin scrollbar($themeName) {
-  &::-webkit-scrollbar {
-    background-color: map.get($mainColorTest, $themeName);
-    border-radius: 5px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: map-get($themeDotBorderTest, $themeName);
-    border-radius: 5px;
-  }
-}
-
 // Section Four
-@mixin s4($themeName) {
+@mixin sectionContact($themeName) {
   background-color: map.get($secondaryColorTest, $themeName);
 
   h3 {

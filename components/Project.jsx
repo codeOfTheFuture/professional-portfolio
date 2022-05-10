@@ -1,25 +1,32 @@
 import React from "react";
 import styles, {
-  projectLt,
-  projectBl,
-  projectGn,
-  projectPl,
-} from "./Project.module.scss";
+  lightMode,
+  blueMode,
+  greenMode,
+  purpleMode,
+} from "../styles/Project.module.scss";
+import ProjectDetails from "./ProjectDetails";
+import ProjectHeading from "./ProjectHeading";
 
 const Project = ({ project, colorMode }) => {
   let mode;
-  if (colorMode === "lightMode") {
-    mode = projectLt;
-  } else if (colorMode === "blueMode") {
-    mode = projectBl;
-  } else if (colorMode === "greenMode") {
-    mode = projectGn;
-  } else {
-    mode = projectPl;
-  }
+  if (colorMode === "lightMode") mode = lightMode;
+  if (colorMode === "blueMode") mode = blueMode;
+  if (colorMode === "greenMode") mode = greenMode;
+  if (colorMode === "purpleMode") mode = purpleMode;
+
+  const [isDescriptionVisible, setIsDescriptionVisible] = React.useState(false);
+  const [isTechStackVisible, setIsTechStackVisible] = React.useState(false);
+
+  const toggleDescription = () => {
+    setIsDescriptionVisible(!isDescriptionVisible);
+  };
+  const toggleTechStack = () => {
+    setIsTechStackVisible(!isTechStackVisible);
+  };
 
   return (
-    <div className={styles.project}>
+    <>
       <div className={styles.projectMain}>
         <h4>{project.title}</h4>
         <a target='_blank' href={project.link}>
@@ -31,21 +38,33 @@ const Project = ({ project, colorMode }) => {
       </div>
 
       <div className={`${styles.projectAbout} ${mode}`}>
-        <h5 className={styles.projectDesc}> {project.about.projectDesc}</h5>
-        <p className={styles.projectDescText}>
-          {project.about.projectDescText}
-        </p>
-        <h5 className={styles.techStack}>{project.about.techStack}</h5>
-        <p className={styles.techStackList}>{project.about.techStackList}</p>
-        <ul className={styles.bulletPoints}>
-          {project.about.bulletPoints.map((bPoint, index) => (
-            <li className={styles.bPoint} key={index}>
-              {bPoint}
-            </li>
-          ))}
-        </ul>
+        <div className={styles.projectDesc}>
+          <ProjectHeading
+            title={project.about.projectDesc}
+            toggle={toggleDescription}
+          />
+          <ProjectDetails
+            description={project.about.projectDescText}
+            techStack={null}
+            detailsList={null}
+            isOpen={isDescriptionVisible}
+          />
+        </div>
+
+        <div className={styles.techStack}>
+          <ProjectHeading
+            title={project.about.techStack}
+            toggle={toggleTechStack}
+          />
+          <ProjectDetails
+            description={null}
+            techStack={project.about.techStackList}
+            detailsList={project.about.bulletPoints}
+            isOpen={isTechStackVisible}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

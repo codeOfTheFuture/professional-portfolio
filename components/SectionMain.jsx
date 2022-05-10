@@ -15,8 +15,8 @@ const SectionMain = ({ chooseColorMode, colorMode }) => {
   else mode = purpleMode;
 
   return (
-    <section className={(styles.s1, mode)}>
-      <div className='main-container'>
+    <section className={("section", styles.sectionMain, mode)}>
+      <div className={styles.mainContainer}>
         <div className={styles.greetingWrapper}>
           <h1>Hi, I'm Jeffrey Oliver</h1>
         </div>

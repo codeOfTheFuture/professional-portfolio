@@ -1,17 +1,17 @@
 import React from "react";
 import styles, {
-  themeDotLt,
-  themeDotBl,
-  themeDotGn,
-  themeDotPl,
+  themeDotLightMode,
+  themeDotBlueMode,
+  themeDotGreenMode,
+  themeDotPurpleMode,
 } from "../styles/InfoLeftColumn.module.scss";
 
 const InfoLeftColumn = ({ chooseColorMode, colorMode }) => {
   let mode;
-  if (colorMode === "lightMode") mode = themeDotLt;
-  else if (colorMode === "blueMode") mode = themeDotBl;
-  else if (colorMode === "greenMode") mode = themeDotGn;
-  else mode = themeDotPl;
+  if (colorMode === "lightMode") mode = themeDotLightMode;
+  if (colorMode === "blueMode") mode = themeDotBlueMode;
+  if (colorMode === "greenMode") mode = themeDotGreenMode;
+  if (colorMode === "purpleMode") mode = themeDotPurpleMode;
 
   return (
     <div className={styles.infoLeftColumn}>

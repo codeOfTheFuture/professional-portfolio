@@ -7,11 +7,12 @@ import projectData from "../projectData";
 
 import {
   carouselWrapper,
-  projectWrapper,
-  projectWrapperLt,
-  projectWrapperBl,
-  projectWrapperGn,
-  projectWrapperPl,
+  swiperBtnNext,
+  swiperBtnPrev,
+  lightMode,
+  blueMode,
+  greenMode,
+  purpleMode,
 } from "../styles/Carousel.module.scss";
 
 import styles, {
@@ -25,23 +26,24 @@ import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Project from "./Project";
 
 const Carousel = ({ colorMode }) => {
   let mode = {};
   if (colorMode === "lightMode") {
-    mode.projectWrapper = projectWrapperLt;
+    mode.carousel = lightMode;
     mode.project = projectLt;
   }
   if (colorMode === "blueMode") {
-    mode.projectWrapper = projectWrapperBl;
+    mode.carousel = blueMode;
     mode.project = projectBl;
   }
   if (colorMode === "greenMode") {
-    mode.projectWrapper = projectWrapperGn;
+    mode.carousel = greenMode;
     mode.project = projectGn;
   }
   if (colorMode === "purpleMode") {
-    mode.projectWrapper = projectWrapperPl;
+    mode.carousel = purpleMode;
     mode.project = projectPl;
   }
 
@@ -50,9 +52,9 @@ const Carousel = ({ colorMode }) => {
       effect={"cube"}
       grabCursor={true}
       cubeEffect={{
-        shadow: false,
+        shadow: true,
         slideShadows: false,
-        shadowOffset: 20,
+        shadowOffset: 10,
         shadowScale: 0.94,
       }}
       pagination={true}
@@ -62,48 +64,18 @@ const Carousel = ({ colorMode }) => {
       }}
       loop={true}
       modules={[EffectCube, Pagination, Navigation]}
-      className={`${projectWrapper} ${mode.projectWrapper}`}
+      className={`${carouselWrapper} ${mode.carousel}`}
     >
       {projectData.map((project, index) => (
         <SwiperSlide
           key={index}
           className={`${mode.project} ${styles.project}`}
         >
-          <div className={styles.projectMain}>
-            <h4>{project.title}</h4>
-            <a target='_blank' href={project.link}>
-              <img src={project.image} alt={project.title} />
-            </a>
-            <a
-              className={styles.githubLink}
-              target='_blank'
-              href={project.github}
-            >
-              View Github
-            </a>
-          </div>
-
-          <div className={`${styles.projectAbout} ${mode}`}>
-            <h5 className={styles.projectDesc}> {project.about.projectDesc}</h5>
-            <p className={styles.projectDescText}>
-              {project.about.projectDescText}
-            </p>
-            <h5 className={styles.techStack}>{project.about.techStack}</h5>
-            <p className={styles.techStackList}>
-              {project.about.techStackList}
-            </p>
-            <ul className={styles.bulletPoints}>
-              {project.about.bulletPoints.map((bPoint, index) => (
-                <li className={styles.bPoint} key={index}>
-                  {bPoint}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Project project={project} colorMode={colorMode} />
         </SwiperSlide>
       ))}
-      <div className='swiper-button-next'></div>
-      <div className='swiper-button-prev'></div>
+      <div className={`${swiperBtnNext} swiper-button-next`}></div>
+      <div className={`${swiperBtnPrev} swiper-button-prev`}></div>
     </Swiper>
   );
 };
