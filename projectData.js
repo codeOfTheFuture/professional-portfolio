@@ -37,6 +37,25 @@ export default [
     },
   },
   {
+    title: "Instagram Clone",
+    image: "/assets/Instagram-clone.PNG",
+    link: "https://ig-clone-dusky.vercel.app/",
+    github: "https://github.com/codeOfTheFuture/instagram-clone",
+    about: {
+      projectDesc: "Project description: ",
+      projectDescText:
+        "Clone of Instagram. I created this project to strengthen my skills with the react javascript library as well as server side rendering with the react framework Next.js.",
+      techStack: "Tech Stack: ",
+      techStackList:
+        "Next.js | React.js | TailwindCSS | Firebase Auth | Firebase Storage | Firebase Firestore",
+      bulletPoints: [
+        "Contributed primarily on the react front-end along with some back-end contributions integrating the firebase admin SDK.",
+        "Built candlestick chart using Canvas Js to display data from a data science PostgreSQL database.",
+        "Collaborated with a team of 5 web developers and 3 data scientists to complete the project within a 6-week deadline.",
+      ],
+    },
+  },
+  {
     title: "Cryptolitic",
     image: "/assets/Cryptolitic.PNG",
     link: "https://cryptolytic-production.netlify.app/main/home",
