@@ -42,6 +42,7 @@ const Project = ({ project, colorMode }) => {
           <ProjectHeading
             title={project.about.projectDesc}
             toggle={toggleDescription}
+            isOpen={isDescriptionVisible}
           />
           <ProjectDetails
             description={project.about.projectDescText}
@@ -55,6 +56,7 @@ const Project = ({ project, colorMode }) => {
           <ProjectHeading
             title={project.about.techStack}
             toggle={toggleTechStack}
+            isOpen={isTechStackVisible}
           />
           <ProjectDetails
             description={null}

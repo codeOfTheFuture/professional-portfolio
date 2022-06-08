@@ -67,6 +67,7 @@
           justify-self: flex-end;
         }
       }
+
       .toggle {
         display: none;
 
@@ -98,6 +99,18 @@
     @media screen and (max-width: $mobileView) {
       margin: 1em 0;
       padding: 0 2.5em;
+    }
+  }
+
+  .showDetails {
+    @media screen and (max-width: $mobileView) {
+      display: block;
+    }
+  }
+
+  .hideDetails {
+    @media screen and (max-width: $mobileView) {
+      display: none;
     }
   }
 

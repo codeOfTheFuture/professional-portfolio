@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "../styles/Project.module.scss";
 
-const ProjectHeading = ({ title, toggle }) => {
+const ProjectHeading = ({ title, toggle, isOpen }) => {
   return (
     <div className={styles.headingWrapper}>
       <h5 className={styles.heading}>{title}</h5>
       <span className={styles.toggle} onClick={toggle}>
-        View
+        {isOpen ? "Hide" : "View"}
       </span>
     </div>
   );
