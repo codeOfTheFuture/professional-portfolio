@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@portabletext/react": "^2.0.0",
     "@sanity/image-url": "^1.0.1",
+    "caniuse-lite": "^1.0.30001445",
     "next": "^12.1.4",
     "next-sanity": "^3.1.2",
     "react": "^18.0.0",
@@ -23,6 +24,5 @@
     "sass": "^1.26.10",
     "styled-components": "^5.1.1",
     "swiper": "^8.1.0"
-  },
-  "devDependencies": {}
+  }
 }
