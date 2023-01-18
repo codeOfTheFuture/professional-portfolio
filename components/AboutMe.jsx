@@ -3,7 +3,6 @@ import Skills from "./Skills";
 import styles from "../styles/AboutMe.module.scss";
 
 const AboutMe = ({ topExpertise, resumeUrl, skills }) => {
-  console.log("resume>>", resumeUrl);
   return (
     <div className={styles.aboutMe}>
       <h4>More about me</h4>
