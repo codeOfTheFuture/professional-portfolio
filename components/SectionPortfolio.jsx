@@ -6,20 +6,36 @@ import styles, {
   greenMode,
   purpleMode,
 } from "../styles/SectionPortfolio.module.scss";
+import { useTheme } from "../context/ThemeContext";
 
-const SectionPortfolio = ({ colorMode }) => {
-  let mode;
-  if (colorMode === "lightMode") mode = lightMode;
-  if (colorMode === "blueMode") mode = blueMode;
-  if (colorMode === "greenMode") mode = greenMode;
-  if (colorMode === "purpleMode") mode = purpleMode;
+const SectionPortfolio = ({ projects }) => {
+  const { theme } = useTheme();
+
+  let currentTheme;
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme = lightMode;
+      break;
+    case "blueMode":
+      currentTheme = blueMode;
+      break;
+    case "greenMode":
+      currentTheme = greenMode;
+      break;
+    case "purpleMode":
+      currentTheme = purpleMode;
+    default:
+      currentTheme = lightMode;
+      break;
+  }
 
   return (
-    <section className={mode}>
+    <section className={currentTheme}>
       <div className={styles.mainContainer}>
         <div className={styles.projects}>
           <h3>Projects</h3>
-          <Carousel colorMode={colorMode} />
+          <Carousel projects={projects} />
         </div>
       </div>
     </section>

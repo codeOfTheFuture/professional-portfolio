@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 import {
   skills,
   skillsLt,
@@ -7,21 +8,28 @@ import {
   skillsPl,
 } from "../styles/Skills.module.scss";
 
-const Skills = ({ colorMode }) => {
-  let skillsMode;
-  if (colorMode === "lightMode") {
-    skillsMode = skillsLt;
-  } else if (colorMode === "blueMode") {
-    skillsMode = skillsBl;
-  } else if (colorMode === "greenMode") {
-    skillsMode = skillsGn;
-  } else {
-    skillsMode = skillsPl;
+const Skills = ({ skillsList }) => {
+  const { theme } = useTheme();
+
+  let currentTheme;
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme = skillsLt;
+      break;
+    case "blueMode":
+      currentTheme = skillsBl;
+      break;
+    case "greenMode":
+      currentTheme = skillsGn;
+      break;
+    case "purpleMode":
+      currentTheme = skillsPl;
   }
 
   return (
-    <div id={skills} className={skillsMode}>
-      <ul>
+    <div className={currentTheme}>
+      {/* <ul>
         <li>React</li>
         <li>Redux</li>
         <li>NextJs</li>
@@ -39,6 +47,11 @@ const Skills = ({ colorMode }) => {
         <li>JSON</li>
         <li>Python</li>
         <li>Sqlite3</li>
+      </ul> */}
+      <ul className={skills}>
+        {skillsList.map(skill => (
+          <li key={skill._id}>{skill.title}</li>
+        ))}
       </ul>
     </div>
   );

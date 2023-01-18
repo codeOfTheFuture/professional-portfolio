@@ -1,25 +1,23 @@
 import React from "react";
+import { urlFor } from "../sanity";
 import { socialLinks, socialImg } from "../styles/SocialLinks.module.scss";
 
-const SocialLinks = ({ colorMode }) => {
+const SocialLinks = ({ socials, image }) => {
   return (
     <div className={socialLinks}>
       <img
         id={socialImg}
-        src='assets/programming.jpg'
-        alt='Programming on a computer with multiple screens'
+        src={urlFor(image).url()}
+        alt="Programming on a computer with multiple screens"
       />
       <h3>Find me on Github & Linkedin</h3>
       <div>
-        <a target='_blank' href='https://github.com/codeOfTheFuture'>
-          Github: codeOfTheFuture
+        <a target="_blank" href={socials[0].url}>
+          {socials[0].title}
         </a>
         <br />
-        <a
-          target='_blank'
-          href='https://www.linkedin.com/in/jeffrey-oliver-353260160/'
-        >
-          Linkedin: Jeffrey Oliver
+        <a target="_blank" href={socials[1].url}>
+          {socials[1].title}
         </a>
       </div>
     </div>

@@ -1,11 +1,15 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-#skills {
-  display: flex;
-  justify-content: space-evenly;
-  // background-color: $previewShadow;
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
   padding: 2em 0;
+
+  li {
+    text-align: center;
+  }
 }
 
 .skillsLt {

@@ -9,20 +9,40 @@ import {
   mainContainer,
   aboutWrapper,
 } from "../styles/SectionAbout.module.scss";
+import { useTheme } from "../context/ThemeContext";
 
-const SectionAbout = ({ colorMode }) => {
-  let mode;
-  if (colorMode === "lightMode") mode = lightMode;
-  if (colorMode === "blueMode") mode = blueMode;
-  if (colorMode === "greenMode") mode = greenMode;
-  if (colorMode === "purpleMode") mode = purpleMode;
+const SectionAbout = ({ topExpertise, resumeUrl, skills, socials, image }) => {
+  const { theme } = useTheme();
+
+  let currentTheme;
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme = lightMode;
+      break;
+    case "blueMode":
+      currentTheme = blueMode;
+      break;
+    case "greenMode":
+      currentTheme = greenMode;
+      break;
+    case "purpleMode":
+      currentTheme = purpleMode;
+      break;
+    default:
+      currentTheme = lightMode;
+  }
 
   return (
-    <section className={mode}>
+    <section className={currentTheme}>
       <div className={mainContainer}>
         <div className={aboutWrapper}>
-          <AboutMe colorMode={colorMode} />
-          <SocialLinks colorMode={colorMode} />
+          <AboutMe
+            topExpertise={topExpertise}
+            resumeUrl={resumeUrl}
+            skills={skills}
+          />
+          <SocialLinks socials={socials} image={image} />
         </div>
       </div>
     </section>

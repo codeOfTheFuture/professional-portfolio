@@ -2,6 +2,27 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
+.mainContent {
+  width: 100%;
+  margin: 0 auto;
+  @media screen and (max-width: $mobileView) {
+    width: 95%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  @media screen and (min-width: 1800px) {
+    width: 70%;
+  }
+}
+
+.greeting {
+  display: grid;
+  text-align: center;
+  align-content: center;
+  min-height: 10em;
+}
+
 .lightMode {
   @include sectionMain("lightMode");
 }
@@ -16,25 +37,4 @@
 
 .purpleMode {
   @include sectionMain("purpleMode");
-}
-
-.mainContainer {
-  width: 100%;
-  margin: 0 auto;
-  @media screen and (max-width: $mobileView) {
-    width: 95%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-
-  @media screen and (min-width: 1800px) {
-    width: 70%;
-  }
-}
-
-.greetingWrapper {
-  display: grid;
-  text-align: center;
-  align-content: center;
-  min-height: 10em;
 }

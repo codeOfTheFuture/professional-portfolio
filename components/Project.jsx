@@ -1,4 +1,6 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
+import { urlFor } from "../sanity";
 import styles, {
   lightMode,
   blueMode,
@@ -8,12 +10,24 @@ import styles, {
 import ProjectDetails from "./ProjectDetails";
 import ProjectHeading from "./ProjectHeading";
 
-const Project = ({ project, colorMode }) => {
-  let mode;
-  if (colorMode === "lightMode") mode = lightMode;
-  if (colorMode === "blueMode") mode = blueMode;
-  if (colorMode === "greenMode") mode = greenMode;
-  if (colorMode === "purpleMode") mode = purpleMode;
+const Project = ({ project }) => {
+  const { theme } = useTheme();
+
+  let currentTheme;
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme = lightMode;
+      break;
+    case "blueMode":
+      currentTheme = blueMode;
+      break;
+    case "greenMode":
+      currentTheme = greenMode;
+      break;
+    case "purpleMode":
+      currentTheme = purpleMode;
+  }
 
   const [isDescriptionVisible, setIsDescriptionVisible] = React.useState(false);
   const [isTechStackVisible, setIsTechStackVisible] = React.useState(false);
@@ -29,23 +43,26 @@ const Project = ({ project, colorMode }) => {
     <>
       <div className={styles.projectMain}>
         <h4>{project.title}</h4>
-        <a target='_blank' href={project.link}>
-          <img src={project.image} alt={project.title} />
+        <a target="_blank" href={project.linkToBuild}>
+          <img src={urlFor(project.image).url()} alt={project.title} />
         </a>
-        <a className={styles.githubLink} target='_blank' href={project.github}>
+        <a
+          className={styles.githubLink}
+          target="_blank"
+          href={project.linkToGithub}>
           View Github
         </a>
       </div>
 
-      <div className={`${styles.projectAbout} ${mode}`}>
+      <div className={`${styles.projectAbout} ${currentTheme}`}>
         <div className={styles.projectDesc}>
           <ProjectHeading
-            title={project.about.projectDesc}
+            title="Project Description:"
             toggle={toggleDescription}
             isOpen={isDescriptionVisible}
           />
           <ProjectDetails
-            description={project.about.projectDescText}
+            description={project.description}
             techStack={null}
             detailsList={null}
             isOpen={isDescriptionVisible}
@@ -54,14 +71,14 @@ const Project = ({ project, colorMode }) => {
 
         <div className={styles.techStack}>
           <ProjectHeading
-            title={project.about.techStack}
+            title="Tech Stack:"
             toggle={toggleTechStack}
             isOpen={isTechStackVisible}
           />
           <ProjectDetails
             description={null}
-            techStack={project.about.techStackList}
-            detailsList={project.about.bulletPoints}
+            techStack={project.techStack.map(t => t.title).join(" | ")}
+            detailsList={project.bulletPoints}
             isOpen={isTechStackVisible}
           />
         </div>

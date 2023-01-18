@@ -32,6 +32,7 @@
 
     img {
       width: 450px;
+      height: 350px;
       margin: 2em 0;
 
       @media screen and (max-width: $mobileView) {
@@ -78,8 +79,7 @@
       }
     }
 
-    .projectDescText,
-    .techStackList {
+    .projectDescText {
       padding: 1em 0;
       line-height: 1.7em;
 
@@ -87,6 +87,10 @@
         padding: 0;
         margin: 1em 0;
       }
+    }
+
+    .techStackList {
+      padding-bottom: 1em;
     }
 
     .bPoint {

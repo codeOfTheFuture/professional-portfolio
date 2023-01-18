@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 import styles, {
   previewShadowLt,
   previewShadowBl,
@@ -10,33 +11,41 @@ import styles, {
   previewPl,
 } from "../styles/InfoRightColumn.module.scss";
 
-const InfoRightColumn = ({ colorMode }) => {
-  let mode = {};
-  if (colorMode === "lightMode") {
-    mode.previewShadow = previewShadowLt;
-    mode.preview = previewLt;
-  } else if (colorMode === "blueMode") {
-    mode.previewShadow = previewShadowBl;
-    mode.preview = previewBl;
-  } else if (colorMode === "greenMode") {
-    mode.previewShadow = previewShadowGn;
-    mode.preview = previewGn;
-  } else {
-    mode.previewShadow = previewShadowPl;
-    mode.preview = previewPl;
+const InfoRightColumn = ({ whatIDo }) => {
+  let currentTheme = {};
+  const { theme } = useTheme();
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme.previewShadow = previewShadowLt;
+      currentTheme.preview = previewLt;
+      break;
+    case "blueMode":
+      currentTheme.previewShadow = previewShadowBl;
+      currentTheme.preview = previewBl;
+      break;
+    case "greenMode":
+      currentTheme.previewShadow = previewShadowGn;
+      currentTheme.preview = previewGn;
+      break;
+    case "purpleMode":
+      currentTheme.previewShadow = previewShadowPl;
+      currentTheme.preview = previewPl;
+      break;
+    default:
+      currentTheme.previewShadow = previewShadowLt;
+      currentTheme.preview = previewLt;
+      break;
   }
 
   return (
     <div className={styles.rightColumn}>
-      <div id={mode.previewShadow}>
-        <div id={mode.preview}>
+      <div id={currentTheme.previewShadow}>
+        <div id={currentTheme.preview}>
           <div id={styles.cornerTl} className={styles.corner}></div>
           <div id={styles.cornerTr} className={styles.corner}></div>
           <h3>What I Do</h3>
-          <p>
-            I develop web applications with modern JavaScript frameworks.
-            Experienced in object-oriented and functional programming.
-          </p>
+          <p>{whatIDo}</p>
           <div id={styles.cornerBr} className={styles.corner}></div>
           <div id={styles.cornerBl} className={styles.corner}></div>
         </div>

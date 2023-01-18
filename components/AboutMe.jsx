@@ -2,7 +2,8 @@ import React from "react";
 import Skills from "./Skills";
 import styles from "../styles/AboutMe.module.scss";
 
-const AboutMe = ({ colorMode }) => {
+const AboutMe = ({ topExpertise, resumeUrl, skills }) => {
+  console.log("resume>>", resumeUrl);
   return (
     <div className={styles.aboutMe}>
       <h4>More about me</h4>
@@ -25,13 +26,13 @@ const AboutMe = ({ colorMode }) => {
       <h4>Top Expertise</h4>
 
       <p>
-        Fullstack developer with primary focus on React + NodeJs: <br />
-        <a target='_blank' href='assets/Jeff-Oliver-Resume.pdf'>
+        {topExpertise} <br />
+        <a target="_blank" href={resumeUrl.resumeUrl}>
           Download Resume
         </a>
       </p>
 
-      <Skills colorMode={colorMode} />
+      <Skills skillsList={skills} />
     </div>
   );
 };

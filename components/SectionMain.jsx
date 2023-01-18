@@ -1,26 +1,43 @@
 import React from "react";
-import InfoWrapper from "./InfoWrapper";
+import Hero from "./Hero";
 import styles, {
   lightMode,
   blueMode,
   greenMode,
   purpleMode,
 } from "../styles/SectionMain.module.scss";
+import { useTheme } from "../context/ThemeContext";
 
-const SectionMain = ({ chooseColorMode, colorMode }) => {
-  let mode;
-  if (colorMode === "lightMode") mode = lightMode;
-  else if (colorMode === "blueMode") mode = blueMode;
-  else if (colorMode === "greenMode") mode = greenMode;
-  else mode = purpleMode;
+const SectionMain = ({ name, profilePic, whatIDo }) => {
+  const { theme } = useTheme();
+
+  let currentTheme;
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme = lightMode;
+      break;
+    case "blueMode":
+      currentTheme = blueMode;
+      break;
+    case "greenMode":
+      currentTheme = greenMode;
+      break;
+    case "purpleMode":
+      currentTheme = purpleMode;
+      break;
+    default:
+      currentTheme = lightMode;
+      break;
+  }
 
   return (
-    <section className={("section", styles.sectionMain, mode)}>
-      <div className={styles.mainContainer}>
-        <div className={styles.greetingWrapper}>
-          <h1>Hi, I'm Jeffrey Oliver</h1>
+    <section className={("section", styles.sectionMain, currentTheme)}>
+      <div className={styles.mainContent}>
+        <div className={styles.greeting}>
+          <h1>Hi, the name is {name}</h1>
         </div>
-        <InfoWrapper chooseColorMode={chooseColorMode} colorMode={colorMode} />
+        <Hero profilePic={profilePic} whatIDo={whatIDo} />
       </div>
     </section>
   );

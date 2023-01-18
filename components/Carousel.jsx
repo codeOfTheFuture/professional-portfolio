@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { EffectCube, Pagination, Navigation } from "swiper";
 
-import projectData from "../projectData";
+// import projectData from "../projectData";
 
 import {
   carouselWrapper,
@@ -27,24 +27,34 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Project from "./Project";
+import { useTheme } from "../context/ThemeContext";
 
-const Carousel = ({ colorMode }) => {
-  let mode = {};
-  if (colorMode === "lightMode") {
-    mode.carousel = lightMode;
-    mode.project = projectLt;
-  }
-  if (colorMode === "blueMode") {
-    mode.carousel = blueMode;
-    mode.project = projectBl;
-  }
-  if (colorMode === "greenMode") {
-    mode.carousel = greenMode;
-    mode.project = projectGn;
-  }
-  if (colorMode === "purpleMode") {
-    mode.carousel = purpleMode;
-    mode.project = projectPl;
+const Carousel = ({ projects }) => {
+  const { theme } = useTheme();
+
+  let currentTheme = {};
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme.carousel = lightMode;
+      currentTheme.project = projectLt;
+      break;
+    case "blueMode":
+      currentTheme.carousel = blueMode;
+      currentTheme.project = projectBl;
+      break;
+    case "greenMode":
+      currentTheme.carousel = greenMode;
+      currentTheme.project = projectGn;
+      break;
+    case "purpleMode":
+      currentTheme.carousel = purpleMode;
+      currentTheme.project = projectPl;
+      break;
+    default:
+      currentTheme.carousel = lightMode;
+      currentTheme.project = projectLt;
+      break;
   }
 
   return (
@@ -64,14 +74,12 @@ const Carousel = ({ colorMode }) => {
       }}
       loop={true}
       modules={[EffectCube, Pagination, Navigation]}
-      className={`${carouselWrapper} ${mode.carousel}`}
-    >
-      {projectData.map((project, index) => (
+      className={`${carouselWrapper} ${currentTheme.carousel}`}>
+      {projects.map(project => (
         <SwiperSlide
-          key={index}
-          className={`${mode.project} ${styles.project}`}
-        >
-          <Project project={project} colorMode={colorMode} />
+          key={project._id}
+          className={`${currentTheme.project} ${styles.project}`}>
+          <Project project={project} />
         </SwiperSlide>
       ))}
       <div className={`${swiperBtnNext} swiper-button-next`}></div>

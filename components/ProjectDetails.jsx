@@ -7,17 +7,16 @@ const ProjectDetails = ({ description, techStack, detailsList, isOpen }) => {
       className={
         styles.projectDescText &&
         (isOpen ? styles.showDetails : styles.hideDetails)
-      }
-    >
+      }>
       {description}
     </p>
   ) : (
     <div className={isOpen ? styles.showDetails : styles.hideDetails}>
       <p className={styles.techStackList}>{techStack}</p>
       <ul className={styles.detailsList}>
-        {detailsList.map((bulletPoint, index) => (
+        {detailsList?.map((bulletPoint, index) => (
           <li className={styles.bulletPoint} key={index}>
-            {bulletPoint}
+            &bull; {bulletPoint}
           </li>
         ))}
       </ul>

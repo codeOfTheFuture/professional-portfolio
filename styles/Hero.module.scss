@@ -1,0 +1,63 @@
+@use "sass:map";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.hero {
+  border-radius: 5px 5px 0 0;
+
+  @include boxShadow;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "nav nav"
+    "leftColumn rightColumn";
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "leftColumn"
+      "rightColumn";
+  }
+
+  .nav {
+    border-radius: 5px 5px 0 0;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navLight {
+    @include nav("lightMode");
+  }
+
+  .navBlue {
+    @include nav("blueMode");
+  }
+
+  .navGreen {
+    @include nav("greenMode");
+  }
+
+  .navPurple {
+    @include nav("purpleMode");
+  }
+}
+
+.heroLight {
+  @include hero("lightMode");
+}
+
+.heroBlue {
+  @include hero("blueMode");
+}
+
+.heroGreen {
+  @include hero("greenMode");
+}
+
+.heroPurple {
+  @include hero("purpleMode");
+}

@@ -1,0 +1,18 @@
+@import "./mixins.scss";
+
+// Main scrollbar style
+.scrollbarLightMode {
+  @include scrollbar("lightMode");
+}
+
+.scrollbarBlueMode {
+  @include scrollbar("blueMode");
+}
+
+.scrollbarGreenMode {
+  @include scrollbar("greenMode");
+}
+
+.scrollbarPurpleMode {
+  @include scrollbar("purpleMode");
+}

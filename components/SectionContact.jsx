@@ -8,19 +8,35 @@ import {
   purpleMode,
   mainContainer,
 } from "../styles/SectionContact.module.scss";
+import { useTheme } from "../context/ThemeContext";
 
-const SectionContact = ({ colorMode }) => {
-  let mode;
-  if (colorMode === "lightMode") mode = lightMode;
-  if (colorMode === "blueMode") mode = blueMode;
-  if (colorMode === "greenMode") mode = greenMode;
-  if (colorMode === "purpleMode") mode = purpleMode;
+const SectionContact = () => {
+  const { theme } = useTheme();
+
+  let currentTheme;
+
+  switch (theme) {
+    case "lightMode":
+      currentTheme = lightMode;
+      break;
+    case "blueMode":
+      currentTheme = blueMode;
+      break;
+    case "greenMode":
+      currentTheme = greenMode;
+      break;
+    case "purpleMode":
+      currentTheme = purpleMode;
+    default:
+      currentTheme = lightMode;
+      break;
+  }
 
   return (
-    <section className={(sectionContact, mode)} id='contact'>
+    <section className={(sectionContact, currentTheme)} id="contact">
       <div className={mainContainer}>
         <h3>Get In Touch</h3>
-        <ContactForm colorMode={colorMode} />
+        <ContactForm />
       </div>
     </section>
   );
