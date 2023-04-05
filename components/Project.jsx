@@ -48,7 +48,12 @@ const Project = ({ project }) => {
           target="_blank"
           href={project.linkToBuild}
           className={styles.projectLink}>
-          <Image src={urlFor(project.image).url()} alt={project.title} fill />
+          <Image
+            src={urlFor(project.image).url()}
+            alt={project.title}
+            width={350}
+            height={300}
+          />
         </a>
         <a
           className={styles.githubLink}
