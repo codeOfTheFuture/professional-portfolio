@@ -9,6 +9,7 @@ import styles, {
 } from "../styles/Project.module.scss";
 import ProjectDetails from "./ProjectDetails";
 import ProjectHeading from "./ProjectHeading";
+import Image from "next/image";
 
 const Project = ({ project }) => {
   const { theme } = useTheme();
@@ -43,8 +44,11 @@ const Project = ({ project }) => {
     <>
       <div className={styles.projectMain}>
         <h4>{project.title}</h4>
-        <a target="_blank" href={project.linkToBuild}>
-          <img src={urlFor(project.image).url()} alt={project.title} />
+        <a
+          target="_blank"
+          href={project.linkToBuild}
+          className={styles.projectLink}>
+          <Image src={urlFor(project.image).url()} alt={project.title} fill />
         </a>
         <a
           className={styles.githubLink}
