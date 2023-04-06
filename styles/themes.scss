@@ -69,10 +69,6 @@
       border: 1px solid map.get($borderColor, $themeName);
     }
 
-    .projectAbout::-webkit-scrollbar {
-      background-color: map.get($mainColor, $themeName);
-    }
-
     .s4 {
       background-color: map.get($secondaryColor, $themeName);
       border-bottom: 1px solid map.get($borderColor, $themeName);
