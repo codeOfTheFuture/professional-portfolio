@@ -4,12 +4,6 @@ export default {
   type: "document",
   fields: [
     {
-      name: "order",
-      title: "Order",
-      type: "number",
-      description: "Specify the order in which the project should be displayed",
-    },
-    {
       name: "title",
       title: "Title",
       description: "Title of the project",
@@ -49,6 +43,12 @@ export default {
       title: "Bullet Points",
       type: "array",
       of: [{ type: "string" }],
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      description: "Specify the order in which the project should be displayed",
     },
   ],
 };
