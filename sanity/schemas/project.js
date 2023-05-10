@@ -4,6 +4,12 @@ export default {
   type: "document",
   fields: [
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+      description: "Specify the order in which the project should be displayed",
+    },
+    {
       name: "title",
       title: "Title",
       description: "Title of the project",
@@ -11,7 +17,7 @@ export default {
     },
     {
       name: "image",
-      title: "image",
+      title: "Image",
       type: "image",
       options: {
         hotspot: true,
@@ -19,12 +25,12 @@ export default {
     },
     {
       name: "linkToGithub",
-      title: "LinkToGithub",
+      title: "Link to Github",
       type: "url",
     },
     {
       name: "linkToBuild",
-      title: "LinkToBuild",
+      title: "Link to Build",
       type: "url",
     },
     {
@@ -34,13 +40,13 @@ export default {
     },
     {
       name: "techStack",
-      title: "TechStack",
+      title: "Tech Stack",
       type: "array",
       of: [{ type: "reference", to: { type: "skill" } }],
     },
     {
       name: "bulletPoints",
-      title: "BulletPoints",
+      title: "Bullet Points",
       type: "array",
       of: [{ type: "string" }],
     },
