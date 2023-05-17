@@ -1,0 +1,157 @@
+@use "../../../scss/variables";
+@use "mixins";
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5em;
+  box-sizing: border-box;
+
+  @media screen and (max-width: $mobileView) {
+    padding: 0;
+    margin-bottom: 2em;
+    grid-template-columns: 1fr;
+  }
+  .projectMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+
+    h4 {
+      text-decoration: underline;
+      padding: 0;
+      @media screen and (max-width: $mobileView) {
+        margin: 0.5em 0;
+        padding: 0;
+      }
+    }
+
+    .projectLink {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+
+        @media screen and (max-width: $mobileView) {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileView) {
+      padding: 0.5em;
+    }
+  }
+
+  .projectAbout {
+    height: 450px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 2em;
+
+    .headingWrapper {
+      @media screen and (max-width: $mobileView) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .heading {
+        padding-top: 1em;
+
+        @media screen and (max-width: $mobileView) {
+          padding: 1em 0;
+        }
+
+        .btn {
+          justify-self: flex-end;
+        }
+      }
+
+      .toggle {
+        display: none;
+
+        @media screen and (max-width: $mobileView) {
+          display: block;
+          color: #17a2b8;
+        }
+      }
+    }
+
+    .projectDescText {
+      padding: 1em 0;
+      line-height: 1.7em;
+
+      @media screen and (max-width: $mobileView) {
+        padding: 0;
+        margin: 1em 0;
+      }
+    }
+
+    .techStackList {
+      padding-bottom: 1em;
+    }
+
+    .bPoint {
+      list-style: disc;
+      padding: 0 1em;
+      margin-left: 1em;
+      margin-bottom: 1em;
+    }
+
+    @media screen and (max-width: $mobileView) {
+      margin: 1em 0;
+      padding: 0 2.5em;
+    }
+  }
+
+  .projectAbout::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px;
+  }
+
+  .projectAbout::-webkit-scrollbar-track {
+    background-color: darkgray;
+    border-radius: 10px;
+    margin: 3px 0;
+  }
+
+  .projectAbout::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .showDetails {
+    @media screen and (max-width: $mobileView) {
+      display: block;
+    }
+  }
+
+  .hideDetails {
+    @media screen and (max-width: $mobileView) {
+      display: none;
+    }
+  }
+
+  .lightMode {
+    @include project("lightMode");
+  }
+
+  .blueMode {
+    @include project("blueMode");
+  }
+
+  .greenMode {
+    @include project("greenMode");
+  }
+
+  .purpleMode {
+    @include project("purpleMode");
+  }
+}

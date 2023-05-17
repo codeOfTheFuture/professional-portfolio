@@ -1,0 +1,28 @@
+@use "sass:map";
+@import "../../../scss/variables/colors";
+
+@mixin about__me__section($themeName) {
+	background-color: map.get($secondaryColor, $themeName);
+	border-bottom: 1px solid map.get($borderColor, $themeName);
+
+	img {
+		border: 1px solid map.get($borderColor, $themeName);
+	}
+
+	h3,
+	h4 {
+		color: map.get($mainText, $themeName);
+	}
+
+	p {
+		color: map.get($secondaryText, $themeName);
+	}
+}
+
+@mixin skills($themeName) {
+	background-color: map.get($previewShadow, $themeName);
+
+	li {
+		color: map.get($secondaryText, $themeName);
+	}
+}

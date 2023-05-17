@@ -1,7 +1,7 @@
-import SectionMain from "../components/SectionMain";
-import SectionAbout from "../components/SectionAbout";
-import SectionPortfolio from "../components/SectionPortfolio";
-import SectionContact from "../components/SectionContact";
+import HeroSection from "../components/heroSection/HeroSection";
+import AboutMeSEction from "../components/aboutMeSection/AboutMeSection";
+import SectionPortfolio from "../components/sectionPortfolio/SectionPortfolio";
+import SectionContact from "../components/sectionContact/SectionContact";
 import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSocials from "../utils/fetchSocials";
 import fetchProjects from "../utils/fetchProjects";
@@ -9,6 +9,7 @@ import fetchSkills from "../utils/fetchSkills";
 import fetchResumeUrl from "../utils/fetchResumeUrl";
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import { PageInfo, Project, Skill, Social } from "types/typings";
 
 interface Props {
 	pageInfo: PageInfo;
@@ -18,7 +19,7 @@ interface Props {
 	resumeUrl: string;
 }
 
-const Home = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => {
+const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => {
 	const { name, profilePic, whatIDo, topExpertise, image } = pageInfo;
 
 	return (
@@ -28,21 +29,21 @@ const Home = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => {
 
 				<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 			</Head>
-			<SectionMain name={name} profilePic={profilePic} whatIDo={whatIDo} />
-			<SectionAbout
+			<HeroSection name={name} profilePic={profilePic} whatIDo={whatIDo} />
+			<AboutMeSEction
 				topExpertise={topExpertise}
 				resumeUrl={resumeUrl}
 				skills={skills}
 				image={image}
 				socials={socials}
 			/>
-			<SectionPortfolio projects={projects} />
-			<SectionContact />
+			{/* <SectionPortfolio projects={projects} />
+			<SectionContact /> */}
 		</div>
 	);
 };
 
-export default Home;
+export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
 	const pageInfo = await fetchPageInfo();

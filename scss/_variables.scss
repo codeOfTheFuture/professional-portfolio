@@ -1,0 +1,71 @@
+// Background Colors
+$mainColor: (
+  "lightMode": #eaeaea,
+  "blueMode": #15202b,
+  "greenMode": #606b56,
+  "purpleMode": #46344e,
+);
+
+$secondaryColor: (
+  "lightMode": white,
+  "blueMode": #192734,
+  "greenMode": #515a48,
+  "purpleMode": #382a3f,
+);
+
+// Border Colors
+$borderColor: (
+  "lightMode": #c1c1c1,
+  "blueMode": #164d56,
+  "greenMode": #161914,
+  "purpleMode": #1d1520,
+);
+
+$themeDotBorder: (
+  "lightMode": #24292e,
+  "blueMode": #fff,
+  "greenMode": #fff,
+  "purpleMode": #fff,
+);
+
+// Text Colors
+$mainText: (
+  "lightMode": #000,
+  "blueMode": #fff,
+  "greenMode": #fff,
+  "purpleMode": #fff,
+);
+
+$secondaryText: (
+  "lightMode": #4b5156,
+  "blueMode": #eee,
+  "greenMode": #eee,
+  "purpleMode": #eee,
+);
+
+// preview background color
+$previewBg: (
+  "lightMode": rgba(251, 249, 243, 0.8),
+  "blueMode": rgba(25, 39, 52, 0.8),
+  "greenMode": rgba(81, 90, 72, 0.8),
+  "purpleMode": rgba(29, 21, 32, 0.8),
+);
+
+// preview shadow
+$previewShadow: (
+  "lightMode": #f0ead6,
+  "blueMode": #111921,
+  "greenMode": #2a2f25,
+  "purpleMode": #2b202f,
+);
+
+//Button Color
+$buttonColor: (
+  "lightMode": #000,
+  "blueMode": #17a2b8,
+  "greenMode": #669966,
+  "purpleMode": #8534a3,
+);
+
+// Mobile view
+$mobileView: 1200px;

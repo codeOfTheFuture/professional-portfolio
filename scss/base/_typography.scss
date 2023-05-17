@@ -1,0 +1,61 @@
+// Global box-sizing
+:root {
+    box-sizing: border-box;
+  }
+  
+  // Global heading font-sizes
+  h1 {
+    font-size: 56px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+  
+  // Main text color for headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    padding: 0.5em 0;
+    font-family: "Russo One", sans-serif;
+    font-weight: 500;
+  }
+  
+  // Secondary text color
+  p,
+  li,
+  span,
+  label,
+  input,
+  textarea {
+    font-size: 1em;
+    font-family: "Roboto Mono", monospace;
+    line-height: 1.5em;
+  }
+
+  // Global link styles
+a {
+    text-decoration: none;
+    color: #17a2b8;
+    font-size: 1.5em;
+  }
+  
+  // Global unordered list styles
+  ul {
+    list-style: none;
+  }

@@ -1,0 +1,26 @@
+@use "../../../scss/mixins" as globalMixins;
+
+.traffic__lights {
+	display: flex;
+	padding: 10px;
+
+	.traffic__lights__dots {
+		background-color: black;
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+		margin: 5px;
+
+		@include globalMixins.box__shadow;
+	}
+
+	.traffic__lights__dots__red {
+		background-color: #fc6058;
+	}
+	.traffic__lights__dots__yellow {
+		background-color: #fec02f;
+	}
+	.traffic__lights__dots__green {
+		background-color: #2aca3e;
+	}
+}

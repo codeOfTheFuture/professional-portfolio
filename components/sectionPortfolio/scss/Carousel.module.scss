@@ -1,0 +1,22 @@
+@use "mixins";
+
+.carouselWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.lightMode {
+  @include projectWrapper("lightMode");
+}
+.blueMode {
+  @include projectWrapper("blueMode");
+}
+.greenMode {
+  @include projectWrapper("greenMode");
+}
+.purpleMode {
+  @include projectWrapper("purpleMode");
+}

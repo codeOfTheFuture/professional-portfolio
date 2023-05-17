@@ -1,0 +1,88 @@
+@use "../../../scss/variables";
+@use "./mixins";
+
+#contactForm {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 100px;
+
+  @media screen and (min-width: 1800px) {
+    max-width: 1200px;
+  }
+
+  label {
+    line-height: 2.7em;
+    padding: 1.5em 0;
+  }
+
+  .labelLt {
+    @include label("lightMode");
+  }
+
+  .labelBl {
+    @include label("blueMode");
+  }
+
+  .labelGn {
+    @include label("greenMode");
+  }
+
+  .labelPl {
+    @include label("purpleMode");
+  }
+
+  .inputField {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 0.5em 0;
+  }
+
+  textarea {
+    min-height: 150px;
+    font-size: 14px;
+  }
+
+  #submitBtn {
+    margin: 2em 0;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btnLt {
+    @include formBtn("lightMode");
+  }
+  .btnBl {
+    @include formBtn("blueMode");
+  }
+  .btnGn {
+    @include formBtn("greenMode");
+  }
+  .btnPl {
+    @include formBtn("purpleMode");
+  }
+}
+
+.contactLt {
+  @include sectionContact("lightMode");
+}
+
+.contactBl {
+  @include sectionContact("blueMode");
+}
+
+.contactGn {
+  @include sectionContact("greenMode");
+}
+
+.contactPl {
+  @include sectionContact("purpleMode");
+}

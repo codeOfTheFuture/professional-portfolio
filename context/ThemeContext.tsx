@@ -1,44 +1,30 @@
-import { ReactNode, useEffect, useState } from "react";
 import { Context } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
+import { PreferredTheme, ThemeContext } from "types/typings";
 
-const ThemeContext: Context<{ theme: string; selectTheme: (theme: string) => void }> =
-	createContext({
-		theme: "lightMode",
-		selectTheme: (theme: string) => {
-			theme;
-		},
-	});
+/**
+ * ThemeContext represents the context object for managing the preferred theme.
+ */
+const ThemeContext: Context<ThemeContext> = createContext<ThemeContext>({
+	/**
+	 * preferredTheme represents the currently selected theme.
+	 * It can be one of "light__theme", "blue__theme", "green__theme", or "purple__theme".
+	 */
+	preferredTheme: "light__theme",
+	/**
+	 * selectTheme is a function that allows changing the preferred theme.
+	 * @param {PreferredTheme} theme - The new theme to be selected.
+	 */
+	selectTheme: (theme: PreferredTheme) => {
+		theme;
+	},
+});
 
-export const useTheme = () => useContext(ThemeContext);
+/**
+ * useTheme is a custom hook that provides access to the ThemeContext.
+ * @returns {ThemeContext} The ThemeContext object.
+ */
+export const useTheme = (): ThemeContext => useContext<ThemeContext>(ThemeContext);
 
-interface Props {
-	children: ReactNode;
-}
-
-export const ThemeProvider = ({ children }: Props) => {
-	const [theme, setTheme] = useState("lightMode");
-
-	useEffect(() => {
-		if (localStorage.getItem("theme")) setTheme(localStorage.getItem("theme")!);
-	}, []);
-
-	const selectTheme = (theme: string) => {
-		if (localStorage.getItem(theme)) {
-			let currentTheme = localStorage.getItem("theme");
-			currentTheme = theme;
-			localStorage.setItem("theme", currentTheme);
-		} else {
-			localStorage.setItem("theme", theme);
-		}
-		setTheme(theme);
-	};
-
-	const value = {
-		theme,
-		selectTheme,
-	};
-
-	return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
-};
+export default ThemeContext;

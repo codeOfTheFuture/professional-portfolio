@@ -1,0 +1,28 @@
+@use "./mixins" as aboutMeSection;
+
+.skills {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.25rem;
+	padding: 2em 0;
+
+	li {
+		text-align: center;
+	}
+}
+
+.skills__light__theme {
+	@include aboutMeSection.skills("light__theme");
+}
+
+.skills__blue__theme {
+	@include aboutMeSection.skills("blue__theme");
+}
+
+.skills__green__theme {
+	@include aboutMeSection.skills("green__theme");
+}
+
+.skills__purple__theme {
+	@include aboutMeSection.skills("purple__theme");
+}

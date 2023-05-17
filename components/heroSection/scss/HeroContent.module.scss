@@ -1,0 +1,64 @@
+@use "sass:map";
+@use "../../../scss/mixins" as globalMixins;
+@use "./mixins" as heroSection;
+@use "../../../scss/variables/colors";
+
+.hero__content {
+	border-radius: 5px 5px 0 0;
+
+	@include globalMixins.box__shadow;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"nav nav"
+		"leftColumn rightColumn";
+
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"nav"
+			"leftColumn"
+			"rightColumn";
+	}
+
+	.hero__content__nav {
+		border-radius: 5px 5px 0 0;
+		grid-area: nav;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.hero__content__nav__light__theme {
+		@include heroSection.hero__content__nav("light__theme");
+	}
+
+	.hero__content__nav__blue__theme {
+		@include heroSection.hero__content__nav("blue__theme");
+	}
+
+	.hero__content__nav__green__theme {
+		@include heroSection.hero__content__nav("green__theme");
+	}
+
+	.hero__content__nav__purple__theme {
+		@include heroSection.hero__content__nav("purple__theme");
+	}
+}
+
+.hero__content__light__theme {
+	@include heroSection.hero__content("light__theme");
+}
+
+.hero__content__blue__theme {
+	@include heroSection.hero__content("blue__theme");
+}
+
+.hero__content__green__theme {
+	@include heroSection.hero__content("green__theme");
+}
+
+.hero__content__purple__theme {
+	@include heroSection.hero__content("purple__theme");
+}

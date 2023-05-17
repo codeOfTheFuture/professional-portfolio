@@ -1,0 +1,30 @@
+.hero__content__left {
+	grid-area: leftColumn;
+	padding: 6em 0;
+
+	@media screen and (max-width: 800px) {
+		padding: 3em 0;
+	}
+
+	.hero__content__left__profile__picture {
+		display: block;
+		margin: 0 auto;
+
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	h5 {
+		text-align: center;
+		line-height: 0;
+		padding-top: 1.5em;
+	}
+
+	.settings__note {
+		font-size: 12px;
+		font-style: italic;
+		text-align: center;
+		margin: 1em 0;
+	}
+}

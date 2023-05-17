@@ -1,0 +1,85 @@
+@use "sass:map";
+@import "../../../scss/variables/breakpoints";
+@import "../../../scss/variables/colors";
+
+@mixin hero__section($themeName) {
+	background-color: map.get($mainColor, $themeName);
+	border-bottom: 1px solid map.get($borderColor, $themeName);
+	color: map.get($mainText, $themeName);
+
+	p {
+		color: map.get($secondaryText, $themeName);
+	}
+}
+
+@mixin hero__content($themeName) {
+	background-color: map.get($secondaryColor, $themeName);
+	border: 1px solid map.get($borderColor, $themeName);
+}
+
+@mixin hero__content__nav($themeName) {
+	background-color: map.get($mainColor, $themeName);
+	border-bottom: 1px solid map.get($borderColor, $themeName);
+}
+
+@mixin theme__option($themeName) {
+	border: 2px solid map.get($themeDotBorder, $themeName);
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	margin: 5px;
+
+	cursor: pointer;
+
+	&:hover {
+		border-width: 5px;
+	}
+}
+
+@mixin preview__shadow($themeName) {
+	background-color: map.get($previewShadow, $themeName);
+	width: 300px;
+	height: 200px;
+	padding-left: 30px;
+	padding-top: 30px;
+
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		height: 240px;
+		padding-left: 10px;
+		padding-top: 10px;
+		margin-bottom: 50px;
+		margin-right: 20px;
+	}
+}
+
+@mixin preview__content($themeName) {
+	width: 300px;
+	border: 1.5px solid #17a2b8;
+	background-color: map.get($previewBg, $themeName);
+	padding: 15px;
+	position: relative;
+
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		width: 285px;
+		margin-bottom: 50px;
+	}
+
+	h3 {
+		padding: 0.7em 0;
+		color: map.get($mainText, $themeName);
+	}
+
+	p {
+		padding: 1em 0;
+		color: map.get($secondaryText, $themeName);
+	}
+}
+
+@mixin preview__corner($themeName) {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	border: 1.5px solid #17a2b8;
+	background-color: map.get($secondaryColor, $themeName);
+	position: absolute;
+}

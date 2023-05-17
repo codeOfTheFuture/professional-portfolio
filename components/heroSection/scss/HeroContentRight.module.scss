@@ -1,0 +1,75 @@
+@use "./mixins" as heroSection;
+
+.preview {
+	grid-area: rightColumn;
+	display: grid;
+	align-content: center;
+	padding: 50px 0;
+
+	@media screen and (max-width: 800px) {
+		justify-content: center;
+		padding: 0;
+	}
+
+	.preview__shadow__light__theme {
+		@include heroSection.preview__shadow("light__theme");
+	}
+
+	.preview__shadow__blue__theme {
+		@include heroSection.preview__shadow("blue__theme");
+	}
+
+	.preview__shadow__green__theme {
+		@include heroSection.preview__shadow("green__theme");
+	}
+
+	.preview__shadow__purple__theme {
+		@include heroSection.preview__shadow("purple__theme");
+	}
+
+	.preview__content__light__theme {
+		@include heroSection.preview__content("light__theme");
+	}
+
+	.preview__content__blue__theme {
+		@include heroSection.preview__content("blue__theme");
+	}
+
+	.preview__content__green__theme {
+		@include heroSection.preview__content("green__theme");
+	}
+
+	.preview__content__purple__theme {
+		@include heroSection.preview__content("purple__theme");
+	}
+
+	.preview__corner__light__theme {
+		@include heroSection.preview__corner("light__theme");
+	}
+	.preview__corner__blue__theme {
+		@include heroSection.preview__corner("blue__theme");
+	}
+	.preview__corner__green__theme {
+		@include heroSection.preview__corner("green__theme");
+	}
+	.preview__corner__purple__theme {
+		@include heroSection.preview__corner("purple__theme");
+	}
+
+	.preview__corner__top__left {
+		top: -5px;
+		left: -5px;
+	}
+	.preview__corner__top__right {
+		top: -5px;
+		right: -5px;
+	}
+	.preview__corner__bottom__right {
+		bottom: -5px;
+		right: -5px;
+	}
+	.preview__corner__bottom__left {
+		bottom: -5px;
+		left: -5px;
+	}
+}

@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "../../../scss/mixins" as globalMixins;
+@use "./mixins" as heroSection;
+@use "../../../scss/variables";
+
+.theme__options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 6em;
+
+	.theme__options__light {
+		background-color: #fff;
+	}
+
+	.theme__options__blue {
+		background-color: #192734;
+	}
+
+	.theme__options__green {
+		background-color: #78866b;
+	}
+
+	.theme__options__purple {
+		background-color: #7e4c74;
+	}
+
+	.theme__options__light__theme {
+		@include heroSection.theme__option("light__theme");
+		@include globalMixins.box__shadow;
+	}
+	.theme__options__blue__theme {
+		@include heroSection.theme__option("blue__theme");
+		@include globalMixins.box__shadow;
+	}
+	.theme__options__green__theme {
+		@include heroSection.theme__option("green__theme");
+		@include globalMixins.box__shadow;
+	}
+	.theme__options__purple__theme {
+		@include heroSection.theme__option("purple__theme");
+		@include globalMixins.box__shadow;
+	}
+}
