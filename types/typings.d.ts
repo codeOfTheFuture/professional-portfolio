@@ -1,4 +1,5 @@
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { File } from "sanity";
 
 type PreferredTheme = "light__theme" | "blue__theme" | "green__theme" | "purple__theme";
 type SelectTheme = (theme: PreferredTheme) => void;
@@ -6,6 +7,23 @@ type SelectTheme = (theme: PreferredTheme) => void;
 interface ThemeContext {
 	preferredTheme: PreferredTheme;
 	selectTheme: SelectTheme;
+}
+
+interface PageInfo {
+	_id: string;
+	_rev: string;
+	_type: string;
+	_createdAt: string;
+	_updatedAt: string;
+	name: string;
+	role: string;
+	profilePic: SanityImageSource;
+	whatIDo: string;
+	aboutMe: string;
+	topExpertise: string;
+	resumeUrl: File;
+	image: SanityImageSource;
+	socials: Social[];
 }
 
 interface Skill {
@@ -28,21 +46,14 @@ interface Social {
 	url: string;
 }
 
-interface PageInfo {
-	name: string;
-	role: string;
-	profilePic: SanityImageSource;
-	whatIDo: string;
-	aboutMe: string;
-	topExpertise: string;
-	resumeUrl: string;
-	image: SanityImageSource;
-	socials: Social[];
-}
-
 interface Project {
+	_id: string;
+	_rev: string;
+	_type: string;
+	_createdAt: string;
+	_updatedAt: string;
 	title: string;
-	image: string;
+	image: SanityImageSource;
 	linkToGithub: string;
 	linkToBuild: string;
 	description: string;

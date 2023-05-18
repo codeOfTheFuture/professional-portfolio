@@ -1,22 +1,59 @@
-@use "mixins";
+@use "mixins" as projectsSection;
+@import "../../../scss/variables/breakpoints";
 
-.carouselWrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 2em;
+.swiper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2em;
+
+	.swiper__slide {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		align-items: center;
+		padding: 2.5em;
+		box-sizing: border-box;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			padding: 0;
+			margin-bottom: 2em;
+			grid-template-columns: 1fr;
+		}
+
+		.swiper__slide__light__theme {
+			@include projectsSection.project("light__theme");
+		}
+
+		.swiper__slide__blue__theme {
+			@include projectsSection.project("blue__theme");
+		}
+
+		.swiper__slide__green__theme {
+			@include projectsSection.project("green__theme");
+		}
+
+		.swiper__slide__purple__theme {
+			@include projectsSection.project("purple__theme");
+		}
+	}
+
+	.swiper__chevron__next,
+	.swiper__chevron__prev {
+		color: #17a2b8;
+	}
 }
 
-.lightMode {
-  @include projectWrapper("lightMode");
+.swiper__light__theme {
+	@include projectsSection.swiper("light__theme");
 }
-.blueMode {
-  @include projectWrapper("blueMode");
+.swiper__blue__theme {
+	@include projectsSection.swiper("blue__theme");
 }
-.greenMode {
-  @include projectWrapper("greenMode");
+.swiper__green__theme {
+	@include projectsSection.swiper("green__theme");
 }
-.purpleMode {
-  @include projectWrapper("purpleMode");
+.swiper__purple__theme {
+	@include projectsSection.swiper("purple__theme");
 }

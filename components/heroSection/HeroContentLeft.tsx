@@ -1,9 +1,10 @@
-import styles from "./scss/HeroContentLeft.module.scss";
-import { urlFor } from "sanity.config";
 import ThemeOptions from "./ThemeOptions";
+import { urlFor } from "sanity.config";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import styles from "./scss/HeroContentLeft.module.scss";
 
 interface Props {
-	profilePic: string;
+	profilePic: SanityImageSource;
 }
 
 const HeroContentLeft = ({ profilePic }: Props) => {

@@ -2,10 +2,11 @@ import HeroContent from "./HeroContent";
 import styles from "./scss/HeroSection.module.scss";
 import { useTheme } from "../../context/ThemeContext";
 import { PreferredTheme } from "types/typings";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface Props {
 	name: string;
-	profilePic: string;
+	profilePic: SanityImageSource;
 	whatIDo: string;
 }
 

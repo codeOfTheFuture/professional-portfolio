@@ -1,6 +1,6 @@
 import HeroSection from "../components/heroSection/HeroSection";
 import AboutMeSEction from "../components/aboutMeSection/AboutMeSection";
-import SectionPortfolio from "../components/sectionPortfolio/SectionPortfolio";
+import SectionPortfolio from "../components/sectionPortfolio/ProjectsSection";
 import SectionContact from "../components/sectionContact/SectionContact";
 import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSocials from "../utils/fetchSocials";
@@ -22,6 +22,8 @@ interface Props {
 const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => {
 	const { name, profilePic, whatIDo, topExpertise, image } = pageInfo;
 
+	console.log("page info: ", pageInfo);
+
 	return (
 		<div>
 			<Head>
@@ -37,8 +39,8 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 				image={image}
 				socials={socials}
 			/>
-			{/* <SectionPortfolio projects={projects} />
-			<SectionContact /> */}
+			<SectionPortfolio projects={projects} />
+			{/* <SectionContact /> */}
 		</div>
 	);
 };

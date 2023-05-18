@@ -1,0 +1,32 @@
+@import "../../../scss/variables/breakpoints";
+
+.project__details__heading {
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	.project__details__heading__title {
+		text-align: center;
+		padding: 1rem 0;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			padding: 1em 0;
+		}
+
+		.btn {
+			justify-self: flex-end;
+		}
+	}
+
+	.project__details__heading__toggle {
+		display: none;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			display: block;
+			color: #17a2b8;
+		}
+	}
+}

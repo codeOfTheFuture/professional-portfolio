@@ -1,64 +1,50 @@
-import React from "react";
+import { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
-import styles, { lightMode, blueMode, greenMode, purpleMode } from "./scss/Project.module.scss";
-import ProjectDetails from "./ProjectDetails";
-import ProjectHeading from "./ProjectHeading";
+import ProjectDetailsDescription from "./ProjectDetailsDescription";
+import ProjectDetailsHeading from "./ProjectDetailsHeading";
 import Image from "next/image";
 import { urlFor } from "sanity.config";
+import { PreferredTheme, Project, Skill } from "types/typings";
+import styles from "./scss/Project.module.scss";
 
 interface Props {
 	project: Project;
 }
 
 const Project = ({ project }: Props) => {
-	const { theme } = useTheme();
+	const [isDescriptionVisible, setIsDescriptionVisible] = useState<boolean>(false);
+	const [isTechStackVisible, setIsTechStackVisible] = useState<boolean>(false);
 
-	let currentTheme;
-
-	switch (theme) {
-		case "lightMode":
-			currentTheme = lightMode;
-			break;
-		case "blueMode":
-			currentTheme = blueMode;
-			break;
-		case "greenMode":
-			currentTheme = greenMode;
-			break;
-		case "purpleMode":
-			currentTheme = purpleMode;
-	}
-
-	const [isDescriptionVisible, setIsDescriptionVisible] = React.useState(false);
-	const [isTechStackVisible, setIsTechStackVisible] = React.useState(false);
-
-	const toggleDescription = () => {
-		setIsDescriptionVisible(!isDescriptionVisible);
+	const toggleDescription = (): void => {
+		setIsDescriptionVisible((prevState: boolean) => !prevState);
 	};
-	const toggleTechStack = () => {
-		setIsTechStackVisible(!isTechStackVisible);
+
+	const toggleTechStack = (): void => {
+		setIsTechStackVisible((prevState: boolean) => !prevState);
 	};
+
+	const { preferredTheme }: { preferredTheme: PreferredTheme } = useTheme();
 
 	return (
 		<>
-			<div className={styles.projectMain}>
+			<div className={styles.project__header}>
 				<h4>{project.title}</h4>
-				<a target="_blank" href={project.linkToBuild} className={styles.projectLink}>
+				<a target="_blank" href={project.linkToBuild} className={styles.project__image}>
 					<Image src={urlFor(project.image).url()} alt={project.title} width={350} height={300} />
 				</a>
-				<a className={styles.githubLink} target="_blank" href={project.linkToGithub}>
+				<a target="_blank" href={project.linkToGithub}>
 					View Github
 				</a>
 			</div>
 
-			<div className={`${styles.projectAbout} ${currentTheme}`}>
-				<div className={styles.projectDesc}>
-					<ProjectHeading
+			<div className={`${styles.project__details} ${styles[`project__${preferredTheme}`]}`}>
+				<div>
+					<ProjectDetailsHeading
 						title="Project Description:"
 						toggle={toggleDescription}
 						isOpen={isDescriptionVisible}
 					/>
-					<ProjectDetails
+					<ProjectDetailsDescription
 						description={project.description}
 						techStack={null}
 						detailsList={null}
@@ -66,15 +52,15 @@ const Project = ({ project }: Props) => {
 					/>
 				</div>
 
-				<div className={styles.techStack}>
-					<ProjectHeading
+				<div>
+					<ProjectDetailsHeading
 						title="Tech Stack:"
 						toggle={toggleTechStack}
 						isOpen={isTechStackVisible}
 					/>
-					<ProjectDetails
+					<ProjectDetailsDescription
 						description={null}
-						techStack={project.techStack.map(t => t.title).join(" | ")}
+						techStack={project.techStack.map((skill: Skill) => skill.title).join(" | ")}
 						detailsList={project.bulletPoints}
 						isOpen={isTechStackVisible}
 					/>

@@ -1,0 +1,27 @@
+@import "../../../scss/variables/breakpoints";
+
+.project__details__description__text {
+	padding: 1em 0;
+	line-height: 1.7em;
+
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		padding: 0;
+		margin: 1em 0;
+	}
+}
+
+.project__details__description__tech__stack {
+	padding-bottom: 1em;
+}
+
+.project__details__description__show__details {
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		display: block;
+	}
+}
+
+.project__details__description__hide__details {
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		display: none;
+	}
+}

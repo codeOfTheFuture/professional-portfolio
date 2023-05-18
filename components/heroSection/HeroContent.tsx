@@ -1,13 +1,14 @@
-import styles from "./scss/HeroContent.module.scss";
-import TrafficLights from "./TrafficLights";
-import HeroNavigation from "./HeroNavigation";
 import HeroContentLeft from "./HeroContentLeft";
 import HeroContentRight from "./HeroContentRight";
+import TrafficLights from "./TrafficLights";
+import HeroNavigation from "./HeroNavigation";
 import { useTheme } from "../../context/ThemeContext";
 import { PreferredTheme } from "types/typings";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import styles from "./scss/HeroContent.module.scss";
 
 interface Props {
-	profilePic: string;
+	profilePic: SanityImageSource;
 	whatIDo: string;
 }
 
