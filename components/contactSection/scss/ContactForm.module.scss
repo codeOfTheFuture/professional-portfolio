@@ -1,0 +1,85 @@
+@use "./mixins" as contactSection;
+
+#contact__section__form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 15px;
+	margin-bottom: 100px;
+
+	label {
+		line-height: 2.7em;
+		padding: 1.5em 0;
+	}
+
+	.contact__section__form__label__light__theme {
+		@include contactSection.content__section__form__label("light__theme");
+	}
+
+	.contact__section__form__label__blue__theme {
+		@include contactSection.content__section__form__label("blue__theme");
+	}
+
+	.contact__section__form__label__green__theme {
+		@include contactSection.content__section__form__label("green__theme");
+	}
+
+	.contact__section__form__label__purple__theme {
+		@include contactSection.content__section__form__label("purple__theme");
+	}
+
+	.contact__section__form__input {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 15px 5px;
+		border-radius: 5px;
+		font-size: 14px;
+		margin: 0.5em 0;
+	}
+
+	textarea {
+		min-height: 150px;
+		font-size: 14px;
+	}
+
+	.contact__section__form__btn {
+		margin: 2em 0;
+		width: 100%;
+		padding: 10px 0;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	.contact__section__form__btn__light__theme {
+		@include contactSection.content__section__form__btn("light__theme");
+	}
+	.contact__section__form__btn__blue__theme {
+		@include contactSection.content__section__form__btn("blue__theme");
+	}
+	.contact__section__form__btn__green__theme {
+		@include contactSection.content__section__form__btn("green__theme");
+	}
+	.contact__section__form__btn__purple__theme {
+		@include contactSection.content__section__form__btn("purple__theme");
+	}
+}
+
+.contact__section__light__theme {
+	@include contactSection.contact__section("light__theme");
+}
+
+.contact__section__blue__theme {
+	@include contactSection.contact__section("blue__theme");
+}
+
+.contact__section__green__theme {
+	@include contactSection.contact__section("green__theme");
+}
+
+.contact__section__purple__theme {
+	@include contactSection.contact__section("purple__theme");
+}

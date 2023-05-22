@@ -4,14 +4,5 @@
 
 @use "../components/heroSection/scss" as heroSection;
 @use "../components/aboutMeSection/scss" as aboutMeSection;
-@use "../components/sectionPortfolio/scss" as projectsSection;
-@use "../components/sectionContact/scss" as sectionContact;
-
-// // Global section styles
-// .section {
-//     overflow: auto;
-
-//     @media screen and (max-width: $mobileView) {
-//       overflow-x: hidden;
-//     }
-//   }
+@use "../components/projectSection/scss" as projectsSection;
+@use "../components/contactSection/scss" as contactSection;

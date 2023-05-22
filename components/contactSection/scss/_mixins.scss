@@ -1,0 +1,27 @@
+@use "sass:map";
+@import "../../../scss/variables/colors";
+
+@mixin contact__section($themeName) {
+	background-color: map.get($secondaryColor, $themeName);
+
+	h3 {
+		color: map.get($mainText, $themeName);
+	}
+}
+
+@mixin content__section__form__label($themeName) {
+	color: map.get($secondaryText, $themeName);
+}
+
+@mixin content__section__form__btn($themeName) {
+	background-color: map.get($buttonColor, $themeName);
+	&:hover {
+		background-color: map.get($themeDotBorder, $themeName);
+
+		@if $themeName == "lightMode" {
+			color: white !important;
+		} @else {
+			color: black !important;
+		}
+	}
+}

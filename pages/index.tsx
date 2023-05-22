@@ -1,14 +1,14 @@
+import { GetStaticProps } from "next";
 import HeroSection from "../components/heroSection/HeroSection";
-import AboutMeSEction from "../components/aboutMeSection/AboutMeSection";
-import SectionPortfolio from "../components/sectionPortfolio/ProjectsSection";
-import SectionContact from "../components/sectionContact/SectionContact";
+import AboutMeSection from "../components/aboutMeSection/AboutMeSection";
+import SectionPortfolio from "../components/projectSection/ProjectsSection";
+import SectionContact from "../components/contactSection/ContactSection";
 import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSocials from "../utils/fetchSocials";
 import fetchProjects from "../utils/fetchProjects";
 import fetchSkills from "../utils/fetchSkills";
 import fetchResumeUrl from "../utils/fetchResumeUrl";
 import Head from "next/head";
-import { GetStaticProps } from "next";
 import { PageInfo, Project, Skill, Social } from "types/typings";
 
 interface Props {
@@ -25,14 +25,14 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 	console.log("page info: ", pageInfo);
 
 	return (
-		<div>
+		<>
 			<Head>
 				<title>Jeff Oliver | Professional Portfolio</title>
 
 				<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 			</Head>
 			<HeroSection name={name} profilePic={profilePic} whatIDo={whatIDo} />
-			<AboutMeSEction
+			<AboutMeSection
 				topExpertise={topExpertise}
 				resumeUrl={resumeUrl}
 				skills={skills}
@@ -40,8 +40,8 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 				socials={socials}
 			/>
 			<SectionPortfolio projects={projects} />
-			{/* <SectionContact /> */}
-		</div>
+			<SectionContact />
+		</>
 	);
 };
 
