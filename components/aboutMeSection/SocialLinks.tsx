@@ -10,9 +10,9 @@ interface Props {
 
 const SocialLinks = ({ socials, image }: Props) => {
 	return (
-		<div className={styles.social__links}>
+		<div className={styles[`about__me__content__social__links`]}>
 			<img
-				className={styles.social__links__image}
+				className={styles[`about__me__content__social__links__image`]}
 				src={urlFor(image).url()}
 				alt="Programming on a computer with multiple screens"
 			/>

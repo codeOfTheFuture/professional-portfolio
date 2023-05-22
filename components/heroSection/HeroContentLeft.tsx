@@ -9,9 +9,9 @@ interface Props {
 
 const HeroContentLeft = ({ profilePic }: Props) => {
 	return (
-		<div className={styles.hero__content__left}>
+		<div className={styles[`hero__section__content__left`]}>
 			<img
-				className={styles.hero__content__left__profile__picture}
+				className={styles[`hero__section__content__left__profile__picture`]}
 				src={urlFor(profilePic).url()}
 				alt="Picture of Jeff Oliver"
 			/>
@@ -19,7 +19,7 @@ const HeroContentLeft = ({ profilePic }: Props) => {
 
 			<ThemeOptions />
 
-			<p className={styles.settings__note}>
+			<p className={styles[`hero__section__content__left__settings__note`]}>
 				*Theme settings will be saved for
 				<br />
 				your next visit

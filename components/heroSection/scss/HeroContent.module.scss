@@ -3,16 +3,15 @@
 @use "./mixins" as heroSection;
 @use "../../../scss/variables/colors";
 
-.hero__content {
-	border-radius: 5px 5px 0 0;
-
-	@include globalMixins.box__shadow;
-
+.hero__section__content {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas:
 		"nav nav"
 		"leftColumn rightColumn";
+	border-radius: 5px 5px 0 0;
+
+	@include globalMixins.box-shadow;
 
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
@@ -22,43 +21,51 @@
 			"rightColumn";
 	}
 
-	.hero__content__nav {
+	&--light__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("light__theme");
+	}
+
+	&--blue__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("blue__theme");
+	}
+
+	&--green__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("green__theme");
+	}
+
+	&--purple__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("purple__theme");
+	}
+
+	&__nav {
 		border-radius: 5px 5px 0 0;
 		grid-area: nav;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		&--light__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("light__theme");
+		}
+
+		&--blue__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("blue__theme");
+		}
+
+		&--green__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("green__theme");
+		}
+
+		&--purple__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("purple__theme");
+		}
 	}
-
-	.hero__content__nav__light__theme {
-		@include heroSection.hero__content__nav("light__theme");
-	}
-
-	.hero__content__nav__blue__theme {
-		@include heroSection.hero__content__nav("blue__theme");
-	}
-
-	.hero__content__nav__green__theme {
-		@include heroSection.hero__content__nav("green__theme");
-	}
-
-	.hero__content__nav__purple__theme {
-		@include heroSection.hero__content__nav("purple__theme");
-	}
-}
-
-.hero__content__light__theme {
-	@include heroSection.hero__content("light__theme");
-}
-
-.hero__content__blue__theme {
-	@include heroSection.hero__content("blue__theme");
-}
-
-.hero__content__green__theme {
-	@include heroSection.hero__content("green__theme");
-}
-
-.hero__content__purple__theme {
-	@include heroSection.hero__content("purple__theme");
 }

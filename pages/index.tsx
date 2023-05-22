@@ -16,7 +16,7 @@ interface Props {
 	socials: Social[];
 	projects: Project[];
 	skills: Skill[];
-	resumeUrl: string;
+	resumeUrl: File;
 }
 
 const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => {

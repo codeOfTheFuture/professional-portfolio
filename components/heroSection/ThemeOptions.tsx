@@ -10,25 +10,31 @@ const ThemeOptions = () => {
 	}: { preferredTheme: PreferredTheme; selectTheme: SelectTheme } = useTheme();
 
 	return (
-		<div className={styles.theme__options}>
+		<div className={styles[`hero__section__content__left__theme__options`]}>
 			<ThemeOption
-				className={`${styles.theme__options__light} ${styles[`theme__options__${preferredTheme}`]}`}
+				className={`${styles[`hero__section__content__left__theme__options--light`]} ${
+					styles[`hero__section__content__left__theme__options--${preferredTheme}`]
+				}`}
 				onClick={() => selectTheme("light__theme")}
 			/>
 
 			<ThemeOption
-				className={`${styles.theme__options__blue} ${styles[`theme__options__${preferredTheme}`]}`}
+				className={`${styles[`hero__section__content__left__theme__options--blue`]} ${
+					styles[`hero__section__content__left__theme__options--${preferredTheme}`]
+				}`}
 				onClick={() => selectTheme("blue__theme")}
 			/>
 
 			<ThemeOption
-				className={`${styles.theme__options__green} ${styles[`theme__options__${preferredTheme}`]}`}
+				className={`${styles[`hero__section__content__left__theme__options--green`]} ${
+					styles[`hero__section__content__left__theme__options--${preferredTheme}`]
+				}`}
 				onClick={() => selectTheme("green__theme")}
 			/>
 
 			<ThemeOption
-				className={`${styles.theme__options__purple} ${
-					styles[`theme__options__${preferredTheme}`]
+				className={`${styles[`hero__section__content__left__theme__options--purple`]} ${
+					styles[`hero__section__content__left__theme__options--${preferredTheme}`]
 				}`}
 				onClick={() => selectTheme("purple__theme")}
 			/>

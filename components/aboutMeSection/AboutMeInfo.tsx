@@ -1,10 +1,17 @@
 import React from "react";
 import Skills from "./Skills";
-import styles from "./scss/AboutMe.module.scss";
+import styles from "./scss/AboutMeInfo.module.scss";
+import { Skill } from "types/typings";
 
-const AboutMe = ({ topExpertise, resumeUrl, skills }) => {
+interface Props {
+	topExpertise: string;
+	resumeUrl: File;
+	skills: Skill[];
+}
+
+const AboutMeInfo = ({ topExpertise, resumeUrl, skills }: Props) => {
 	return (
-		<div className={styles.about__me}>
+		<div className={styles[`about__me__section__content__info`]}>
 			<h4>More about me</h4>
 
 			<p>
@@ -34,4 +41,4 @@ const AboutMe = ({ topExpertise, resumeUrl, skills }) => {
 	);
 };
 
-export default AboutMe;
+export default AboutMeInfo;

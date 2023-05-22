@@ -2,7 +2,7 @@ import styles from "./scss/HeroNavigation.module.scss";
 
 const HeroNavigation = () => {
 	return (
-		<ul className={styles.hero__navigation}>
+		<ul className={styles[`hero__section__content__nav__links`]}>
 			<li>
 				<a href="#contact">Contact</a>
 			</li>

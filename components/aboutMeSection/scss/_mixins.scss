@@ -1,7 +1,7 @@
 @use "sass:map";
 @import "../../../scss/variables/colors";
 
-@mixin about__me__section($themeName) {
+@mixin about-me-section($themeName) {
 	background-color: map.get($secondaryColor, $themeName);
 	border-bottom: 1px solid map.get($borderColor, $themeName);
 

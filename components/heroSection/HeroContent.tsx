@@ -16,12 +16,8 @@ const HeroContent = ({ profilePic, whatIDo }: Props) => {
 	const { preferredTheme }: { preferredTheme: PreferredTheme } = useTheme();
 
 	return (
-		<div className={`${styles.hero__content} ${styles[`hero__content__${preferredTheme}`]}`}>
-			<nav
-				className={`${styles.hero__content__nav} ${
-					styles[`hero__content__nav__${preferredTheme}`]
-				}`}
-			>
+		<div className={styles[`hero__section__content--${preferredTheme}`]}>
+			<nav className={styles[`hero__section__content__nav--${preferredTheme}`]}>
 				<TrafficLights />
 				<HeroNavigation />
 			</nav>

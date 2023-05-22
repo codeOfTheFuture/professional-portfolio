@@ -14,9 +14,9 @@ const HeroSection = ({ name, profilePic, whatIDo }: Props) => {
 	const { preferredTheme }: { preferredTheme: PreferredTheme } = useTheme();
 
 	return (
-		<section className={styles[`hero__section__${preferredTheme}`]}>
-			<div className={styles.hero__section__content}>
-				<div className={styles.hero__section__greeting}>
+		<section className={styles[`hero__section--${preferredTheme}`]}>
+			<div className={styles[`hero__section__content`]}>
+				<div className={styles[`hero__section__content__greeting`]}>
 					<h1>Hi, the name is {name}</h1>
 				</div>
 				<HeroContent profilePic={profilePic} whatIDo={whatIDo} />

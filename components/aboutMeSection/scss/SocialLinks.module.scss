@@ -1,6 +1,6 @@
 @import "../../../scss/variables/breakpoints";
 
-.social__links {
+.about__me__content__social__links {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -15,7 +15,7 @@
 		align-items: center;
 	}
 
-	.social__links__image {
+	&__image {
 		display: block;
 		width: 100%;
 		object-fit: cover;

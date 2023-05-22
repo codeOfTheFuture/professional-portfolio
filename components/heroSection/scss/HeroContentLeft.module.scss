@@ -1,4 +1,4 @@
-.hero__content__left {
+.hero__section__content__left {
 	grid-area: leftColumn;
 	padding: 6em 0;
 
@@ -6,7 +6,7 @@
 		padding: 3em 0;
 	}
 
-	.hero__content__left__profile__picture {
+	&__profile__picture {
 		display: block;
 		margin: 0 auto;
 
@@ -21,7 +21,7 @@
 		padding-top: 1.5em;
 	}
 
-	.settings__note {
+	&__settings__note {
 		font-size: 12px;
 		font-style: italic;
 		text-align: center;
