@@ -11,7 +11,7 @@ interface Props {
 
 const AboutMeInfo = ({ topExpertise, resumeUrl, skills }: Props) => {
 	return (
-		<div className={styles[`about__me__section__content__info`]}>
+		<div className={styles[`content__info`]}>
 			<h4>More about me</h4>
 
 			<p>

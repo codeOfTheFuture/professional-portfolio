@@ -1,4 +1,4 @@
-import AboutMe from "./AboutMeInfo";
+import AboutMeInfo from "./AboutMeInfo";
 import SocialLinks from "./SocialLinks";
 import styles from "./scss/AboutMeSection.module.scss";
 import { useTheme } from "../../context/ThemeContext";
@@ -19,7 +19,7 @@ const AboutMeSection = ({ topExpertise, resumeUrl, skills, socials, image }: Pro
 	return (
 		<section className={styles[`about__me__section--${preferredTheme}`]}>
 			<div className={styles[`about__me__section__content`]}>
-				<AboutMe topExpertise={topExpertise} resumeUrl={resumeUrl} skills={skills} />
+				<AboutMeInfo topExpertise={topExpertise} resumeUrl={resumeUrl} skills={skills} />
 				<SocialLinks socials={socials} image={image} />
 			</div>
 		</section>

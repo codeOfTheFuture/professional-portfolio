@@ -20,6 +20,7 @@ const Carousel = ({ projects }: Props) => {
 
 	return (
 		<Swiper
+			className={styles[`swiper--${preferredTheme}`]}
 			effect={"cube"}
 			grabCursor={true}
 			cubeEffect={{
@@ -36,18 +37,14 @@ const Carousel = ({ projects }: Props) => {
 			speed={800}
 			loop={true}
 			modules={[EffectCube, Pagination, Navigation]}
-			className={`${styles.swiper} ${styles[`swiper__${preferredTheme}`]}`}
 		>
 			{projects.map(project => (
-				<SwiperSlide
-					key={project._id}
-					className={`${styles.swiper__slide} ${styles[`swiper__slide__${preferredTheme}`]}`}
-				>
+				<SwiperSlide key={project._id} className={`${styles[`swiper__slide`]}`}>
 					<Project project={project} />
 				</SwiperSlide>
 			))}
-			<div className={`swiper-button-next ${styles.swiper__chevron__next}`}></div>
-			<div className={`swiper-button-prev ${styles.swiper__chevron__prev}`}></div>
+			<div className={`swiper-button-next ${styles[`swiper__chevron__next`]}`}></div>
+			<div className={`swiper-button-prev ${styles[`swiper__chevron__prev`]}`}></div>
 		</Swiper>
 	);
 };

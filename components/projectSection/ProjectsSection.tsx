@@ -11,8 +11,8 @@ const ProjectsSection = ({ projects }: Props) => {
 	const { preferredTheme }: { preferredTheme: PreferredTheme } = useTheme();
 
 	return (
-		<section className={`${styles[`projects__section__${preferredTheme}`]}`}>
-			<div className={styles.projects}>
+		<section className={`${styles[`projects__section--${preferredTheme}`]}`}>
+			<div className={styles[`projects__section__content`]}>
 				<h3>Projects</h3>
 				<Carousel projects={projects} />
 			</div>

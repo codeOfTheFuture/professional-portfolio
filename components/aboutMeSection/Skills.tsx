@@ -10,7 +10,7 @@ const Skills = ({ skillsList }: Props) => {
 	const { preferredTheme }: { preferredTheme: PreferredTheme } = useTheme();
 
 	return (
-		<ul className={styles[`about__me__section__content__info__skills--${preferredTheme}`]}>
+		<ul className={styles[`content__info__skills--${preferredTheme}`]}>
 			{skillsList.map((skill: Skill) => (
 				<li key={skill._id}>{skill.title}</li>
 			))}

@@ -33,45 +33,40 @@ const ContactForm = () => {
 
 	return (
 		<form
-			id={styles.contact__section__form}
-			className={styles[`contact__section__${preferredTheme}`]}
+			id="contact__section__form"
+			className={styles[`contact__section__form`]}
 			method="POST"
 			action="https://formspree.io/xyynyqzr"
 			target="_blank"
 			onSubmit={formSubmit}
 		>
-			<label htmlFor="name" className={styles[`contact__section__form__label__${preferredTheme}`]}>
+			<label htmlFor="name" className={styles[`contact__section__form__label--${preferredTheme}`]}>
 				Name
 			</label>
-			<input className={styles.contact__section__form__input} type="text" name="name" />
+			<input className={styles[`contact__section__form__input`]} type="text" name="name" />
 
 			<label
 				htmlFor="subject"
-				className={styles[`contact__section__form__label__${preferredTheme}`]}
+				className={styles[`contact__section__form__label--${preferredTheme}`]}
 			>
 				Subject
 			</label>
-			<input className={styles.contact__section__form__input} type="text" name="subject" />
+			<input className={styles[`contact__section__form__input`]} type="text" name="subject" />
 
-			<label htmlFor="email" className={styles[`contact__section__form__label__${preferredTheme}`]}>
+			<label htmlFor="email" className={styles[`contact__section__form__label--${preferredTheme}`]}>
 				Email
 			</label>
-			<input className={styles.contact__section__form__input} type="text" name="email" />
+			<input className={styles[`contact__section__form__input`]} type="text" name="email" />
 
 			<label
 				htmlFor="message"
-				className={styles[`contact__section__form__label__${preferredTheme}`]}
+				className={styles[`contact__section__form__label--${preferredTheme}`]}
 			>
 				Message
 			</label>
-			<textarea className={styles.contact__section__form__input}></textarea>
+			<textarea className={styles[`contact__section__form__input`]}></textarea>
 
-			<button
-				className={`${styles.contact__section__form__btn} ${
-					styles[`contact__section__form__btn__${preferredTheme}`]
-				}`}
-				type="submit"
-			>
+			<button className={styles[`contact__section__form__btn--${preferredTheme}`]} type="submit">
 				Send
 			</button>
 		</form>

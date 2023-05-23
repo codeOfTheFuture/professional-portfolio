@@ -1,6 +1,6 @@
 @use "./mixins" as contactSection;
 
-#contact__section__form {
+.contact__section__form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -9,28 +9,32 @@
 	padding: 15px;
 	margin-bottom: 100px;
 
-	label {
+	&__label {
 		line-height: 2.7em;
 		padding: 1.5em 0;
+
+		&--light__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("light__theme");
+		}
+
+		&--blue__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("blue__theme");
+		}
+
+		&--green__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("green__theme");
+		}
+
+		&--purple__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("purple__theme");
+		}
 	}
 
-	.contact__section__form__label__light__theme {
-		@include contactSection.content__section__form__label("light__theme");
-	}
-
-	.contact__section__form__label__blue__theme {
-		@include contactSection.content__section__form__label("blue__theme");
-	}
-
-	.contact__section__form__label__green__theme {
-		@include contactSection.content__section__form__label("green__theme");
-	}
-
-	.contact__section__form__label__purple__theme {
-		@include contactSection.content__section__form__label("purple__theme");
-	}
-
-	.contact__section__form__input {
+	&__input {
 		width: 100%;
 		box-sizing: border-box;
 		padding: 15px 5px;
@@ -44,7 +48,7 @@
 		font-size: 14px;
 	}
 
-	.contact__section__form__btn {
+	&__btn {
 		margin: 2em 0;
 		width: 100%;
 		padding: 10px 0;
@@ -52,34 +56,25 @@
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
-	}
 
-	.contact__section__form__btn__light__theme {
-		@include contactSection.content__section__form__btn("light__theme");
-	}
-	.contact__section__form__btn__blue__theme {
-		@include contactSection.content__section__form__btn("blue__theme");
-	}
-	.contact__section__form__btn__green__theme {
-		@include contactSection.content__section__form__btn("green__theme");
-	}
-	.contact__section__form__btn__purple__theme {
-		@include contactSection.content__section__form__btn("purple__theme");
-	}
-}
+		&--light__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("light__theme");
+		}
 
-.contact__section__light__theme {
-	@include contactSection.contact__section("light__theme");
-}
+		&--blue__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("blue__theme");
+		}
 
-.contact__section__blue__theme {
-	@include contactSection.contact__section("blue__theme");
-}
+		&--green__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("green__theme");
+		}
 
-.contact__section__green__theme {
-	@include contactSection.contact__section("green__theme");
-}
-
-.contact__section__purple__theme {
-	@include contactSection.contact__section("purple__theme");
+		&--purple__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("purple__theme");
+		}
+	}
 }

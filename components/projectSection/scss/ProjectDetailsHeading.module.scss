@@ -8,7 +8,7 @@
 		width: 100%;
 	}
 
-	.project__details__heading__title {
+	&__title {
 		text-align: center;
 		padding: 1rem 0;
 
@@ -21,7 +21,7 @@
 		}
 	}
 
-	.project__details__heading__toggle {
+	&__toggle {
 		display: none;
 
 		@media screen and (max-width: $large-desktop-breakpoint) {

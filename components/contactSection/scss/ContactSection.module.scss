@@ -2,32 +2,37 @@
 @import "../../../scss/variables/breakpoints";
 
 .contact__section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
 
 	@media screen and (max-width: $large-desktop-breakpoint) {
-		width: 95%;
-		height: 100%;
 		overflow-x: hidden;
 	}
 
 	h3 {
 		text-align: center;
-		margin-top: 2em;
+		padding: 2em;
 	}
-}
 
-.contact__section__light__theme {
-	@include contactSection.contact__section("light__theme");
-}
-.contact__section__blue__theme {
-	@include contactSection.contact__section("blue__theme");
-}
-.contact__section__green__theme {
-	@include contactSection.contact__section("green__theme");
-}
-.contact__section__purple__theme {
-	@include contactSection.contact__section("purple__theme");
+	&--light__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("light__theme");
+	}
+
+	&--blue__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("blue__theme");
+	}
+
+	&--green__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("green__theme");
+	}
+
+	&--purple__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("purple__theme");
+	}
 }

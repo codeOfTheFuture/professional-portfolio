@@ -1,6 +1,6 @@
 @use "../../../scss/mixins" as globalMixins;
 
-.hero__section__content__nav__traffic__lights {
+.traffic__lights {
 	display: flex;
 	padding: 10px;
 
@@ -14,17 +14,17 @@
 		@include globalMixins.box-shadow;
 
 		&--red {
-			@extend .hero__section__content__nav__traffic__lights__dots;
+			@extend .traffic__lights__dots;
 			background-color: #fc6058;
 		}
 
 		&--yellow {
-			@extend .hero__section__content__nav__traffic__lights__dots;
+			@extend .traffic__lights__dots;
 			background-color: #fec02f;
 		}
 
 		&--green {
-			@extend .hero__section__content__nav__traffic__lights__dots;
+			@extend .traffic__lights__dots;
 			background-color: #2aca3e;
 		}
 	}

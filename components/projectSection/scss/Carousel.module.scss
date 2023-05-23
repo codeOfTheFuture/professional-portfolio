@@ -8,7 +8,27 @@
 	width: 100%;
 	margin-bottom: 2em;
 
-	.swiper__slide {
+	&--light__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("light__theme");
+	}
+
+	&--blue__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("blue__theme");
+	}
+
+	&--green__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("green__theme");
+	}
+
+	&--purple__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("purple__theme");
+	}
+
+	&__slide {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		justify-content: center;
@@ -21,39 +41,10 @@
 			margin-bottom: 2em;
 			grid-template-columns: 1fr;
 		}
-
-		.swiper__slide__light__theme {
-			@include projectsSection.project("light__theme");
-		}
-
-		.swiper__slide__blue__theme {
-			@include projectsSection.project("blue__theme");
-		}
-
-		.swiper__slide__green__theme {
-			@include projectsSection.project("green__theme");
-		}
-
-		.swiper__slide__purple__theme {
-			@include projectsSection.project("purple__theme");
-		}
 	}
 
 	.swiper__chevron__next,
 	.swiper__chevron__prev {
 		color: #17a2b8;
 	}
-}
-
-.swiper__light__theme {
-	@include projectsSection.swiper("light__theme");
-}
-.swiper__blue__theme {
-	@include projectsSection.swiper("blue__theme");
-}
-.swiper__green__theme {
-	@include projectsSection.swiper("green__theme");
-}
-.swiper__purple__theme {
-	@include projectsSection.swiper("purple__theme");
 }

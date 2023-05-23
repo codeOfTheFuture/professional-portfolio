@@ -1,6 +1,6 @@
 @use "./mixins" as aboutMeSection;
 
-.about__me__section__content__info__skills {
+.content__info__skills {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 0.25rem;
@@ -11,22 +11,22 @@
 	}
 
 	&--light__theme {
-		@extend .about__me__section__content__info__skills;
+		@extend .content__info__skills;
 		@include aboutMeSection.skills("light__theme");
 	}
 
 	&--blue__theme {
-		@extend .about__me__section__content__info__skills;
+		@extend .content__info__skills;
 		@include aboutMeSection.skills("blue__theme");
 	}
 
 	&--green__theme {
-		@extend .about__me__section__content__info__skills;
+		@extend .content__info__skills;
 		@include aboutMeSection.skills("green__theme");
 	}
 
 	&--purple__theme {
-		@extend .about__me__section__content__info__skills;
+		@extend .content__info__skills;
 		@include aboutMeSection.skills("purple__theme");
 	}
 }

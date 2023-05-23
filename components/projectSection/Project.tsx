@@ -27,9 +27,9 @@ const Project = ({ project }: Props) => {
 
 	return (
 		<>
-			<div className={styles.project__header}>
+			<div className={styles[`project__header`]}>
 				<h4>{project.title}</h4>
-				<a target="_blank" href={project.linkToBuild} className={styles.project__image}>
+				<a target="_blank" href={project.linkToBuild} className={styles[`project__header__image`]}>
 					<Image src={urlFor(project.image).url()} alt={project.title} width={350} height={300} />
 				</a>
 				<a target="_blank" href={project.linkToGithub}>
@@ -37,7 +37,7 @@ const Project = ({ project }: Props) => {
 				</a>
 			</div>
 
-			<div className={`${styles.project__details} ${styles[`project__${preferredTheme}`]}`}>
+			<div className={styles[`project__details--${preferredTheme}`]}>
 				<div>
 					<ProjectDetailsHeading
 						title="Project Description:"
