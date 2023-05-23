@@ -1,23 +1,24 @@
 /**
- * This configuration is used to for the Sanity Studio that’s mounted on the `\pages\studio\[[...index]].tsx` route
+ * @file_overview Sanity configuration file for Next.js app
+ * @module sanity.config
  */
 
-import { visionTool } from "@sanity/vision";
-import { defineConfig } from "sanity";
+import { Config, ImageUrlBuilder, defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
+import { SanityClient, createClient } from "next-sanity";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schemas/schema";
-import { ClientConfig, SanityClient, createClient } from "next-sanity";
 import createImageUrlBuilder from "@sanity/image-url";
-import { SanityClientLike, SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 /**
- * config is the configuration object for the Sanity client.
- * @type {ClientConfig}
+ * Configuration object for Sanity CMS.
+ * @type {Config}
  */
-const config: ClientConfig = defineConfig({
+const config: Config = defineConfig({
 	basePath: "/studio",
 	projectId,
 	dataset,
@@ -32,17 +33,17 @@ const config: ClientConfig = defineConfig({
 });
 
 /**
- * sanityClient is an instance of the SanityClient used to interact with the Sanity API.
+ * Instance of the Sanity client for querying and mutating data.
  * @type {SanityClient}
  */
 const sanityClient: SanityClient = createClient(config);
 
 /**
- * urlFor is a function that generates an image URL from a SanityImageSource.
+ * Helper function to build URLs for Sanity images.
  * @param {SanityImageSource} source - The source of the image.
- * @returns {string} The generated image URL.
+ * @returns {ImageUrlBuilder} - Image URL builder instance.
  */
-const urlFor = (source: SanityImageSource) =>
-	createImageUrlBuilder(config as SanityClientLike).image(source);
+const urlFor = (source: SanityImageSource): ImageUrlBuilder =>
+	createImageUrlBuilder(config).image(source);
 
 export { config, sanityClient, urlFor };
