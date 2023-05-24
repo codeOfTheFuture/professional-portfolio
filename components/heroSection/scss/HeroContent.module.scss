@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "../../../scss/mixins" as globalMixins;
+@use "./mixins" as heroSection;
+@use "../../../scss/variables/colors";
+
+.hero__section__content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"nav nav"
+		"leftColumn rightColumn";
+	border-radius: 5px 5px 0 0;
+
+	@include globalMixins.box-shadow;
+
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"nav"
+			"leftColumn"
+			"rightColumn";
+	}
+
+	&--light__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("light__theme");
+	}
+
+	&--blue__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("blue__theme");
+	}
+
+	&--green__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("green__theme");
+	}
+
+	&--purple__theme {
+		@extend .hero__section__content;
+		@include heroSection.hero-content("purple__theme");
+	}
+
+	&__nav {
+		border-radius: 5px 5px 0 0;
+		grid-area: nav;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&--light__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("light__theme");
+		}
+
+		&--blue__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("blue__theme");
+		}
+
+		&--green__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("green__theme");
+		}
+
+		&--purple__theme {
+			@extend .hero__section__content__nav;
+			@include heroSection.hero-content-nav("purple__theme");
+		}
+	}
+}

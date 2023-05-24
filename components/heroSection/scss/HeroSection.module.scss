@@ -1,0 +1,41 @@
+@use "./mixins" as heroSection;
+@import "../../../scss/variables/breakpoints";
+
+.hero__section {
+	&--light__theme {
+		@include heroSection.hero-section("light__theme");
+	}
+
+	&--blue__theme {
+		@include heroSection.hero-section("blue__theme");
+	}
+
+	&--green__theme {
+		@include heroSection.hero-section("green__theme");
+	}
+
+	&--purple__theme {
+		@include heroSection.hero-section("purple__theme");
+	}
+
+	&__content {
+		width: 100%;
+		margin: 0 auto;
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			width: 95%;
+			// height: 100%;
+			overflow-x: hidden;
+		}
+
+		@media screen and (min-width: 1800px) {
+			width: 70%;
+		}
+
+		&__greeting {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 3em;
+		}
+	}
+}

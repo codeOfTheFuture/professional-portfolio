@@ -1,0 +1,35 @@
+@use "./mixins" as contactSection;
+@import "../../../scss/variables/breakpoints";
+
+.contact__section {
+	padding-bottom: 1em;
+
+	@media screen and (max-width: $large-desktop-breakpoint) {
+		overflow-x: hidden;
+	}
+
+	h3 {
+		text-align: center;
+		padding: 2em;
+	}
+
+	&--light__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("light__theme");
+	}
+
+	&--blue__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("blue__theme");
+	}
+
+	&--green__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("green__theme");
+	}
+
+	&--purple__theme {
+		@extend .contact__section;
+		@include contactSection.contact-section("purple__theme");
+	}
+}

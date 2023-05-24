@@ -1,0 +1,41 @@
+@use "./mixins" as aboutMeSection;
+@import "../../../scss/variables/breakpoints";
+
+.about__me__section {
+	&--light__theme {
+		@include aboutMeSection.about-me-section("light__theme");
+	}
+
+	&--blue__theme {
+		@include aboutMeSection.about-me-section("blue__theme");
+	}
+
+	&--green__theme {
+		@include aboutMeSection.about-me-section("green__theme");
+	}
+
+	&--purple__theme {
+		@include aboutMeSection.about-me-section("purple__theme");
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		padding: 50px 0;
+
+		margin: 0 auto;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			padding: 0;
+			gap: 20px;
+
+			width: 95%;
+			height: 100%;
+			padding: 1em 0;
+		}
+
+		@media screen and (min-width: 1800px) {
+			width: 70%;
+		}
+	}
+}

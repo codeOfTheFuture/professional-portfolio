@@ -1,0 +1,56 @@
+@use "sass:map";
+@import "../../../scss/variables/colors";
+
+@mixin hero-section($themeName) {
+	background-color: map.get($mainColor, $themeName);
+	border-bottom: 1px solid map.get($borderColor, $themeName);
+	color: map.get($mainText, $themeName);
+
+	p {
+		color: map.get($secondaryText, $themeName);
+	}
+}
+
+@mixin hero-content($themeName) {
+	background-color: map.get($secondaryColor, $themeName);
+	border: 1px solid map.get($borderColor, $themeName);
+}
+
+@mixin hero-content-nav($themeName) {
+	background-color: map.get($mainColor, $themeName);
+	border-bottom: 1px solid map.get($borderColor, $themeName);
+}
+
+@mixin theme-option($themeName) {
+	border: 2px solid map.get($themeDotBorder, $themeName);
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	margin: 5px;
+
+	cursor: pointer;
+
+	&:hover {
+		border-width: 5px;
+	}
+}
+
+@mixin preview-shadow($themeName) {
+	background-color: map.get($previewShadow, $themeName);
+}
+
+@mixin preview-content($themeName) {
+	background-color: map.get($previewBg, $themeName);
+
+	h3 {
+		color: map.get($mainText, $themeName);
+	}
+
+	p {
+		color: map.get($secondaryText, $themeName);
+	}
+}
+
+@mixin preview-corner($themeName) {
+	background-color: map.get($secondaryColor, $themeName);
+}

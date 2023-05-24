@@ -1,0 +1,50 @@
+@use "mixins" as projectsSection;
+@import "../../../scss/variables/breakpoints";
+
+.swiper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2em;
+
+	&--light__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("light__theme");
+	}
+
+	&--blue__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("blue__theme");
+	}
+
+	&--green__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("green__theme");
+	}
+
+	&--purple__theme {
+		@extend .swiper;
+		@include projectsSection.swiper("purple__theme");
+	}
+
+	&__slide {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		align-items: center;
+		padding: 2.5em;
+		box-sizing: border-box;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			padding: 0;
+			margin-bottom: 2em;
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.swiper__chevron__next,
+	.swiper__chevron__prev {
+		color: #17a2b8;
+	}
+}

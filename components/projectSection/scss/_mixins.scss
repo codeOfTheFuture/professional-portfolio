@@ -1,0 +1,37 @@
+@use "sass:map";
+@import "../../../scss/variables/colors";
+
+@mixin projects-section($themeName) {
+	background-color: map.get($mainColor, $themeName);
+	border-bottom: 1px solid map.get($borderColor, $themeName);
+
+	h3,
+	h4,
+	h5 {
+		color: map.get($mainText, $themeName);
+	}
+
+	p,
+	li {
+		color: map.get($secondaryText, $themeName);
+	}
+}
+
+@mixin swiper($themeName) {
+	background-color: map.get($mainColor, $themeName);
+}
+
+@mixin project-details($themeName) {
+	background-color: map.get($secondaryColor, $themeName);
+	border: 1px solid map.get($borderColor, $themeName);
+}
+
+@mixin chevron($themeName) {
+	color: map.get($secondaryColor, $themeName);
+	background-color: map.get($mainText, $themeName);
+	border: 2px solid map.get($borderColor, $themeName);
+
+	&:hover {
+		color: map.get($mainColor, $themeName);
+	}
+}

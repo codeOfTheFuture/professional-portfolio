@@ -1,0 +1,130 @@
+@use "./mixins" as heroSection;
+@import "../../../scss/variables/breakpoints";
+
+.preview {
+	grid-area: rightColumn;
+	display: grid;
+	align-content: center;
+	padding: 50px 0;
+
+	@media screen and (max-width: 800px) {
+		justify-content: center;
+		padding: 0;
+	}
+
+	&__shadow {
+		width: 300px;
+		height: 200px;
+		padding-left: 30px;
+		padding-top: 30px;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			height: 240px;
+			padding-left: 10px;
+			padding-top: 10px;
+			margin-bottom: 50px;
+			margin-right: 20px;
+		}
+
+		&--light__theme {
+			@extend .preview__shadow;
+			@include heroSection.preview-shadow("light__theme");
+		}
+		&--blue__theme {
+			@extend .preview__shadow;
+			@include heroSection.preview-shadow("blue__theme");
+		}
+		&--green__theme {
+			@extend .preview__shadow;
+			@include heroSection.preview-shadow("green__theme");
+		}
+		&--purple__theme {
+			@extend .preview__shadow;
+			@include heroSection.preview-shadow("purple__theme");
+		}
+	}
+
+	&__content {
+		width: 300px;
+		border: 1.5px solid #17a2b8;
+		padding: 15px;
+		position: relative;
+
+		@media screen and (max-width: $large-desktop-breakpoint) {
+			width: 285px;
+			margin-bottom: 50px;
+		}
+
+		h3 {
+			padding: 0.7em 0;
+		}
+
+		p {
+			padding: 1em 0;
+		}
+
+		&--light__theme {
+			@extend .preview__content;
+			@include heroSection.preview-content("light__theme");
+		}
+		&--blue__theme {
+			@extend .preview__content;
+			@include heroSection.preview-content("blue__theme");
+		}
+		&--green__theme {
+			@extend .preview__content;
+			@include heroSection.preview-content("green__theme");
+		}
+		&--purple__theme {
+			@extend .preview__content;
+			@include heroSection.preview-content("purple__theme");
+		}
+
+		&__corner {
+			position: absolute;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			border: 1.5px solid #17a2b8;
+
+			&--top__left {
+				@extend .preview__content__corner;
+				top: -5px;
+				left: -5px;
+			}
+
+			&--top__right {
+				@extend .preview__content__corner;
+				top: -5px;
+				right: -5px;
+			}
+
+			&--bottom__right {
+				@extend .preview__content__corner;
+				bottom: -5px;
+				right: -5px;
+			}
+
+			&--bottom__left {
+				@extend .preview__content__corner;
+				bottom: -5px;
+				left: -5px;
+			}
+		}
+
+		&__corner {
+			&--light__theme {
+				@include heroSection.preview-corner("light__theme");
+			}
+			&--blue__theme {
+				@include heroSection.preview-corner("blue__theme");
+			}
+			&--green__theme {
+				@include heroSection.preview-corner("green__theme");
+			}
+			&--purple__theme {
+				@include heroSection.preview-corner("purple__theme");
+			}
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@use "./mixins" as contactSection;
+
+.contact__section__form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 15px;
+	margin-bottom: 100px;
+
+	&__label {
+		line-height: 2.7em;
+		padding: 1.5em 0;
+
+		&--light__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("light__theme");
+		}
+
+		&--blue__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("blue__theme");
+		}
+
+		&--green__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("green__theme");
+		}
+
+		&--purple__theme {
+			@extend .contact__section__form__label;
+			@include contactSection.content-section-form-label("purple__theme");
+		}
+	}
+
+	&__input {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 15px 5px;
+		border-radius: 5px;
+		font-size: 14px;
+		margin: 0.5em 0;
+	}
+
+	textarea {
+		min-height: 150px;
+		font-size: 14px;
+	}
+
+	&__btn {
+		margin: 2em 0;
+		width: 100%;
+		padding: 10px 0;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+
+		&--light__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("light__theme");
+		}
+
+		&--blue__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("blue__theme");
+		}
+
+		&--green__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("green__theme");
+		}
+
+		&--purple__theme {
+			@extend .contact__section__form__btn;
+			@include contactSection.content-section-form-btn("purple__theme");
+		}
+	}
+}

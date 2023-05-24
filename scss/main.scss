@@ -1,0 +1,8 @@
+@use "variables" as *;
+@use "base" as *;
+@use "mixins";
+
+@use "../components/heroSection/scss" as heroSection;
+@use "../components/aboutMeSection/scss" as aboutMeSection;
+@use "../components/projectSection/scss" as projectsSection;
+@use "../components/contactSection/scss" as contactSection;
