@@ -2,10 +2,7 @@
 @import "../../../scss/variables/breakpoints";
 
 .contact__section {
-	// display: flex;
-	// flex-direction: column;
-	// justify-content: center;
-	// align-items: center;
+	padding-bottom: 1em;
 
 	@media screen and (max-width: $large-desktop-breakpoint) {
 		overflow-x: hidden;
