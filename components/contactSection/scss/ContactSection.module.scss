@@ -2,8 +2,6 @@
 @import "../../../scss/variables/breakpoints";
 
 .contact__section {
-	padding-bottom: 1em;
-
 	@media screen and (max-width: $large-desktop-breakpoint) {
 		overflow-x: hidden;
 	}

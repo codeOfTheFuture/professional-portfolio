@@ -11,6 +11,8 @@ import fetchResumeUrl from "../utils/fetchResumeUrl";
 import Head from "next/head";
 import { PageInfo, Project, Skill, Social } from "types/typings";
 
+import styles from "./styles/index.module.scss";
+
 interface Props {
 	pageInfo: PageInfo;
 	socials: Social[];
@@ -23,7 +25,7 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 	const { name, profilePic, whatIDo, topExpertise, image } = pageInfo;
 
 	return (
-		<>
+		<div className={styles["app"]}>
 			<Head>
 				<title>Jeff Oliver | Professional Portfolio</title>
 
@@ -39,7 +41,7 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 			/>
 			<SectionPortfolio projects={projects} />
 			<SectionContact />
-		</>
+		</div>
 	);
 };
 
