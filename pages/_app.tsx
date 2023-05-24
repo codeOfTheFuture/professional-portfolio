@@ -5,7 +5,7 @@ import "../scss/main.scss";
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<ThemeProvider>
-			<Component {...pageProps} />;
+			<Component {...pageProps} />
 		</ThemeProvider>
 	);
 };
