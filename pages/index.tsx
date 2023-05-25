@@ -25,7 +25,7 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 	const { name, profilePic, whatIDo, topExpertise, image } = pageInfo;
 
 	return (
-		<div className={styles["app"]}>
+		<>
 			<Head>
 				<title>Jeff Oliver | Professional Portfolio</title>
 
@@ -41,7 +41,7 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 			/>
 			<SectionPortfolio projects={projects} />
 			<SectionContact />
-		</div>
+		</>
 	);
 };
 
