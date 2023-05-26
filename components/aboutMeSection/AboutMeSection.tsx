@@ -7,7 +7,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface Props {
 	topExpertise: string;
-	resumeUrl: File;
+	resumeUrl: string;
 	skills: Skill[];
 	socials: Social[];
 	image: SanityImageSource;

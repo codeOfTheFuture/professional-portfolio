@@ -2,6 +2,7 @@ import { urlFor } from "sanity.config";
 import { Social } from "types/typings";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import styles from "./scss/SocialLinks.module.scss";
+import Image from "next/image";
 
 interface Props {
 	socials: Social[];
@@ -11,13 +12,17 @@ interface Props {
 const SocialLinks = ({ socials, image }: Props) => {
 	return (
 		<div className={styles[`content__social__links`]}>
-			<img
-				className={styles[`content__social__links__image`]}
-				src={urlFor(image).url()}
-				alt="Programming on a computer with multiple screens"
-			/>
-			<h3>Find me on Github & Linkedin</h3>
+			<div className={styles[`content__social__links__image__wrapper`]}>
+				<Image
+					className={styles[`content__social__links__image`]}
+					src={urlFor(image).url()}
+					alt="Programming on a computer with multiple screens"
+					fill
+				/>
+			</div>
+
 			<div>
+				<h3>Find me on Github & Linkedin</h3>
 				<a target="_blank" href={socials[0].url}>
 					{socials[0]?.title}
 				</a>

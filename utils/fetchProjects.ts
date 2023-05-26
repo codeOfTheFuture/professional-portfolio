@@ -9,8 +9,19 @@ import { Project } from "types/typings";
 const fetchProjects = async (): Promise<Project[]> => {
 	const query = groq`
     *[_type == "project"] {
-      ...,
-      techStack[]->
+      _id,
+      title,
+      image,
+      linkToGithub,
+      linkToBuild,
+      description,
+      bulletPoints,
+      order,
+      techStack[]->{
+        _id,
+        order,
+        title
+      }
     }
   `;
 

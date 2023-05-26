@@ -6,18 +6,21 @@
 		padding: 3em 0;
 	}
 
-	&__profile__picture {
-		display: block;
-		margin: 0 auto;
-
+	&__profile__picture__wrapper {
+		position: relative;
+		margin-inline: auto;
+		margin-bottom: 1.5em;
 		width: 200px;
 		height: 200px;
+	}
+
+	&__profile__picture {
+		display: block;
 		object-fit: cover;
 	}
 
 	h5 {
 		text-align: center;
-		padding-top: 1.5em;
 	}
 
 	&__settings__note {

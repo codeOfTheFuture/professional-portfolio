@@ -29,8 +29,17 @@ const Project = ({ project }: Props) => {
 		<>
 			<div className={styles[`project__header`]}>
 				<h4>{project.title}</h4>
-				<a target="_blank" href={project.linkToBuild} className={styles[`project__header__image`]}>
-					<Image src={urlFor(project.image).url()} alt={project.title} width={350} height={300} />
+				<a
+					target="_blank"
+					href={project.linkToBuild}
+					className={styles[`project__header__image__wrapper`]}
+				>
+					<Image
+						className={styles[`project__header__image`]}
+						src={urlFor(project.image).url()}
+						alt={project.title}
+						fill
+					/>
 				</a>
 				<a target="_blank" href={project.linkToGithub}>
 					View Github

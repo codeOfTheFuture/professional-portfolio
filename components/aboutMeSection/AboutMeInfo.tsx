@@ -5,11 +5,13 @@ import { Skill } from "types/typings";
 
 interface Props {
 	topExpertise: string;
-	resumeUrl: File;
+	resumeUrl: string;
 	skills: Skill[];
 }
 
 const AboutMeInfo = ({ topExpertise, resumeUrl, skills }: Props) => {
+	console.log("resume url: ", resumeUrl);
+
 	return (
 		<div className={styles[`content__info`]}>
 			<h4>More about me</h4>
@@ -29,12 +31,11 @@ const AboutMeInfo = ({ topExpertise, resumeUrl, skills }: Props) => {
 
 			<h4>Top Expertise</h4>
 
-			<p>
-				{topExpertise} <br />
-				{/* <a target="_blank" href={resumeUrl.resumeUrl}>
-          Download Resume
-        </a> */}
-			</p>
+			<p>{topExpertise}</p>
+
+			<a target="_blank" href={resumeUrl}>
+				Download Resume
+			</a>
 
 			<Skills skillsList={skills} />
 		</div>
