@@ -2,6 +2,7 @@ import ThemeOptions from "./ThemeOptions";
 import { urlFor } from "sanity.config";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import styles from "./scss/HeroContentLeft.module.scss";
+import Image from "next/image";
 
 interface Props {
 	profilePic: SanityImageSource;
@@ -10,11 +11,15 @@ interface Props {
 const HeroContentLeft = ({ profilePic }: Props) => {
 	return (
 		<div className={styles[`content__left`]}>
-			<img
-				className={styles[`content__left__profile__picture`]}
-				src={urlFor(profilePic).url()}
-				alt="Picture of Jeff Oliver"
-			/>
+			<div className={styles[`content__left__profile__picture__wrapper`]}>
+				<Image
+					className={styles[`content__left__profile__picture`]}
+					src={urlFor(profilePic).url()}
+					alt="Picture of Jeff Oliver"
+					fill
+				/>
+			</div>
+
 			<h5>Personalize Theme</h5>
 
 			<ThemeOptions />

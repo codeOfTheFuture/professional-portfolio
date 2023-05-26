@@ -29,7 +29,13 @@ const Carousel = ({ projects }: Props) => {
 				shadowOffset: 10,
 				shadowScale: 0.94,
 			}}
-			pagination={true}
+			pagination={{
+				enabled: true,
+				el: ".swiper-pagination",
+				bulletClass: "swiper-pagination-bullet",
+				bulletActiveClass: styles[`swiper__pagination__bullet__active`],
+				clickable: true,
+			}}
 			navigation={{
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
@@ -43,6 +49,11 @@ const Carousel = ({ projects }: Props) => {
 					<Project project={project} />
 				</SwiperSlide>
 			))}
+			<div className={`swiper-pagination ${styles[`swiper__pagination`]}`}>
+				{projects.map(project => (
+					<span key={project._id} className={`.swiper-pagination-bullet`}></span>
+				))}
+			</div>
 			<div className={`swiper-button-next ${styles[`swiper__chevron__next`]}`}></div>
 			<div className={`swiper-button-prev ${styles[`swiper__chevron__prev`]}`}></div>
 		</Swiper>

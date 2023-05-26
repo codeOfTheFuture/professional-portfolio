@@ -24,6 +24,7 @@ const config: Config = defineConfig({
 	dataset,
 	// Add and edit the content schema in the './sanity/schemas' folder
 	schema,
+	apiVersion,
 	plugins: [
 		deskTool(),
 		// Vision is a tool that lets you query your content with GROQ in the studio

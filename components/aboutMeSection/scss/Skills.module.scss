@@ -3,11 +3,11 @@
 .content__info__skills {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 0.25rem;
-	padding: 2em 0;
+	padding: 1em 0;
 
 	li {
 		text-align: center;
+		padding: 0.5em 0;
 	}
 
 	&--light__theme {

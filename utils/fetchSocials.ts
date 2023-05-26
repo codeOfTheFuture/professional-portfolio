@@ -9,7 +9,11 @@ import { Social } from "types/typings";
  */
 const fetchSocials = async (): Promise<Social[]> => {
 	const query = groq`
-    *[_type == "social"]
+    *[_type == "social"] {
+      _id,
+      title,
+      url
+    }
   `;
 
 	return await sanityClient.fetch(query);

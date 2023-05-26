@@ -31,9 +31,9 @@
 	h6,
 	strong {
 		font-family: "Russo One", sans-serif;
+		padding: 0.5em 0;
 	}
 
-	// Secondary text color
 	p,
 	li,
 	span,
@@ -43,13 +43,17 @@
 		font-size: 1em;
 		font-family: "Roboto Mono", monospace;
 		line-height: 1.5rem;
+		padding: 1em 0;
 	}
 
 	// Global link styles
 	a {
+		display: block;
 		text-decoration: none;
 		color: #17a2b8;
 		font-size: 1.5em;
+		font-family: "Roboto Mono", monospace;
+		padding: 0.5em 0;
 	}
 
 	// Global unordered list styles

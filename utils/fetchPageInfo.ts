@@ -8,7 +8,16 @@ import { PageInfo } from "types/typings";
  */
 const fetchPageInfo = async (): Promise<PageInfo> => {
 	const query: string = groq`
-    *[_type == "pageInfo"][0]
+    *[_type == "pageInfo"][0] {
+      name,
+      role,
+      profilePic,
+      whatIDo,
+      aboutMe,
+      topExpertise,
+      image,
+      "resumeUrl": resume.asset->url
+    }
   `;
 
 	return await sanityClient.fetch(query);

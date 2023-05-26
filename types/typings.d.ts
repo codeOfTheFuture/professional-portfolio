@@ -30,20 +30,14 @@ interface ThemeContext {
  * @interface
  */
 interface PageInfo {
-	_id: string;
-	_rev: string;
-	_type: string;
-	_createdAt: string;
-	_updatedAt: string;
 	name: string;
 	role: string;
 	profilePic: SanityImageSource;
 	whatIDo: string;
 	aboutMe: string;
 	topExpertise: string;
-	resumeUrl: File;
+	resumeUrl: string;
 	image: SanityImageSource;
-	socials: Social[];
 }
 
 /**
@@ -52,10 +46,6 @@ interface PageInfo {
  */
 interface Skill {
 	_id: string;
-	_createdAt: string;
-	_updatedAt: string;
-	_rev: string;
-	_type: string;
 	title: string;
 	order: number;
 }
@@ -66,10 +56,6 @@ interface Skill {
  */
 interface Social {
 	_id: string;
-	_rev: string;
-	_type: string;
-	_createdAt: string;
-	_updatedAt: string;
 	title: string;
 	url: string;
 }
@@ -80,10 +66,6 @@ interface Social {
  */
 interface Project {
 	_id: string;
-	_rev: string;
-	_type: string;
-	_createdAt: string;
-	_updatedAt: string;
 	title: string;
 	image: SanityImageSource;
 	linkToGithub: string;

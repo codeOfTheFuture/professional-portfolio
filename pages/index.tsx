@@ -7,25 +7,24 @@ import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSocials from "../utils/fetchSocials";
 import fetchProjects from "../utils/fetchProjects";
 import fetchSkills from "../utils/fetchSkills";
-import fetchResumeUrl from "../utils/fetchResumeUrl";
 import Head from "next/head";
 import { PageInfo, Project, Skill, Social } from "types/typings";
-
-import styles from "./styles/index.module.scss";
 
 interface Props {
 	pageInfo: PageInfo;
 	socials: Social[];
 	projects: Project[];
 	skills: Skill[];
-	resumeUrl: File;
 }
 
-const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => {
-	const { name, profilePic, whatIDo, topExpertise, image } = pageInfo;
+const HomePage = ({ pageInfo, projects, skills, socials }: Props) => {
+	const { name, profilePic, whatIDo, topExpertise, image, resumeUrl } = pageInfo;
+
+	console.log("projects: ", projects);
+	console.log("skills", skills);
 
 	return (
-		<div className={styles["app"]}>
+		<>
 			<Head>
 				<title>Jeff Oliver | Professional Portfolio</title>
 
@@ -41,7 +40,7 @@ const HomePage = ({ pageInfo, projects, skills, socials, resumeUrl }: Props) => 
 			/>
 			<SectionPortfolio projects={projects} />
 			<SectionContact />
-		</div>
+		</>
 	);
 };
 
@@ -52,7 +51,6 @@ export const getStaticProps: GetStaticProps = async () => {
 	const socials = await fetchSocials();
 	const projects = await fetchProjects();
 	const skills = await fetchSkills();
-	const resumeUrl = await fetchResumeUrl();
 
 	return {
 		props: {
@@ -60,7 +58,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			socials,
 			projects,
 			skills,
-			resumeUrl,
 		},
 		revalidate: 30,
 	};

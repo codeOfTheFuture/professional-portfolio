@@ -9,7 +9,11 @@ import { Skill } from "types/typings";
  */
 const fetchSkills = async (): Promise<Skill[]> => {
 	const query = groq`
-    *[_type == "skill"] | order(order)
+    *[_type == "skill"] | order(order) {
+      _id,
+      title,
+      order
+    }
   `;
 
 	return await sanityClient.fetch(query);
