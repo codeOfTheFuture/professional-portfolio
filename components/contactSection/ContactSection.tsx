@@ -1,4 +1,3 @@
-import React from "react";
 import ContactForm from "./ContactForm";
 import styles from "./scss/ContactSection.module.scss";
 import { useTheme } from "../../context/ThemeContext";

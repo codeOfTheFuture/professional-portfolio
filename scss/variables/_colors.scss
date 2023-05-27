@@ -1,68 +1,84 @@
 // Background Colors
 $mainColor: (
-  "light__theme": #eaeaea,
-  "blue__theme": #15202b,
-  "green__theme": #606b56,
-  "purple__theme": #46344e,
+	"light__theme": #eaeaea,
+	"blue__theme": #15202b,
+	"green__theme": #606b56,
+	"purple__theme": #46344e,
 );
 
 $secondaryColor: (
-  "light__theme": white,
-  "blue__theme": #192734,
-  "green__theme": #515a48,
-  "purple__theme": #382a3f,
+	"light__theme": white,
+	"blue__theme": #192734,
+	"green__theme": #515a48,
+	"purple__theme": #382a3f,
 );
 
 // Border Colors
 $borderColor: (
-  "light__theme": #c1c1c1,
-  "blue__theme": #164d56,
-  "green__theme": #161914,
-  "purple__theme": #1d1520,
+	"light__theme": #c1c1c1,
+	"blue__theme": #164d56,
+	"green__theme": #161914,
+	"purple__theme": #1d1520,
 );
 
 $themeDotBorder: (
-  "light__theme": #24292e,
-  "blue__theme": #fff,
-  "green__theme": #fff,
-  "purple__theme": #fff,
+	"light__theme": #24292e,
+	"blue__theme": #fff,
+	"green__theme": #fff,
+	"purple__theme": #fff,
 );
 
 // Text Colors
 $mainText: (
-  "light__theme": #000,
-  "blue__theme": #fff,
-  "green__theme": #fff,
-  "purple__theme": #fff,
+	"light__theme": #000,
+	"blue__theme": #fff,
+	"green__theme": #fff,
+	"purple__theme": #fff,
 );
 
 $secondaryText: (
-  "light__theme": #4b5156,
-  "blue__theme": #eee,
-  "green__theme": #eee,
-  "purple__theme": #eee,
+	"light__theme": #4b5156,
+	"blue__theme": #eee,
+	"green__theme": #eee,
+	"purple__theme": #eee,
 );
 
 // preview background color
 $previewBg: (
-  "light__theme": rgba(251, 249, 243, 0.8),
-  "blue__theme": rgba(25, 39, 52, 0.8),
-  "green__theme": rgba(81, 90, 72, 0.8),
-  "purple__theme": rgba(29, 21, 32, 0.8),
+	"light__theme": rgba(251, 249, 243, 0.8),
+	"blue__theme": rgba(25, 39, 52, 0.8),
+	"green__theme": rgba(81, 90, 72, 0.8),
+	"purple__theme": rgba(29, 21, 32, 0.8),
 );
 
 // preview shadow
 $previewShadow: (
-  "light__theme": #f0ead6,
-  "blue__theme": #111921,
-  "green__theme": #2a2f25,
-  "purple__theme": #2b202f,
+	"light__theme": #f0ead6,
+	"blue__theme": #111921,
+	"green__theme": #2a2f25,
+	"purple__theme": #2b202f,
 );
 
 //Button Color
 $buttonColor: (
-  "light__theme": #000,
-  "blue__theme": #17a2b8,
-  "green__theme": #669966,
-  "purple__theme": #8534a3,
+	"light__theme": #000,
+	"blue__theme": #17a2b8,
+	"green__theme": #669966,
+	"purple__theme": #8534a3,
+);
+
+//Button Text Color Primary
+$buttonTextColorPrimary: (
+	"light__theme": #fff,
+	"blue__theme": #fff,
+	"green__theme": #fff,
+	"purple__theme": #fff,
+);
+
+// Button Text Color Secondary
+$buttonTextColorSecondary: (
+	"light__theme": #fff,
+	"blue__theme": #000,
+	"green__theme": #000,
+	"purple__theme": #000,
 );

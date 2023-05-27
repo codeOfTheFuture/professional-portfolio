@@ -15,13 +15,10 @@
 
 @mixin content-section-form-btn($themeName) {
 	background-color: map.get($buttonColor, $themeName);
+	color: map.get($buttonTextColorPrimary, $themeName);
+
 	&:hover {
 		background-color: map.get($themeDotBorder, $themeName);
-
-		@if $themeName == "lightMode" {
-			color: white !important;
-		} @else {
-			color: black !important;
-		}
+		color: map.get($buttonTextColorSecondary, $themeName);
 	}
 }
