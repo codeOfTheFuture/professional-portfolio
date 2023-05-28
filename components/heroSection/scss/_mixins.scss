@@ -2,7 +2,7 @@
 @import "../../../scss/variables/colors";
 
 @mixin hero-section($themeName) {
-	background-color: map.get($mainColor, $themeName);
+	background-color: map.get($mainBackgroundColor, $themeName);
 	border-bottom: 1px solid map.get($borderColor, $themeName);
 	color: map.get($mainText, $themeName);
 
@@ -12,12 +12,12 @@
 }
 
 @mixin hero-content($themeName) {
-	background-color: map.get($secondaryColor, $themeName);
+	background-color: map.get($secondaryBackgroundColor, $themeName);
 	border: 1px solid map.get($borderColor, $themeName);
 }
 
 @mixin hero-content-nav($themeName) {
-	background-color: map.get($mainColor, $themeName);
+	background-color: map.get($mainBackgroundColor, $themeName);
 	border-bottom: 1px solid map.get($borderColor, $themeName);
 }
 
@@ -52,5 +52,5 @@
 }
 
 @mixin preview-corner($themeName) {
-	background-color: map.get($secondaryColor, $themeName);
+	background-color: map.get($secondaryBackgroundColor, $themeName);
 }

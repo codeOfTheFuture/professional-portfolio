@@ -5,7 +5,7 @@
 	grid-area: rightColumn;
 	display: grid;
 	align-content: center;
-	padding: 6em 0;
+	padding: 6rem 0;
 
 	@media screen and (max-width: 800px) {
 		justify-content: center;
@@ -14,16 +14,8 @@
 	&__shadow {
 		width: 300px;
 		height: 200px;
-		padding-left: 30px;
-		padding-top: 30px;
-
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			height: 240px;
-			padding-left: 10px;
-			padding-top: 10px;
-			margin-bottom: 50px;
-			margin-right: 20px;
-		}
+		padding-left: 1.875rem;
+		padding-top: 1.875rem;
 
 		&--light__theme {
 			@extend .preview__shadow;
@@ -44,19 +36,10 @@
 	}
 
 	&__content {
-		width: 300px;
-		border: 1.5px solid #17a2b8;
-		padding: 1em;
 		position: relative;
-
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			width: 285px;
-			margin-bottom: 50px;
-		}
-
-		p {
-			padding: 1em 0;
-		}
+		width: 300px;
+		padding: 1rem;
+		border: 1.5px solid #17a2b8;
 
 		&--light__theme {
 			@extend .preview__content;

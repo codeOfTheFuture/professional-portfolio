@@ -2,7 +2,7 @@
 @import "../../../scss/variables/colors";
 
 @mixin projects-section($themeName) {
-	background-color: map.get($mainColor, $themeName);
+	background-color: map.get($mainBackgroundColor, $themeName);
 	border-bottom: 1px solid map.get($borderColor, $themeName);
 
 	h3,
@@ -18,11 +18,11 @@
 }
 
 @mixin swiper($themeName) {
-	background-color: map.get($mainColor, $themeName);
+	background-color: map.get($mainBackgroundColor, $themeName);
 }
 
 @mixin project-details($themeName) {
-	background-color: map.get($secondaryColor, $themeName);
+	background-color: map.get($secondaryBackgroundColor, $themeName);
 	border: 1px solid map.get($borderColor, $themeName);
 }
 

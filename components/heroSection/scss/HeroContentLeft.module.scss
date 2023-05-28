@@ -1,15 +1,15 @@
 .content__left {
 	grid-area: leftColumn;
-	padding: 6em 0;
+	padding: 6rem 0;
 
 	@media screen and (max-width: 800px) {
-		padding: 3em 0;
+		padding: 3rem 0;
 	}
 
 	&__profile__picture__wrapper {
 		position: relative;
 		margin-inline: auto;
-		margin-bottom: 1.5em;
+		margin-bottom: 1.5rem;
 		width: 200px;
 		height: 200px;
 	}
@@ -24,7 +24,6 @@
 	}
 
 	&__settings__note {
-		font-size: 12px;
 		font-style: italic;
 		text-align: center;
 	}

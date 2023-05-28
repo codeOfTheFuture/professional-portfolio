@@ -2,14 +2,14 @@
 
 .traffic__lights {
 	display: flex;
-	padding: 10px;
+	padding: 0.625rem;
 
 	&__dots {
 		background-color: black;
 		height: 15px;
 		width: 15px;
 		border-radius: 50%;
-		margin: 5px;
+		margin: 0.3125rem;
 
 		@include globalMixins.box-shadow;
 

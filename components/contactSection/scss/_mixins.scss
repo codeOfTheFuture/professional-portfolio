@@ -2,7 +2,7 @@
 @import "../../../scss/variables/colors";
 
 @mixin contact-section($themeName) {
-	background-color: map.get($secondaryColor, $themeName);
+	background-color: map.get($secondaryBackgroundColor, $themeName);
 
 	h3 {
 		color: map.get($mainText, $themeName);

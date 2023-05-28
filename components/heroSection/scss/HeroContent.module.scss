@@ -66,9 +66,5 @@
 			@extend .hero__section__content__nav;
 			@include heroSection.hero-content-nav("purple__theme");
 		}
-
-		a {
-			padding: 0;
-		}
 	}
 }
