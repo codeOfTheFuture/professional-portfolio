@@ -1,15 +1,22 @@
+@import "../../../scss/variables/breakpoints";
+
 .content__left {
 	grid-area: leftColumn;
-	padding: 6em 0;
+	font-size: 0.8rem;
+	padding: 3rem 0;
 
-	@media screen and (max-width: 800px) {
-		padding: 3em 0;
+	@media screen and (min-width: $mobile-breakpoint) {
+		font-size: 1rem;
+	}
+
+	@media screen and (min-width: $tablet-breakpoint) {
+		padding: 6rem 0;
 	}
 
 	&__profile__picture__wrapper {
 		position: relative;
 		margin-inline: auto;
-		margin-bottom: 1.5em;
+		margin-bottom: 1.5rem;
 		width: 200px;
 		height: 200px;
 	}
@@ -24,9 +31,7 @@
 	}
 
 	&__settings__note {
-		font-size: 12px;
 		font-style: italic;
 		text-align: center;
-		margin: 1em 0;
 	}
 }

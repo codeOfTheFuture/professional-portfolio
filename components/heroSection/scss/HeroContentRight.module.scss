@@ -4,25 +4,23 @@
 .preview {
 	grid-area: rightColumn;
 	display: grid;
+	justify-content: center;
 	align-content: center;
-	padding: 6em 0;
+	padding: 6rem 0;
 
-	@media screen and (max-width: 800px) {
-		justify-content: center;
+	@media screen and (min-width: $desktop-breakpoint) {
+		justify-content: start;
 	}
 
 	&__shadow {
 		width: 300px;
 		height: 200px;
-		padding-left: 30px;
-		padding-top: 30px;
+		padding-left: 1rem;
+		padding-top: 1rem;
 
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			height: 240px;
-			padding-left: 10px;
-			padding-top: 10px;
-			margin-bottom: 50px;
-			margin-right: 20px;
+		@media screen and (min-width: $desktop-breakpoint) {
+			padding-left: 1.875rem;
+			padding-top: 1.875rem;
 		}
 
 		&--light__theme {
@@ -44,18 +42,14 @@
 	}
 
 	&__content {
-		width: 300px;
-		border: 1.5px solid #17a2b8;
-		padding: 1em;
 		position: relative;
+		padding: 0.5rem;
+		width: 300px;
+		height: 200px;
+		border: 1.5px solid #17a2b8;
 
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			width: 285px;
-			margin-bottom: 50px;
-		}
-
-		p {
-			padding: 1em 0;
+		@media screen and (min-width: $desktop-breakpoint) {
+			padding: 1rem;
 		}
 
 		&--light__theme {

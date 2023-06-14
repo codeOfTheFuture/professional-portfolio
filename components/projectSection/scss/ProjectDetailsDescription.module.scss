@@ -2,12 +2,11 @@
 
 .project__details__description {
 	&__text {
-		padding: 1em 0;
-		line-height: 1.7em;
+		margin: 1em 0;
 
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			padding: 0;
-			margin: 1em 0;
+		@media screen and (min-width: $large-desktop-breakpoint) {
+			margin: 0;
+			padding: 1em 0;
 		}
 	}
 

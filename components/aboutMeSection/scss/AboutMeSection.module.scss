@@ -2,7 +2,7 @@
 @import "../../../scss/variables/breakpoints";
 
 .about__me__section {
-	padding: 3em 0;
+	padding: 3rem 0;
 
 	&--light__theme {
 		@extend .about__me__section;
@@ -27,20 +27,14 @@
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-		column-gap: 2em;
-		margin: 0 auto;
+		gap: 3rem;
+		width: 90%;
+		margin-inline: auto;
 
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			padding: 0;
-			gap: 20px;
-
-			width: 95%;
-			height: 100%;
-			padding: 1em 0;
-		}
-
-		@media screen and (min-width: 1800px) {
+		@media screen and (min-width: $large-desktop-breakpoint) {
 			width: 70%;
+			gap: 0;
+			column-gap: 3rem;
 		}
 	}
 }

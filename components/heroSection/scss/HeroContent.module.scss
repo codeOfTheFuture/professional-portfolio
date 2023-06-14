@@ -1,24 +1,24 @@
-@use "sass:map";
 @use "../../../scss/mixins" as globalMixins;
 @use "./mixins" as heroSection;
 @use "../../../scss/variables/colors";
+@import "../../../scss/variables/breakpoints";
 
 .hero__section__content {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	grid-template-areas:
-		"nav nav"
-		"leftColumn rightColumn";
+		"nav"
+		"leftColumn"
+		"rightColumn";
 	border-radius: 5px 5px 0 0;
 
 	@include globalMixins.box-shadow;
 
-	@media screen and (max-width: 800px) {
-		grid-template-columns: 1fr;
+	@media screen and (min-width: $tablet-breakpoint) {
+		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
-			"nav"
-			"leftColumn"
-			"rightColumn";
+			"nav nav"
+			"leftColumn rightColumn";
 	}
 
 	&--light__theme {

@@ -10,8 +10,6 @@ interface Props {
 }
 
 const AboutMeInfo = ({ topExpertise, resumeUrl, skills }: Props) => {
-	console.log("resume url: ", resumeUrl);
-
 	return (
 		<div className={styles[`content__info`]}>
 			<h4>More about me</h4>

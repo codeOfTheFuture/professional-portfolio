@@ -3,16 +3,11 @@
 .contact__section__form {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 15px;
-	margin-bottom: 100px;
 
 	&__label {
-		line-height: 2.7em;
-		padding: 1.5em 0;
-
 		&--light__theme {
 			@extend .contact__section__form__label;
 			@include contactSection.content-section-form-label("light__theme");

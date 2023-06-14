@@ -2,7 +2,7 @@
 @import "../../../scss/variables/colors";
 
 @mixin about-me-section($themeName) {
-	background-color: map.get($secondaryColor, $themeName);
+	background-color: map.get($secondaryBackgroundColor, $themeName);
 	border-bottom: 1px solid map.get($borderColor, $themeName);
 
 	img {

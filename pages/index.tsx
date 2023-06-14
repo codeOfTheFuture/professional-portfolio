@@ -20,9 +20,6 @@ interface Props {
 const HomePage = ({ pageInfo, projects, skills, socials }: Props) => {
 	const { name, profilePic, whatIDo, topExpertise, image, resumeUrl } = pageInfo;
 
-	console.log("projects: ", projects);
-	console.log("skills", skills);
-
 	return (
 		<>
 			<Head>

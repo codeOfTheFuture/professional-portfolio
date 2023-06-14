@@ -2,13 +2,10 @@
 @import "../../../scss/variables/breakpoints";
 
 .contact__section {
-	@media screen and (max-width: $large-desktop-breakpoint) {
-		overflow-x: hidden;
-	}
+	padding: 3em 0;
 
 	h3 {
 		text-align: center;
-		padding: 2em;
 	}
 
 	&--light__theme {
