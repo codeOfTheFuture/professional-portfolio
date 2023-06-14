@@ -27,19 +27,14 @@
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-		column-gap: 3rem;
+		gap: 3rem;
+		width: 90%;
 		margin-inline: auto;
 
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			padding: 0;
-			column-gap: 0;
-			gap: 3rem;
-
-			width: 95%;
-		}
-
-		@media screen and (min-width: 1800px) {
+		@media screen and (min-width: $large-desktop-breakpoint) {
 			width: 70%;
+			gap: 0;
+			column-gap: 3rem;
 		}
 	}
 }

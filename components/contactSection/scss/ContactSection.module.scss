@@ -4,10 +4,6 @@
 .contact__section {
 	padding: 3em 0;
 
-	@media screen and (max-width: $large-desktop-breakpoint) {
-		overflow-x: hidden;
-	}
-
 	h3 {
 		text-align: center;
 	}

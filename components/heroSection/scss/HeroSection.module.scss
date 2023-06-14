@@ -20,21 +20,23 @@
 
 	&__content {
 		width: 100%;
-		margin: 0 auto;
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			width: 95%;
-			overflow-x: hidden;
-		}
+		margin-inline: auto;
+		// overflow-x: hidden;
 
-		@media screen and (min-width: 1800px) {
+		@media screen and (min-width: $large-desktop-breakpoint) {
 			width: 70%;
 		}
 
 		&__greeting {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 3rem;
+			padding: 1rem;
+
+			@media screen and (min-width: $mobile-breakpoint) {
+				padding: 3rem;
+			}
+
+			h1 {
+				text-align: center;
+			}
 		}
 	}
 }

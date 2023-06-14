@@ -4,18 +4,24 @@
 .preview {
 	grid-area: rightColumn;
 	display: grid;
+	justify-content: center;
 	align-content: center;
 	padding: 6rem 0;
 
-	@media screen and (max-width: 800px) {
-		justify-content: center;
+	@media screen and (min-width: $desktop-breakpoint) {
+		justify-content: start;
 	}
 
 	&__shadow {
 		width: 300px;
 		height: 200px;
-		padding-left: 1.875rem;
-		padding-top: 1.875rem;
+		padding-left: 1rem;
+		padding-top: 1rem;
+
+		@media screen and (min-width: $desktop-breakpoint) {
+			padding-left: 1.875rem;
+			padding-top: 1.875rem;
+		}
 
 		&--light__theme {
 			@extend .preview__shadow;
@@ -37,9 +43,14 @@
 
 	&__content {
 		position: relative;
+		padding: 0.5rem;
 		width: 300px;
-		padding: 1rem;
+		height: 200px;
 		border: 1.5px solid #17a2b8;
+
+		@media screen and (min-width: $desktop-breakpoint) {
+			padding: 1rem;
+		}
 
 		&--light__theme {
 			@extend .preview__content;

@@ -15,10 +15,9 @@
 
 		h4 {
 			text-decoration: underline;
-			padding: 0;
+
 			@media screen and (max-width: $large-desktop-breakpoint) {
 				margin: 0.5em 0;
-				padding: 0;
 			}
 		}
 
@@ -34,15 +33,15 @@
 	}
 
 	&__details {
-		height: 450px;
-		overflow-y: auto;
 		box-sizing: border-box;
-		padding: 2em;
+		margin: 1em 0;
+		padding: 0 2.5em;
 
-		@media screen and (max-width: $large-desktop-breakpoint) {
-			height: auto;
-			margin: 1em 0;
-			padding: 0 2.5em;
+		@media screen and (min-width: $large-desktop-breakpoint) {
+			overflow-y: auto;
+			height: 450px;
+			padding: 2em;
+			margin: 0;
 		}
 
 		&--light__theme {

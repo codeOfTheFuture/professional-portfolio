@@ -1,9 +1,16 @@
+@import "../../../scss/variables/breakpoints";
+
 .content__left {
 	grid-area: leftColumn;
-	padding: 6rem 0;
+	font-size: 0.8rem;
+	padding: 3rem 0;
 
-	@media screen and (max-width: 800px) {
-		padding: 3rem 0;
+	@media screen and (min-width: $mobile-breakpoint) {
+		font-size: 1rem;
+	}
+
+	@media screen and (min-width: $tablet-breakpoint) {
+		padding: 6rem 0;
 	}
 
 	&__profile__picture__wrapper {

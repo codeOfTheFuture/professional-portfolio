@@ -1,6 +1,9 @@
 :root {
 	// Global box-sizing
-	box-sizing: border-box;
+	html,
+	body {
+		box-sizing: border-box;
+	}
 
 	// Global heading font-sizes
 	h1 {
